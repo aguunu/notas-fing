@@ -1,4 +1,4 @@
-Dado un [[Autómatas#Autómata Finito Determinista|AFD]] $M$ se quiere hallar una [[Expresiones Regulares|expresión regular]] $r$ tal que $L(M)$ = $L(r)$.
+Dado un [[Autómata Finito Determinista|AFD]] $M$ se quiere hallar una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $L(M)$ = $L(r)$.
 *Esté método calcula las clases de equivalencia de $R_M$.*
 
 ## Aplicación

@@ -7,6 +7,7 @@ Paso Base,
 Paso Inductivo,
 1. $R_{ij}^k=R_{ij}^{k-1} \bigcup R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^* \cdot R_{kj}^{k-1}$
 
-*Observación: expresando el $R_{ij}^k$ como una [[Expresiones Regulares|expresión regular]] obtenemos que $R_{ij}^k=R_{ij}^{k-1} | R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^* \cdot R_{kj}^{k-1}$
+*Observación: expresando el $R_{ij}^k$ como una [[Expresiones Regulares|Expresión Regular]] obtenemos que,
+$$R_{ij}^k=R_{ij}^{k-1} | R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^* \cdot R_{kj}^{k-1}$$
 
 *Observación: Sea $F=\{f_1,...,f_m\}$ el conjunto de estados finales $\implies \bigcup_{j=1}^{m} R_{1 f_j}^m$ es el conjunto de cadenas aceptadas por el lenguaje.*

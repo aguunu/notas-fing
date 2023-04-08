@@ -5,7 +5,7 @@ Cada proceso puede tener multiples threads (*multithreaded*) que *"viven"* en el
 *Observación: crear un proceso es más costoso que crear un thread, pues para crear un proceso se necesita reservar memoria y recursos.*
 
 ## Implementación
-Los *threads* pueden implementarse tanto a nivel de usuario como a nivel del SO.
+Los *threads* pueden implementarse tanto a *nivel de usuario* como a *nivel de kernel*.
 - **User Threads**: El usuario implementa una librería *(thread library)* que provee soporte para crear, planificar y administrar los *threads*. *(El sistema operativo reconocerá el proceso como **single-threaded** sin importar la cantidad de threads que este posea).*
 - **Kernel Threads**: El sistema operativo provee el soporte para crear, planificar y administrar los *threads*.
 
@@ -21,6 +21,6 @@ Los *threads* pueden implementarse tanto a nivel de usuario como a nivel del SO.
 - **Independencia**: Al ejecutarse los threads de forma independiente, si un thread se bloquea, los demás pueden seguir en ejecución.
 
 ### Modelos
-- *Many To One*: $n$ threads a nivel de usuario corresponden a un thread a nivel de sistema.
-- *One To One*: Un thread a nivel de usuarios corresponde a un único thread a nivel de sistema.
-- *Many To Many*: $n$ threads a nivel de usuario corresponden a $m$ threads a nivel de sistema.
+- *Many To One*: $n$ threads a nivel de usuario corresponden a un thread a nivel de kernel.
+- *One To One*: Un thread a nivel de usuarios corresponde a un único thread a nivel de kernel.
+- *Many To Many*: $n$ threads a nivel de usuario corresponden a $m$ threads a nivel de kernel.

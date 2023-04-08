@@ -5,14 +5,14 @@ Un proceso en memoria contiene varias secciones:
 - **Text**: Contiene una porción de las instrucciones del proceso.
 - **Data**: Incluye variables globales y estáticas.
 - **Heap**: Memoria dinámica asignada al proceso.
-- **Stack**: El stack del proceso contiene datos temporales, por ejemplo parámetros de métodos/funciones y variables locales.
+- **Stack**: Datos temporales asignados al proceso (ej. parámetros de métodos/funciones y variables locales).
 
 ## Estados
 Mientras un proceso se ejecuta, este puede cambiar de estado.
 - **New**: El proceso esta siendo creado.
 - **Ready**: El proceso esta esperando ser asignado a un CPU.
 - **Running***: Las instrucciones están siendo ejecutadas.
-- **Waiting**: El proceso esta esperando por un evento (por ejemplo ES)
+- **Waiting**: El proceso esta esperando por un evento (ej. ES).
 - **Terminated**: El proceso finalizó su ejecución.
 ```mermaid
 stateDiagram-v2
@@ -112,8 +112,9 @@ int main() {
 }
 ```
 
-*Observación: Si se agrega **&** después de un comando, Unix correará estos procesos en paralelos sobre la shell, de otra forma, el próximo comando deberá esperar hasta que finalize el primero.*
+*Observación: Si se agrega **&** después de un comando, Unix ejecutará estos procesos en paralelos sobre la shell, de otra forma, el próximo comando deberá esperar hasta que finalize el primero.*
 
 ## Cooperación entre Procesos
-Dos procesos pueden sincronizarse y comunicarse entre ellos utilizando (sin compartir el espacio de direccionamiento en memoria) usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.
+Dos procesos pueden sincronizarse y comunicarse entre ellos usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.
 
+Sin embargo, el acceso concurrente entre varios procesos a datos compartidos puede resultar en *datos inconsistentes.*

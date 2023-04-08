@@ -15,12 +15,12 @@ Las principales funcionalidades de un sistema operativos son las siguientes:
 - Administrar recursos
 - Protección & Seguridad
 
-### Sistema Batch (lotes).
+### System Batch (lotes).
 Los *jobs (tareas)* se agrupan en conjuntos para un procesamiento más eficiente.
 
 ### Sistema Batch con Multiprogramación 
 El sistema selecciona un subconjunto de la *job pool* que está en memoria secundaria para ser cargado en memoria principal.
-Luego, el sistema ejecuta un *job* de este subconjunto, mientras el *job* que esta en ejecución espera por otra tarea (*ej. impresión de un documento*), el sistema elige otro *job* para que haga uso del CPU (*multiprogramación*). Reduciendo así el tiempo muerto del CPU.
+Luego, el sistema ejecuta un *job* de este subconjunto, mientras el *job* que esta en ejecución espera por otra tarea (*ej. impresión de un documento*), el sistema elige otro *job* para que haga uso del CPU (*multiprogramación*), reduciendo así el tiempo muerto del CPU.
 
 ### Time-Sharing System
 Permite a los usuarios compartir el CPU simultáneamente, utilizando *CPU Scheduling* y *multiprogramación*.
@@ -59,9 +59,5 @@ La **Taxonomía de Flynn** es una clasificación de arquitectura de computado
 
 ### Real Time System
 El sistema esta sujeto al tiempo real, la respuesta del sistema debe estar garantizada en un tiempo definido o el sistema fallará.
-
-#### **Hard Real Time System**
-El sistema nunca puede llegar a su *deadline* (fecha limite). De lo contrario, podrían producirse fallas irrecuperables en el sistema.
-
-#### Soft Real Time System
-Este tipo de sistemas puede perder su *deadline* ocasionalmente.
+- **Hard Real Time System**: El sistema nunca puede llegar a su *deadline* (fecha limite). De lo contrario, podrían producirse fallas irrecuperables en el sistema.
+- **Soft Real Time System**: A diferencia del *Hard Real Time System*, si puede perder su *deadline* ocasionalmente.

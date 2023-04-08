@@ -1,14 +1,14 @@
-## Problema de Sección Crítica
-La sección crítica es una sección de código donde múltiples procesos o hilos intentan acceder a un recurso compartido o realizar una tarea crítica al mismo tiempo.
+## Sección Crítica
+La sección crítica es una sección de código donde múltiples procesos intentan acceder a un recurso compartido o realizar una tarea crítica al mismo tiempo.
 
-Cuando varios procesos o hilos intentan acceder simultáneamente a un recurso compartido, pueden ocurrir problemas como *race conditions*, en los que el resultado final del programa depende del orden en que los procesos acceden al recurso compartido.
+Cuando varios procesos intentan acceder simultáneamente a un recurso compartido, pueden ocurrir problemas como *race conditions*, en los que el resultado final del programa depende del orden en que los procesos acceden al recurso compartido. Este problema se denomina "*El Problema de la Sección Crítica*".
 
-Para evitar estos problemas, se utiliza la sección crítica. En esta técnica, los procesos o hilos solicitan acceso exclusivo al recurso compartido antes de acceder a él. Solo un proceso o hilo puede acceder al recurso compartido a la vez, lo que garantiza que no habrá *race conditions*. Una vez que el proceso o hilo ha terminado de acceder al recurso compartido, libera el acceso exclusivo para que otro proceso o hilo pueda acceder al recurso compartido.
-
-Una solución al problema de sección crítica debe cumplir con las siguientes condiciones:
+Para resolver este problema, se busca diseñar un protocolo que los procesos utilicen para cooperar entre ellos, y que a su vez cumplan con las siguientes condiciones:
 1. **Exclusión Mutua**: Si un proceso esta ejecutando su sección crítica, ningún otro proceso podrá estar ejecutando en dicha sección crítica. ^7b522d
 2. **Progreso**: Si varios procesos desean entrar a una sección crítica y esta se libera, la misma deberá ser asignada a uno de estos procesos. (Evita [[#Deadlock]]).
 3. **Espera Acotada**: Existe un limite en la cantidad de veces que un proceso es permitido entrar en su sección crítica después de que otro proceso realizó una petición para entrar a su sección crítica. (Evita espera indefinida).
+
+*Observación: el problema de sección crítica se puede generalizar para ser aplicado tanto a [[Procesos]] como a [[Threads]].*
 
 ### Busy Waiting
 Desperdicia ciclos del CPU que podrían ser aprovechados por otro proceso.
@@ -54,7 +54,6 @@ Análogamente, se deduce la estructura del proceso $P_j$
 Las soluciones eficientes para el problema de sección crítica requieren asistencia del hardware y del SO.
 Todas estas soluciones se basan en *locking*, encargándose de proteger las secciones críticas a través de *locks*.
 
-
 ### Test And Set && Compare And Swap
 El problema de sección crítica puede ser resuelto fácilmente en un sistema *single-processor* si pudiéramos deshabilitar las [[Interrupciones]] mientras la variable compartida esta siendo modificada. Sin embargo, en un sistema *multi-processor* consumiría mucho tiempo (el mensaje se pasaría a todos los procesadores).
 A pesar de esto, los sistemas modernos proveen instrucciones de hardware atómicas para resolver este problema. `test_and_set()` y `compare_and_swap()`.
@@ -76,7 +75,6 @@ int compare_and_swap(int *value, int expected, int new_value) {
 		*value = new value;
 	return temp;
 }
-
 ```
 
 *Exclusion Mutua* con *test and set*:
@@ -120,7 +118,7 @@ void signal(Semaforo S) {
 	S++;
 }
 
-/* */
+/* Inicializa el semáforo S */
 void init(unsigned int S, unsigned int recursos_disponibles) {
 	S = recursos_disponibles;
 }
