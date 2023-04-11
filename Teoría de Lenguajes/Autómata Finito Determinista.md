@@ -16,7 +16,7 @@ El lenguaje $L(A)$ es el conjunto de cadenas $w$ que parten del estado inicial $
 
 Si $L$ es $L(A)$ para un determinado AFD $A$, entonces $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]].
 
-## ADF $\rightarrow$ Expresión Regular
+## AFD $\rightarrow$ Expresión Regular
 Dado un AFD $M$ se quiere hallar una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $L(M)$ = $L(r)$.
 Para esto tenemos 3 métodos distintos:
 - [[R_ij k]]

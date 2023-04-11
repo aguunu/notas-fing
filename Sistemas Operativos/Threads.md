@@ -1,4 +1,4 @@
-Cada proceso puede tener multiples threads (*multithreaded*) que *"viven"* en el **[[Procesos#^d16134 |PCB]]** de dicho proceso. Por ende, el código, archivos e información es compartida entre ellos. Sin embargo, cada *thread* tiene su propio set de registros (incluye program counter) y stack.
+Cada proceso puede tener multiples threads (*multithreaded*) que *"viven"* en el [[Procesos#Process Control Block (PCB)|PCB]] de dicho proceso. Por ende, el código, archivos e información es compartida entre ellos. Sin embargo, cada *thread* tiene su propio set de registros (incluye program counter) y stack.
 
 *Observación: hasta el momento estuvimos trabajando con procesos **single-threaded**, es decir, procesos con un solo thread.*
 

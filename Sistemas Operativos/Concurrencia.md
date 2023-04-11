@@ -100,7 +100,7 @@ do {
 *Observación: tanto la solución con `test_and_set()` y `compare_and_swap()` hacen uso de [[#Busy Waiting]]*.
 
 ### Semáforos
-Es una técnica para administrar procesos concurrentes haciendo uso de un único *valor entero no negativo* compartido entre estos procesos, este valor se se conoce como *semáforo* que resuelve el [[#Problema de Sección Crítica]] y logra la sincronización entre procesos en [[Sistemas Operativos/Introducción#Sistema Multiprocesador (Paralelos)|multiprocessing systems]].
+Es una técnica para administrar procesos concurrentes haciendo uso de un único *valor entero no negativo* compartido entre estos procesos, este valor se se conoce como *semáforo* que resuelve el [[#Problema de Sección Crítica]] y logra la sincronización entre procesos en [[Sistemas Operativos/Introducción#Sistema Multiprocesador (Paralelos)|Multiprocessing Systems]].
 
 Un semáforo es un valor entero no negativo, que se accede únicamente por dos operaciones atómicas:
 - `wait()` $\rightarrow$ **P** *to test*
@@ -132,7 +132,7 @@ signal(S); // avisar a los procesos que el semáforo S esta disponible
 ```
 
 #### Semáforo Binario
-El semáforo binario puede tomar el valor 0 o 1. En algunos sistemas, también se le conocen como **Mutex Locks** ya que son *locks* que proveen [[#^7b522d|exclusión mutua]].
+El semáforo binario puede tomar el valor 0 o 1. En algunos sistemas, también se le conocen como **Mutex Locks** ya que son *locks* que proveen [[#^7b522d|Exclusión Mutua]].
 
 #### Semáforo de Conteo
 El semáforo de conteo no está restringido por un dominio. Se utiliza para controlar el acceso a un recurso que posee multiples instancias.
@@ -140,4 +140,34 @@ El semáforo de conteo no está restringido por un dominio. Se utiliza para cont
 *Observación: se puede demostrar que los [[#Semáforo Binario]] y [[#Semáforo de Conteo]] son equivalentes.*
 
 ### Monitores
-TODO
+Un *monitor* es una abstracción que provee un mecanismo efectivo y conveniente para la sincronización de procesos. 
+
+El *tipo monitor* define un conjunto de variables cuyos valores definen el estado de dicha instancia. Además, el monitor contiene un conjunto de operaciones que operan sobre dichas variables y a su vez proveen [[#^7b522d|Exclusión Mutua]] dentro del monitor.
+
+```c
+Monitor nombre_monitor
+{
+	/* declaración de variables compartidas */
+
+	/* operaciones */
+	function P1(...) { ... }
+	function P2(...) { ... }
+	.
+	.
+	.
+	function Pn(...) { ... }
+
+	/* codigo para inicializar el monitor*/
+	inicializar(...) { ... }
+}
+```
+
+Una operación definida dentro de un monitor puede acceder únicamente a las variables declaradas localmente en el monitor y a los parámetros de dicha función. De forma similar, las variables locales pueden ser accedidas únicamente por estas operaciones.
+
+Solo puede haber una única operación en ejecución en un momento dado.
+
+Se definen variables de tipo *condition* cuyo valor no se inicializa. Las únicas operaciones que pueden ser invocadas sobre dichas variables son `wait()` y `signal()`.
+- `var_c.wait()`: El proceso invocando esta operación sera suspendido hasta que otro proceso invoque `var.signal()`.
+- `var_c.signal()`: Se reanuda exactamente un proceso que se encuentre suspendido.
+
+*Observación: en el caso de invocar `signal()` sin procesos bloqueados, la operación no tiene efecto.*

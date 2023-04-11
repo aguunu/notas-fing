@@ -32,9 +32,6 @@ running-->terminated
 
 ## Data Structures
 ### Process Control Block (PCB)
-
-^d16134
-
 Es una estructura del SO que almacena información de todos los procesos.
 - El SO crea un nuevo PCB en la creación de cada proceso y lo coloca en el *state queue*.
 - El SO libera el PCB cuando su proceso correspondiente termina.
@@ -63,9 +60,6 @@ Cuando el SO cambia el estado de un **PCB**, este se remueve de su cola actual y
 *Observación: en el caso de tener $n$ CPUs podremos tener a lo sumo $n$ PCBs en el **State Queue** correspondiente al estado **running**, puesto que cada CPU puede tener un único proceso en dicho estado*
 
 ### Context Switch
-
-^5066ec
-
 Es la acción de cambiar el CPU de un proceso $p_1$ *(en estado running)* a un proceso $p_2$ *(en estado ready)*.
 
 El SO guarda el contexto *(registro del cpu, program counter, stack pointer, etc)* de $p_1$ en su correspondiente **PCB**, para luego cargar el contexto de $p_2$. Además, actualiza el estado correspondiente de $p_1$ al estado que le corresponda *(terminated, waiting o ready)* y $p_2$ al estado **running**.
