@@ -30,8 +30,8 @@ Definimos $\Sigma^k$ el conjunto de las cadenas de longitud $k$, tales que cada 
 *Observación: $\Sigma^0 = \{\varepsilon\}$ pues esta es la única palabra de largo igual a 0.*
 
 #### Clausura de Kleen
-El conjunto de todas las cadenas de un alfabeto $\Sigma$ se designa mediante $\Sigma^*$ *clausura de Kleen*.
-1. $\{0,1\}^* = \{\varepsilon,0,1,00,01,10,11,000,...\}$.
+El conjunto de todas las cadenas de un alfabeto $\Sigma$ se designa mediante $\Sigma^\star$ *clausura de Kleen*.
+1. $\{0,1\}^\star = \{\varepsilon,0,1,00,01,10,11,000,...\}$.
 
 *Observación: $\Sigma^\star = \Sigma^0 \cup \Sigma^1 \cup \Sigma^2 ...$*
 

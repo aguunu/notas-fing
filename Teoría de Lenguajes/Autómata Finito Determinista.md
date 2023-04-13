@@ -1,11 +1,11 @@
 Un autómata finito determinista (AFD) sólo puede estar en un único estado después de leer cualquier secuencia de entradas.
 
 Definimos un AFD como una "quíntupla" $(Q,\Sigma,\delta, q_0, F)$ donde:
-- $Q$ un conjunto finito de estados
-- $\Sigma$ un conjunto de los símbolos de entrada
-- $\delta : Q \times \Sigma \rightarrow Q$ una función de transición, que toma como entrada un estado y una entrada y retorna un estado.
-- $q_0$ un estado inicial, perteneciente a $Q$.
-- $F$ un conjunto de estados finales.
+- $Q$ un conjunto finito de estados.
+- $\Sigma$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de entrada.
+- $\delta : Q \times \Sigma \rightarrow Q$ la función de transición.
+- $q_0$ un estado inicial donde $q_0 \in Q$.
+- $F$ un conjunto de estados finales con $F \subseteq Q$.
 
 ## Lenguaje de un AFD
 Definimos el lenguaje de un AFD $A=(Q,\Sigma,\delta, q_0, F)$ como $L(A)=\{w : \hat{\delta}(q_0, w) \in F\}$ donde $\delta$ se define inductivamente,

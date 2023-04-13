@@ -11,4 +11,4 @@ Dado un [[Autómata Finito Determinista|AFD]] $M$ se quiere hallar una [[Expresi
 *Observación: no incluir el estado pozo facilita las cuentas (la solución del estado pozo siempre es la misma $X_p=\emptyset$).*
 
 ## Lema Arden
-Nos permite afirmar que $X=r^* \cdot s$ es la solución a la ecuación $X=rX|s$ donde $\varepsilon \notin L(r)$.
+Nos permite afirmar que $X=r^\star \cdot s$ es la solución a la ecuación $X=rX|s$ donde $\varepsilon \notin L(r)$.

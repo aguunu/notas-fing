@@ -1,3 +1,4 @@
+# Concurrencia
 ## Sección Crítica
 La sección crítica es una sección de código donde múltiples procesos intentan acceder a un recurso compartido o realizar una tarea crítica al mismo tiempo.
 

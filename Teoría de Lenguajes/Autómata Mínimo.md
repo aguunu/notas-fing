@@ -7,8 +7,8 @@ Dado un [[Autómata Finito Determinista|AFD]] $M=(Q, \Sigma, \delta, q_0, F)$ ob
 4. Si en el paso anterior se han distinguido nuevos estados, volver.
 
 Sea $M=\{Q, \Sigma, \delta, q_0, F\}$ y además  $p, q \in Q$:
-- **Estados Equivalentes**: $p$ es equivalente a $q$ si $\forall z \in \Sigma^* \; \hat{\delta}(p,z) = \hat{\delta}(q,z)$.
-- **Estados Distinguibles**: $p$ es *distinguible* de $q$ si $\exists x \in \Sigma^*: \hat{\delta}(p, x) \in F \land \hat{\delta}(q,x) \notin F$.
+- **Estados Equivalentes**: $p$ es equivalente a $q$ si $\forall x \in \Sigma^\star: \hat{\delta}(p, x) \in F \iff \hat{\delta}(q,x) \in F$.
+- **Estados Distinguibles**: $p$ es *distinguible* de $q$ si $\exists x \in \Sigma^\star: \hat{\delta}(p, x) \in F \land \hat{\delta}(q,x) \notin F$.
 
 *Observación: $p$ y $q$ son distinguibles $\iff$ $p$ y $q$ no son equivalentes.*
 
