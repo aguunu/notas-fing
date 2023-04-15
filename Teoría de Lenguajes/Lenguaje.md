@@ -29,5 +29,5 @@ Sea $M=\{Q, \Sigma, \delta, q_0, F\}$ un [[Autómata Finito Determinista|AFD]] e
 
 *Observación: no necesariamente se cumple que $xR_Ly \implies xR_My$. Sin embargo, si se cumple que $xR_My \implies xR_Ly$. Por ende,  $|R_L| \leq |R_M|$.*
 
-[^1]: Sea $L$ un lenguaje, se define el reverso $L^r=\{x^r : x \in L\}$. 
+[^1]: Sea $L$ un lenguaje, se define el reverso $L^r=\{x^r \in \Sigma^\star: x \in L\}$. 
 [^2]: Sea $L_1$ y $L_2$ lenguajes, se define el cociente $\frac{L_1}{L_2}=\{x \in \Sigma^\star : \exists y \in L_2 \land xy \in L_1 \}$.
