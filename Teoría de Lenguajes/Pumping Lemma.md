@@ -1,11 +1,10 @@
-El *pumping lemma* se utiliza para probar que un [[Lenguaje]] no es [[Lenguaje#Lenguaje Regular|Regular]].
-
-Si $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], entonces $L$ tiene un largo *pumping* $N$, de forma que cualquier [[Conceptos Fundamentales#Cadena de Caracteres|Cadena]] $s$ donde $|s| \geq N$ podrá ser expresadas de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
+Si $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], entonces $L$ tiene un largo *pumping* $N$, de forma que cualquier [[Conceptos Fundamentales#Cadena de Caracteres|Cadena]] $s \in L$ donde $|s| \geq N$ podrá ser expresadas de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
 $$\tag{1} x y^i z \in L \; \forall i \geq 0$$
 $$\tag{2} |y| \gt 0$$
 $$\tag{3} |xy| \leq N$$
+
 Para probar que un lenguaje $L$ no es regular utilizando el *pumping lemma*, seguiremos los siguientes pasos:
-1. Asumir por contradicción, que $L$ es un lenguaje regular. Sea $N$ el largo del *pumping lemma*.
+1. Asumir por contradicción, que $L$ es un lenguaje regular con $N$ el largo del *pumping lemma* sobre $L$.
 2. Construir un contra ejemplo con una [[Conceptos Fundamentales#Cadena de Caracteres|Cadena]] $s \in L$ con $|s| \geq N$.
 3. Demostrar que para toda descomposición $s=xyz$ que cumplen con las condiciones $(2)$ y $(3)$ no cumplen con la condición $(1)$ (es decir existe un $i \geq 1: xy^iz \notin L$).
 

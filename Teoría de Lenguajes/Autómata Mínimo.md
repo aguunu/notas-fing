@@ -1,10 +1,11 @@
 ## Algoritmo de Minimización
 Dado un [[Autómata Finito Determinista|AFD]] $M=(Q, \Sigma, \delta, q_0, F)$ obtendremos un AFDM $M'=(Q', \Sigma, \delta', q'_0, F')$.
 
-1. Si hay algún estado inalcanzable eliminarlo.
-2. $(i=0)$ Marcar todos los estados que pueden distinguirse con la cadena vacía (es decir, todos los finales se pueden distinguir de los no finales).
-3. $(i=i+1)$ Marcar como distinguibles $q$ y $q'$ si con algún $a \in \Sigma$ obtenemos que $\delta(q,a)$ es distinguible de $\delta(q',a)$.
-4. Si en el paso anterior se han distinguido nuevos estados, volver.
+1. Agregar $q_p$ el estado pozo.
+2. Si hay algún estado inalcanzable eliminarlo.
+3. $(i=0)$ Marcar todos los estados *distinguibles* con la cadena vacía (es decir, todos los finales se pueden distinguir de los no finales).
+4. $(i=i+1)$ Marcar como *distinguibles* $q$ y $q'$ si con algún $a \in \Sigma$ obtenemos que $\delta(q,a)$ es distinguible de $\delta(q',a)$.
+5. Si en el paso anterior se han distinguido nuevos estados, volver.
 
 Sea $M=\{Q, \Sigma, \delta, q_0, F\}$ y además  $p, q \in Q$:
 - **Estados Equivalentes**: $p$ es equivalente a $q$ si $\forall x \in \Sigma^\star: \hat{\delta}(p, x) \in F \iff \hat{\delta}(q,x) \in F$.

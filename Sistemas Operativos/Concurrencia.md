@@ -1,4 +1,3 @@
-# Concurrencia
 ## Sección Crítica
 La sección crítica es una sección de código donde múltiples procesos intentan acceder a un recurso compartido o realizar una tarea crítica al mismo tiempo.
 
@@ -26,14 +25,42 @@ TODO
 
 ## Solución de Dekker
 La solución de Dekker, es independiente del SO (no utiliza [[Estructura del SO#System Calls|System Calls]]) pues utiliza [[#Busy Waiting]].
+```c
+/* Variables Globales */
+desea_entrar : array of 2 booleans
+turno : integer
 
-*Observación: esta solución no se utiliza en la práctica.*
+/* Inicialización de las Variables Globales*/
+desea_entrar[0] ← false
+desea_entrar[1] ← false
+turno ← 0 // o 1
+```
+
+```c
+/* Estructura de P0 (análogo para P1) */
+P0:
+	desea_entrar[0] ← true
+	while desea_entrar[1] {
+		if turn ≠ 0 {
+			desea_entrar[0] ← false
+			while turno ≠ 0; // busy wait
+	        desea_entrar[0] ← true
+	    }
+	}
+	
+	// sección crítica
+	...
+	turno ← 1
+	desea_entrar[0] ← false
+	// sección restante
+	...
+```
 
 ## Solución de Peterson
 Esta solución esta restringida a 2 procesos. Se requiere compartir dos datos entre dichos procesos:
 ```c
 int turn; // indica el proceso al que le corresponde entrar a su sección crítica.
-boolean flag[2]; // indica si el proceso esta listo para entrar a su sección crítica.
+bool flag[2]; // indica si el proceso esta listo para entrar a su sección crítica.
 ```
 
 Sean $P_i$ y $P_j$ dichos procesos, la estructura del proceso $P_i$ según la solución de Peterson:
@@ -55,30 +82,29 @@ Análogamente, se deduce la estructura del proceso $P_j$
 Las soluciones eficientes para el problema de sección crítica requieren asistencia del hardware y del SO.
 Todas estas soluciones se basan en *locking*, encargándose de proteger las secciones críticas a través de *locks*.
 
-### Test And Set && Compare And Swap
+### Test And Set && Swap
 El problema de sección crítica puede ser resuelto fácilmente en un sistema *single-processor* si pudiéramos deshabilitar las [[Interrupciones]] mientras la variable compartida esta siendo modificada. Sin embargo, en un sistema *multi-processor* consumiría mucho tiempo (el mensaje se pasaría a todos los procesadores).
-A pesar de esto, los sistemas modernos proveen instrucciones de hardware atómicas para resolver este problema. `test_and_set()` y `compare_and_swap()`.
+A pesar de esto, los sistemas modernos proveen instrucciones de hardware atómicas para resolver este problema. `test_and_set()` y `swap()`.
 
 Existe una variable compartida entre los procesos que puede tomar el valor 0 o 1. Antes de entrar a una sección crítica adquieren un *lock*, que luego liberarán al salir. Si este está *lock* esta bloqueado, el proceso espera hasta que se desbloque. En otro caso, toma el *lock* y ejecuta la sección crítica.
 
 ```c
 /* Operacion atómica test_and_set */
-boolean test_and_set(boolean *target) {
+boolean test_and_set(boolean* target) {
 	boolean rv = *target;
 	*target = true;
 	return rv;
 }
 
-/* Operacion atómica compare_and_swap */
-int compare_and_swap(int *value, int expected, int new_value) {
-	int temp = *value;
-	if (*value == expected)
-		*value = new value;
-	return temp;
+/* Operacion atómica swap */
+int swap(int& a, int& b) {
+	int tmp = a;
+	a = b;
+	b = tmp;
 }
 ```
 
-*Exclusion Mutua* con *test and set*:
+Solución al [[#Sección Crítica|Problema de Sección Crítica]] con *test and set*:
 ```c
 do {
 	while (test_and_set(&lock)); // busy waiting
@@ -88,12 +114,17 @@ do {
 } while (true);
 ```
 
-*Exclusion Mutua* con *compare and swap*:
+Solución al [[#Sección Crítica|Problema de Sección Crítica]] con *swap*:
 ```c
+bool lock = false; // Variable global, se inicializa un única vez.
+
 do {
-	while (compare and swap(&lock, 0, 1) != 0); // busy waiting
+	bool key = true;
+	while (key) { // busy waiting
+		swap(&key, &lock);
+	}
 	/* sección crítica */
-	lock = 0;
+	lock = false;
 	/* sección restante */
 } while (true);
 ```
@@ -101,7 +132,7 @@ do {
 *Observación: tanto la solución con `test_and_set()` y `compare_and_swap()` hacen uso de [[#Busy Waiting]]*.
 
 ### Semáforos
-Es una técnica para administrar procesos concurrentes haciendo uso de un único *valor entero no negativo* compartido entre estos procesos, este valor se se conoce como *semáforo* que resuelve el [[#Problema de Sección Crítica]] y logra la sincronización entre procesos en [[Sistemas Operativos/Introducción#Sistema Multiprocesador (Paralelos)|Multiprocessing Systems]].
+Es una técnica para administrar procesos concurrentes haciendo uso de un único *valor entero no negativo* compartido entre estos procesos, este valor se se conoce como *semáforo* que resuelve el [[#Sección Crítica|Problema de Sección Crítica]] y logra la sincronización entre procesos en [[Sistemas Operativos/Introducción#Sistema Multiprocesador (Paralelos)|Multiprocessing Systems]].
 
 Un semáforo es un valor entero no negativo, que se accede únicamente por dos operaciones atómicas:
 - `wait()` $\rightarrow$ **P** *to test*
