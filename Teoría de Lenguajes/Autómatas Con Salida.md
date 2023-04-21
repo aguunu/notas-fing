@@ -10,14 +10,14 @@ Definimos una *máquina de Mealy* como $M=(Q, \Sigma, \Delta, \delta, \lambda, q
 - $q_0 \in Q$ el estado inicial.
 
 Extendiendo la función $\delta : Q \times \Sigma \rightarrow Q$:
-- $\hat{\delta}: Q \times \Sigma^{\star} \rightarrow Q$
+- $\hat{\delta}: Q \times \Sigma^{\ast} \rightarrow Q$
 - $\hat{\delta}(q, \varepsilon) = q \; \forall q \in Q$
-- $\hat{\delta}(q, wa) = \delta(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\star}$
+- $\hat{\delta}(q, wa) = \delta(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\ast}$
 
 Extendiendo la función $\lambda : Q \times \Sigma \rightarrow \Delta$
-- $\hat{\lambda} : Q \times \Sigma^{\star} \rightarrow \Delta^{\star}$
+- $\hat{\lambda} : Q \times \Sigma^{\ast} \rightarrow \Delta^{\ast}$
 - $\hat{\lambda}(q, \varepsilon) = q \; \forall q \in Q$
-- $\hat{\lambda}(q, wa) = \hat{\lambda}(q, w) \cdot \lambda(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\star}$
+- $\hat{\lambda}(q, wa) = \hat{\lambda}(q, w) \cdot \lambda(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\ast}$
 
 ## Máquina de Moore
 Una *máquina de Moore* es un *autómata con salida* cuya salida depende únicamente del estado actual.
@@ -31,11 +31,11 @@ Definimos una *máquina de Moore* como una $M = (Q, \Sigma, \Delta, \delta, \lam
 - $q_0 \in Q$ el estado inicial.
 
 Extendiendo la función $\delta$:
-- $\hat{\delta} : Q \times \Sigma^{\star} \rightarrow Q$
+- $\hat{\delta} : Q \times \Sigma^{\ast} \rightarrow Q$
 - $\hat{\delta}(q, \varepsilon) = q \; \forall q \in Q$
-- $\hat{\delta}(q, wa) = \delta(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\star}$
+- $\hat{\delta}(q, wa) = \delta(\hat{\delta}(q, w), a) \; \forall q \in Q, a \in \Sigma, w \in \Sigma^{\ast}$
 
 Extendiendo la función $\lambda$:
-- $\hat{\lambda}: Q \times \ \Sigma^{\star} \rightarrow \Delta^{\star}$
+- $\hat{\lambda}: Q \times \ \Sigma^{\ast} \rightarrow \Delta^{\ast}$
 - $\hat{\lambda}(q, \varepsilon) = \varepsilon \; \forall q \in Q$
-- $\hat{\lambda}(q, wa) = \hat{\lambda}(q, w) \cdot \hat{\lambda}(\hat{\delta}(q, wa)) \; \forall q \ in Q, a \in \Sigma, w \in \Sigma^{\star}$
+- $\hat{\lambda}(q, wa) = \hat{\lambda}(q, w) \cdot \hat{\lambda}(\hat{\delta}(q, wa)) \; \forall q \ in Q, a \in \Sigma, w \in \Sigma^{\ast}$

@@ -30,14 +30,14 @@ Definimos $\Sigma^k$ el conjunto de las cadenas de longitud $k$, tales que cada 
 *Observación: $\Sigma^0 = \{\varepsilon\}$ pues esta es la única palabra de largo igual a 0.*
 
 #### Clausura de Kleen
-El conjunto de todas las cadenas de un alfabeto $\Sigma$ se designa mediante $\Sigma^\star$ *clausura de Kleen*.
-1. $\{0,1\}^\star = \{\varepsilon,0,1,00,01,10,11,000,...\}$.
+El conjunto de todas las cadenas de un alfabeto $\Sigma$ se designa mediante $\Sigma^\ast$ *clausura de Kleen*.
+1. $\{0,1\}^\ast = \{\varepsilon,0,1,00,01,10,11,000,...\}$.
 
-*Observación: $\Sigma^\star = \Sigma^0 \cup \Sigma^1 \cup \Sigma^2 ...$*
+*Observación: $\Sigma^\ast = \Sigma^0 \cup \Sigma^1 \cup \Sigma^2 ...$*
 
 El conjunto de cadenas no vacías del alfabeto $\Sigma$ se designa como $\Sigma^+$. Por ende, 
 - $\Sigma^+ = \Sigma^1 \cup \Sigma^2 \cup \Sigma^3 ...$
-- $\Sigma^\star = \Sigma^+ \cup \Sigma^0$
+- $\Sigma^\ast = \Sigma^+ \cup \Sigma^0$
 
 ### Concatenación de Cadenas
 Sean $x$ e $y$ dos cadenas. Entonces, $xy$ denota la concatenación de $x$ e $y$, es decir, la cadena formada por una copia de $x$ seguida de una copia de $y$.

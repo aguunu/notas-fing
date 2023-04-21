@@ -1,20 +1,36 @@
-Un *autómata finito no determinista* (AFN) tiene la capacidad de estar en varios estados a la vez. Esta capacidad a menudo se expresa como la posibilidad de que el autómata “conjeture” algo acerca de su entrada.
+Un *autómata finito no determinista* (AFN) tiene la capacidad de estar en varios estados a la vez.
 
-Definimos un ***autónoma finito no determinista*** como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
+Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de entrada.
 - $\delta : Q \times \Sigma \rightarrow 2^Q$ la función de transición.
 - $q_0 \in Q$ el estado inicial.
 - $F \subseteq Q$ el conjunto de estados finales.
 
-*Observación: la única diferencia entre un AFN y un AFD se encuentra en el tipo de valor que devuelve $\delta$: un conjunto de estados en el caso de un AFN y un único estado en el caso de un AFD.*
+Extendemos inductivamente la función de transición $\delta$ para que el autómata sea capaz de procesar cadenas de $\Sigma^\ast$,  con lo cual obtenemos $\hat{\delta} : Q \times \Sigma^\ast \rightarrow 2^Q$ definida de la siguiente manera:
+$$
+\forall q \in Q : \tilde{\delta}(q, \varepsilon) = \{q\}
+$$
+$$
+\forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \tilde{\delta}(\hat{\delta}(q, x), a) \text{ donde } \tilde{\delta} : 2^Q \times \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
+$$
 
-## Lenguaje de un AFN
-Definimos el lenguaje de un AFN $A=(Q,\Sigma,\delta, q_0, F)$ como $L(A)=\{w:\hat{\delta}(q_0,w) \cup F \neq \emptyset \}$ donde $\delta$ se define inductivamente,
-1. $\hat{\delta}(q, \varepsilon) = q$
-2. $\hat{\delta}(q, xa) = \bigcup_{i = 1}^{k} \delta(p_i, a)$ donde $\hat{\delta}(q,x)=\{p_1,p_2,...,p_k\}$ 
+>[!important] Lenguaje Aceptado
+>Dado un AFN-$\varepsilon$ $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$
 
-El lenguaje $L(A)$ es el conjunto de cadenas $w \in \Sigma^\star$ tal que $\delta(q_o, w)$ contiene al menos un estado de aceptación.
+>[!important] Lenguaje Regular
+>Si $L$ es aceptado por algún AFN $\implies$ $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]].
 
 ## AFN $\rightarrow$ AFD
-TODO
+Dado un AFN $M=(Q,\Sigma,\delta, q_0, F)$ construiremos un [[Autómata Finito Determinista|AFD]] $M=(Q', \Sigma, \delta', q_0, F')$.
+
+1. $F'=Q'=\emptyset$
+1. $P=\{\{q_0\}\}$.
+2. Mientras $P \neq \emptyset$
+	1. Elegir y remover un conjunto de estados arbitrario $S$ de $P$.
+	2. $\forall a \in \Sigma$
+		1. $S'=\bigcup_{q \in S}\delta(q, a)$
+		2. Llamemos $q$ a un nuevo estado identificado a partir del conjunto $S'$.
+		3. Si $q \notin Q' \rightarrow$ Agregar $q$ a $Q'$, a su vez agregar $S'$ a $P$.
+		4. Si $\exists f \in F : f \in S' \rightarrow$ Agregar $q$ a $F'$.
+		5. $\delta'(S,a)=q$ donde $q$ es el estado agregado en el paso anterior.

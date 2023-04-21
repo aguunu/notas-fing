@@ -1,7 +1,10 @@
-Si $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], entonces $L$ tiene un largo *pumping* $N$, de forma que cualquier [[Conceptos Fundamentales#Cadena de Caracteres|Cadena]] $s \in L$ donde $|s| \geq N$ podrá ser expresadas de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
+Sea $L$ un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]]. Existe una constante $N$ (que depende de $L$), de forma que para cualquier [[Conceptos Fundamentales#Cadena de Caracteres|Cadena]] $s \in L$ donde $|s| \geq N$, podemos descomponer a $s$ de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
 $$\tag{1} x y^i z \in L \; \forall i \geq 0$$
 $$\tag{2} |y| \gt 0$$
 $$\tag{3} |xy| \leq N$$
+Es decir, siempre podemos hallar una cadena no vacía y no demasiado alejada del principio de $s$ que pueda “bombearse”; es decir, si se repite y cualquier número de veces, o se borra (el caso en que k = 0), la cadena resultante también pertenece al lenguaje $L$.
+
+***
 
 Para probar que un lenguaje $L$ no es regular utilizando el *pumping lemma*, seguiremos los siguientes pasos:
 1. Asumir por contradicción, que $L$ es un lenguaje regular con $N$ el largo del *pumping lemma* sobre $L$.

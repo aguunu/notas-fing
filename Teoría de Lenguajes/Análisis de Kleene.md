@@ -5,9 +5,8 @@ Para realizar el análisis de Kleene:
 2. A cada $X$ que este asociada a un estado final agregarle $\varepsilon$.
 3. La expresión regular $r$ buscada será la asociada al estado inicial.
 
-*Observación: no incluir el estado pozo facilita las cuentas (la solución del estado pozo siempre es la misma $X_p=\emptyset$).*
+>[!tip] Estado Pozo
+>No incluir el estado pozo facilita las cuentas, pues la solución al estado pozo siempre es la misma $X_p = \emptyset$.
 
 >[!note] Lema Arden I
->Para resolver las ecuaciones de la forma $X=rX|s$ se utiliza el *lema arden*. Que nos permite afirmar que $X=r^\star \cdot s$ es la solución a la ecuación $X=rX|s$ donde $\varepsilon \notin L(r)$.
-
-
+>Para resolver las ecuaciones de la forma $X=rX|s$ se utiliza el *lema arden*. Que nos permite afirmar que $X=r^\ast \cdot s$ es la solución a la ecuación $X=rX|s$ donde $\varepsilon \notin L(r)$.
