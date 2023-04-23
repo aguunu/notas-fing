@@ -1,4 +1,4 @@
-Un *autómata finito determinista de dos cintas (AFD de dos cintas)* es una variante de [[Autómata Finito Determinista|AFD]], que posee dos cintas independientes. La diferencia con un [[Autómatas Con Salida]] es que en este caso, ambas cintas son de entrada.
+Un *autómata finito determinista de dos cintas (AFD de dos cintas)* es una variante de [[Autómata Finito Determinista|AFD]], que posee dos cintas independientes. A diferencia del [[Autómata Con Salida]], ambas cintas son de entrada.
 
 Definimos un *AFD de dos cintas* como $M=(Q_1, Q_2, \Sigma,\delta, q_0, F)$ donde:
 - $Q_1$ un conjunto finito de estados que avanzan sobre la cinta #1.

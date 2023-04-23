@@ -8,10 +8,13 @@ Definimos un *AFN-$\varepsilon$* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
 - $F \subseteq Q$ el conjunto de estados finales.
 
 Extendemos inductivamente la función de transición $\delta$ para que el autómata sea capaz de procesar cadenas de $\Sigma^\ast$, con lo cual obtenemos $\hat{\delta} : Q \times \Sigma^\ast \rightarrow 2^Q$ definida de la siguiente manera:
+
 $$
 \forall q \in Q : \hat{\delta}(q, \varepsilon) = \varepsilon \text{-}cl(q)
-$$$$
-\forall q \in Q , \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \varepsilon \text{-}cl(\tilde{\delta}(\hat{\delta}(q,x),a)) \text{ donde } \tilde{\delta} : 2^Q \times \Sigma \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
+$$
+
+$$
+\forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \varepsilon \text{-}cl(\tilde{\delta}(\hat{\delta}(q,x),a)) \text{ donde } \tilde{\delta} : 2^Q \times \Sigma \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
 $$
 
 ## $\varepsilon \text{-} clausura(q)$

@@ -2,13 +2,17 @@ Dado un [[Autómata Finito Determinista|AFD]] $M=(Q, \Sigma, \delta, \textcolor{
 
 Definimos $R_{ij}^k$ de forma inductiva,
 - Caso Base
+
 $$\tag{1} R_{ij}^0=\{a \in \Sigma \mid \delta(q_i, a) = q_j \} : \text{ si } i \neq j$$
+
 $$\tag{2} R_{ii}^0=\{a \in \Sigma \mid \delta(q_i, a) = q_i \} \cup \{ \varepsilon \} : \text{ si } i = j$$
 
 - Caso Inductivo
+
 $$\tag{3} R_{ij}^k=R_{ij}^{k-1} \cup R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^\ast \cdot R_{kj}^{k-1}$$
 
 Además, expresando $R_{ij}^k$ como una [[Expresiones Regulares|Expresión Regular]] obtenemos la siguiente expresión,
+
 $$R_{ij}^k=R_{ij}^{k-1} | R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^\ast \cdot R_{kj}^{k-1}$$
 
 > [!info]  Observación

@@ -17,7 +17,7 @@ Los *threads* pueden implementarse tanto a *nivel de usuario* como a *nivel de k
 *Observación: por lo general serán más rápidos que los kernel threads, pues no requiere que el SO intervenga (system calls, context switch, scheduling, etc).*
 
 ### Ventajas de *Kernel Threads*
-- **Aprovechamiento de un [[Sistemas Operativos/Introducción#Sistema Multiprocesador (Paralelos)|Sistema Multiprocesador]]**: El SO puede asignar threads de un proceso en diferentes procesadores.
+- **Aprovechamiento de un [[Sistemas#Sistema Multiprocesador (Paralelos)|Sistema Multiprocesador]]**: El SO puede asignar threads de un proceso en diferentes procesadores.
 - **Independencia**: Al ejecutarse los threads de forma independiente, si un thread se bloquea, los demás pueden seguir en ejecución.
 
 ### Modelos

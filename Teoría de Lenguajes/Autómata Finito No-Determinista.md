@@ -8,9 +8,11 @@ Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F
 - $F \subseteq Q$ el conjunto de estados finales.
 
 Extendemos inductivamente la función de transición $\delta$ para que el autómata sea capaz de procesar cadenas de $\Sigma^\ast$,  con lo cual obtenemos $\hat{\delta} : Q \times \Sigma^\ast \rightarrow 2^Q$ definida de la siguiente manera:
+
 $$
 \forall q \in Q : \tilde{\delta}(q, \varepsilon) = \{q\}
 $$
+
 $$
 \forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \tilde{\delta}(\hat{\delta}(q, x), a) \text{ donde } \tilde{\delta} : 2^Q \times \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
 $$

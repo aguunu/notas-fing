@@ -14,6 +14,7 @@ Mientras un proceso se ejecuta, este puede cambiar de estado.
 - **Running***: Las instrucciones están siendo ejecutadas.
 - **Waiting**: El proceso esta esperando por un evento (ej. ES).
 - **Terminated**: El proceso finalizó su ejecución.
+
 ```mermaid
 stateDiagram-v2
 	state "New" as new
@@ -28,7 +29,9 @@ running-->ready
 waiting-->ready
 running-->terminated
 ```
-*Observación: un solo proceso puede estar en el estado **running** en cualquier CPU en cualquier instante. Sin embargo, varios procesos pueden estar en **waiting** y **ready**.*
+
+>[!attention] ¡Atención!
+>En un instante dado, en un CPU solo podrá haber un proceso en estado **running**. Sin embargo, varios procesos pueden estar en **waiting** y **ready**.
 
 ## Data Structures
 ### Process Control Block (PCB)
@@ -57,12 +60,13 @@ Cuando el SO cambia el estado de un **PCB**, este se remueve de su cola actual y
 - **Ready Queue**: Almacena todos los procesos que se encuentran en memoria principal listos para ser ejecutados.
 - **Device Queue**: Almacena los procesos que están en estado *waiting* debido a una interrupción I/O. Además, cada dispositivo de I/O tiene su propia *device queue*.
 
-*Observación: en el caso de tener $n$ CPUs podremos tener a lo sumo $n$ PCBs en el **State Queue** correspondiente al estado **running**, puesto que cada CPU puede tener un único proceso en dicho estado*
+>[!warning] ¡Cuidado!
+>En el caso de tener $n$ CPUs podremos tener a lo sumo $n$ PCBs en el **State Queue** correspondiente al estado **running**, puesto que cada CPU puede tener un único proceso en dicho estado
 
 ### Context Switch
 Es la acción de cambiar el CPU de un proceso $p_1$ *(en estado running)* a un proceso $p_2$ *(en estado ready)*.
 
-El SO guarda el contexto *(registro del cpu, program counter, stack pointer, etc)* de $p_1$ en su correspondiente **PCB**, para luego cargar el contexto de $p_2$. Además, actualiza el estado correspondiente de $p_1$ al estado que le corresponda *(terminated, waiting o ready)* y $p_2$ al estado **running**.
+El SO guarda el contexto *(registros del CPU, program counter, stack pointer, etc)* de $p_1$ en su correspondiente **PCB**, para luego cargar el contexto de $p_2$. Además, actualiza el estado correspondiente de $p_1$ al estado que le corresponda *(terminated, waiting o ready)* y $p_2$ al estado **running**.
 
 ### Creación de Procesos
 Un proceso puede crear otros procesos, donde el creador es llamado *padre* y el nuevo procedimiento es llamado *hijo*, formando así un *árbol* de procesos.
@@ -106,7 +110,8 @@ int main() {
 }
 ```
 
-*Observación: Si se agrega **&** después de un comando, Unix ejecutará estos procesos en paralelos sobre la shell, de otra forma, el próximo comando deberá esperar hasta que finalize el primero.*
+>[!info] Procesos en Paralelo (Unix)
+>Si se agrega **&** después de un comando, Unix ejecutará estos procesos en paralelo sobre la shell, de otra forma, el próximo comando deberá esperar hasta que finalize el primero.
 
 ## Cooperación entre Procesos
 Dos procesos pueden sincronizarse y comunicarse entre ellos usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.

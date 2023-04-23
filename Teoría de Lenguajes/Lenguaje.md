@@ -10,7 +10,26 @@ Aunque los lenguajes pueden tener un número infinito de cadenas, están restrin
 ## Lenguaje Regular
 Un leguaje $L$ es regular si existe una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $r$ define a $L$.
 
-### Propiedades de Clausura de los Lenguajes regulares
+## Relaciones
+### $R_L$
+Sea $L \subseteq \Sigma^\ast,\; x,y \in \Sigma^\ast$, definimos la relación $R_L$ como:
+
+$$x R_{L} y \iff \forall z \in \Sigma^\ast \; (xz \in L \land yz \in L) \lor (xz \notin L \land yz \notin L)$$
+
+### $R_M$
+Sea $M=\{Q, \Sigma, \delta, q_0, F\}$ un [[Autómata Finito Determinista|AFD]], $x, y \in \Sigma^\ast$, definimos la relación $R_M$ como:
+
+$$xR_My \iff \hat{\delta}(q_0, x) = \hat{\delta}(q_0, y)$$
+
+> [!info] Observación
+> $R_M$ es una relación de equivalencia donde $|R_M|$ es igual a la cantidad de estados de $M$.
+> 
+> Además, para cualquier [[Lenguaje#Lenguaje Regular|Lenguaje Regular]] $L$ se cumple que $xR_My \implies xR_Ly$. Por ende, se puede duducir que $|R_L| \leq |R_M|$.
+
+>[!warning] ¡Cuidado!
+>No necesariamente se cumple que $xR_Ly \implies xR_My$.
+
+## Propiedades de Clausura
 1. Unión: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cup L_2$ regular.
 2. Intersección: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cap L_2$ regular.
 3. Concatenación: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cdot L_2$  regular.
@@ -22,22 +41,6 @@ Un leguaje $L$ es regular si existe una [[Expresiones Regulares|Expresión Regul
 9. Sustitución: Sea $L$ regular y $f$ una función de sustitución $\implies f(L)$ regular.
 10. Homomorfismo: Sea $L$ regular y $h$ un homomorfismo[^3] $\implies$ $h(L)$ regular.
 11. Homomorfismo inverso: Sea $L$ regular y $h$ un homomorfismo $\implies$ $h^{-1}(L)$ regular.
-
-## Relaciones
-### $R_L$
-Sea $L \subseteq \Sigma^\ast,\; x,y \in \Sigma^\ast$, definimos la relación $R_L$ como:
-$$x R_{L} y \iff \forall z \in \Sigma^\ast \; (xz \in L \land yz \in L) \lor (xz \notin L \land yz \notin L)$$
-### $R_M$
-Sea $M=\{Q, \Sigma, \delta, q_0, F\}$ un [[Autómata Finito Determinista|AFD]], $x, y \in \Sigma^\ast$, definimos la relación $R_M$ como:
-$$xR_My \iff \hat{\delta}(q_0, x) = \hat{\delta}(q_0, y)$$
-
-> [!info] Observación
-> $R_M$ es una relación de equivalencia donde $|R_M|$ es igual a la cantidad de estados de $M$.
-> 
-> Además, para cualquier [[Lenguaje#Lenguaje Regular|Lenguaje Regular]] $L$ se cumple que $xR_My \implies xR_Ly$. Por ende, se puede duducir que $|R_L| \leq |R_M|$.
-
->[!warning] ¡Cuidado!
->No necesariamente se cumple que $xR_Ly \implies xR_My$.
 
 [^1]: Se define el reflexión/reverso de un lenguaje $L$ como $L^r=\{x^r \in \Sigma^\ast: x \in L\}$. 
 [^2]: Se define el cociente entre los lenguajes $L_1$ y $L_2$ como $\frac{L_1}{L_2}=\{x \in \Sigma^\ast : \exists y \in L_2 \land xy \in L_1 \}$.
