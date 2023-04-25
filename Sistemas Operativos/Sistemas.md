@@ -1,9 +1,3 @@
-## Multiprogramación
-Cuando un *job (tarea)* que esta en ejecución espera por otra tarea externa al CPU *(ej. impresión de un documento)*, el sistema le otorga el CPU a otro *job* *(mediante algoritmos de CPU Scheduling)* y de esta forma reducir el tiempo muerto del CPU.
-
-## Multi-Tasking
-El CPU ejecuta concurrentemente multiple *jobs* intercambiándolos entre ellos haciendo uso de *algoritmos de CPU Scheduling*.
-***
 ## Batch System (lotes).
 El sistema selecciona un subconjunto de *jobs (tareas)* de la *job pool* que se encuentra en memoria secundaria. Luego, el sistema ejecuta este subconjunto de *jobs* para un procesamiento más eficiente.
 
@@ -42,3 +36,9 @@ La **Taxonomía de Flynn** es una clasificación de arquitectura de computado
 - SIMD *(Single Instruction, Multiple Data)*: sistemas que ejecutan la misma instrucción sobre un conjunto distinto de datos (sistemas vectoriales).
 - MISD *(Multiple Instruction, Single Data)*: utilizado para paralelismo redundante.
 - MIMD *(Multiple Instruction, Multiple Data)*: sistemas con procesadores autónomos que ejecutan en forma simultánea diferentes instrucciones sobre diferentes datos.
+***
+## Multiprogramación
+Cuando un *job (tarea)* que esta en ejecución espera por otra tarea externa al CPU *(ej. impresión de un documento)*, el sistema le otorga el CPU a otro *job* *(mediante algoritmos de CPU Scheduling)* y de esta forma reducir el tiempo muerto del CPU.
+
+## Multi-Tasking
+El CPU ejecuta concurrentemente multiple *jobs* intercambiándolos entre ellos haciendo uso de *algoritmos de CPU Scheduling*.

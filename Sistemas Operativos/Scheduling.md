@@ -31,7 +31,7 @@ Por lo tanto, se encarga de:
 3. Saltar a la instrucción en la que se encuentra el proceso *(program counter)*.
 
 >[!important] Dispatch Latency
->Se busca que el **despachador** sea lo más rápido posible, pues se invoca siempre que se intercambien procesos.
+>Se busca que el **despachador** sea lo más rápido posible, pues se invoca siempre que se intercambian procesos.
 >
 >El tiempo que toma detener un proceso y empezar otro se le conoce como *dispatch latency*.
 
@@ -58,16 +58,20 @@ Los diferentes algoritmos de scheduling pueden compararse según el siguiente cr
 - **Tiempo de Espera**: Es la suma de los periodos en la cola de espera.
 - **Tiempo de Respuesta**: Es el intervalo de tiempo desde que un proceso es cargado hasta que da su primera respuesta. *(Útil en sistemas interactivos).*
 
-### First Come First Server
-Se ejecuta los procesos (hasta que finalicen) según el orden de arribo.
+>[!important] Importante
+>A los algoritmos de scheduling se les suele aplicar la técnica de [[Sistemas#Multiprogramación|Multiprogramación]] con el fin de reducir el tiempo muerto del CPU.
 
-*Observación: sea $\{p_1,...,p_n\}$ un conjunto de procesos donde $p_i$ es el i-esimo proceso en arribar. Si se esta ejecutando $p_j$ y este recibe una petición de I/O, se empieza a ejecutar $p_{j+1}$ y cuando esta petición de I/O finalize, deja de ejecutarse $p_{j+1}$ y se sigue con la ejecución de $p_j$.*
+### First Come First Server
+El algoritmo *first come first server (FCFS)* ejecuta los procesos (hasta que finalicen) según el orden de arribo.
+
+>[!example] FCFS con [[Sistemas#Multiprogramación|Multiprogramación]]
+>Sea $\{p_1,...,p_n\}$ un conjunto de procesos donde $p_i$ es el i-esimo proceso en arribar. Si se esta ejecutando $p_j$ y este recibe una petición de I/O, se empieza a ejecutar $p_{j+1}$ y cuando esta petición de I/O finalize, deja de ejecutarse $p_{j+1}$ y se sigue con la ejecución de $p_j$.
 
 ### Shortest Job First
-Se ejecuta el proceso que tenga la menor carga de trabaja hasta su finalización o hasta la próxima petición de I/O.
+El algoritmo *shortest job first (SJF)* ejecuta el proceso que tenga la menor carga de trabaja hasta su finalización o hasta la próxima petición de I/O.
 
 ### Basados en Prioridad
-A cada proceso se le asigna una prioridad, y el algoritmo se encarga de seleccionar el proceso con mas prioridad.
+En los algoritmos basados en prioridad, a cada proceso se le asigna una prioridad, y el algoritmo se encarga de seleccionar el proceso con mas prioridad.
 
 ### Round Robin
 Después de una cierta porción de tiempo *(time quantum)* se mueve el proceso que este en ejecución al final de una cola y se continua con el siguiente proceso.

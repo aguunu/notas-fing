@@ -1,4 +1,4 @@
-La *Solución de Dekker* brinda una solución al [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] que consiste [[Sección Crítica#Busy Waiting|Busy Waiting]] y además es independiente del SO, es decir no utiliza [[Estructura del SO#System Calls|System Calls]].
+La *Solución de Dekker* brinda una solución al [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] que consiste [[Sección Crítica#Busy Waiting|Busy Waiting]] y además es independiente del SO, es decir no utiliza [[Sistema Operativo#System Calls|System Calls]].
 
 ```c
 /* Variables Globales */

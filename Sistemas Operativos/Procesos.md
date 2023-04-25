@@ -1,4 +1,4 @@
-Representa la ejecución de un programa en un sistema operativo.
+Un *proceso* representa la ejecución de un programa dentro de un sistema operativo.
 
 ## Memoria
 Un proceso en memoria contiene varias secciones:
@@ -74,7 +74,7 @@ Un proceso puede crear otros procesos, donde el creador es llamado *padre* y el 
 El *padre* define los recursos y privilegios a compartir con sus *hijos*. Sin embargo, nunca se comparte la memoria entre ellos.
 Además, el *padre* pude esperar a que sus *hijos* completen su trabajo o continuar en paralelo.
 
-Los *hijos* se crean usando una [[Estructura del SO#System Calls|System Call]] dependiendo del SO.  En el caso de Unix, se provee un [[Estructura del SO#System Calls|System Call]] *"fork"* (retorna el **PID** del *hijo* creado en el caso del *padre*, y **0** en el caso del *hijo*). Cuando se ejecuta, se copia todo el contexto del *padre* al *hijo* excepto el resultado de *fork*. Además, provee un [[Estructura del SO#System Calls|System Call]] *exec* que remplaza el espacio de memoria del proceso por uno nuevo.
+Los *hijos* se crean usando una [[Sistema Operativo#System Calls|System Call]] dependiendo del SO.  En el caso de Unix, se provee un [[Sistema Operativo#System Calls|System Call]] *"fork"* (retorna el **PID** del *hijo* creado en el caso del *padre*, y **0** en el caso del *hijo*). Cuando se ejecuta, se copia todo el contexto del *padre* al *hijo* excepto el resultado de *fork*. Además, provee un [[Sistema Operativo#System Calls|System Call]] *exec* que remplaza el espacio de memoria del proceso por uno nuevo.
 
 ```c
 /* 
@@ -116,4 +116,5 @@ int main() {
 ## Cooperación entre Procesos
 Dos procesos pueden sincronizarse y comunicarse entre ellos usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.
 
-Sin embargo, el acceso concurrente entre varios procesos a datos compartidos puede resultar en *datos inconsistentes.*
+>[!danger] Datos Inconsistentes
+>El acceso concurrente entre varios procesos a datos compartidos puede resultar en *datos inconsistentes.*
