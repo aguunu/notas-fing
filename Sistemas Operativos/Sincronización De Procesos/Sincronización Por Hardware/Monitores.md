@@ -25,8 +25,6 @@ Una operación definida dentro de un monitor puede acceder únicamente a las var
 Solo puede haber una única operación en ejecución en un momento dado.
 
 Se definen variables de tipo *condition* cuyo valor no se inicializa. Las únicas operaciones que pueden ser invocadas sobre dichas variables son `wait()` y `signal()`.
-- `var_c.wait()`: El proceso invocando esta operación sera suspendido hasta que otro proceso invoque `var.signal()`.
-- `var_c.signal()`: Se reanuda exactamente un proceso que se encuentre suspendido.
-
->[!info]
->En el caso de invocar `signal()` sin procesos bloqueados, la operación no tiene efecto.
+- `var.wait()`: El proceso que invoque esta función se bloquea y queda en un cola de procesos bloqueados.
+- `var.signal()`: Si la cola de procesos no esta vacía, despierta al primer proceso bloqueado. En otro caso, la operación no tiene efecto.
+- 

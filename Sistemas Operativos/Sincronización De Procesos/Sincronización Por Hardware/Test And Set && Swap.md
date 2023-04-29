@@ -45,5 +45,5 @@ do {
 } while (true);
 ```
 
->[!info] Observación
->Ambas soluciones hacen uso de [[Sección Crítica#Busy Waiting|Busy Waiting]].
+>[!warning] ¡Cuidado!
+>A pesar de que ambas soluciones garantizan *exclusión mutua* y *progreso*, no garantizan *espera acotada*. Además utilizan *busy waiting*.

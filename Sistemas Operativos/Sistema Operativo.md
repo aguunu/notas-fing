@@ -31,7 +31,7 @@ El hardware suministra al sistema operativo mecanismos para la protección, entr
 - **Dual Mode**: El hardware provee distintos modos de ejecución, de los cuales se destacan:
 	1. *User Mode*: Únicamente se podrá ejecutar un conjunto reducido de instrucciones de hardware.
 	2. *Kernel Mode (Monitor)*: Todas las instrucciones del hardware están disponibles. Sin embargo, el sistema operativo es el único que debe ejecutar este modo, por esta razón, el SO provee *system calls* para el uso de estas instrucciones privilegiadas.
-- **Protección I/O**: Todas las instrucciones de entrada y salida son privilegiadas. 
+- **Protección I/O**: Todas las instrucciones de entrada y salida son [[#Instrucciones Privilegiadas|Privilegiadas]]. 
 - **Protección de Memoria**: Traducir las direcciones de memoria a través de la [[#Memory Management Unit|MMU]].
 - **Protección de CPU**: Introducción de un *timer* que limita el uso del CPU a los procesos.
 
@@ -71,3 +71,6 @@ Una *memory management unit (MMU)*, también conocida como *paged memory managem
 
 ## Excepción
 Una *excepción* o también conocido como *trap* es una interrupción generada a nivel de software invocada por un error o por un solicitud de un usuario a un servicio especifico del sistema operativo.
+
+## Instrucciones Privilegiadas 
+Son aquellas instrucciones que únicamente se pueden ejecutar en *kernel mode* ya que pueden potencialmente dañar otros procesos *(ej. operaciones de I/O, actualizar el clock, desactivar interrupciones, manipular el [[#Memory Management Unit|MMU]], manipular el bit del Dual Mode, etc)*.

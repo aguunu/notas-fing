@@ -1,4 +1,4 @@
-Es la base para lograr la [[Sistemas#Multiprogramación|Multiprogramación]], pues si existe un procesador disponible y además existen procesos en estado *ready*, el *scheduling* se encargará de la elección de uno de estos procesos para su ejecución.
+Es la base para lograr la [[Sistemas#Multiprogramming System|Multiprogramación]], pues si existe un procesador disponible y además existen procesos en estado *ready*, el *scheduling* se encargará de la elección de uno de estos procesos para su ejecución.
 
 ## Schedulers
 ### Largo Plazo *(Job Scheduler)*
@@ -52,19 +52,19 @@ En sistemas multiprocesadores simétricos *(SMP systems)* se intenta evitar la m
 
 ## Algoritmos
 Los diferentes algoritmos de scheduling pueden compararse según el siguiente criterio:
-- **Utilización del CPU**: Se busca maximizar el porcentaje de uso del CPU.
+- **Uso de CPU**: Es el porcentaje de uso que tiene un procesador.
 - **Rendimiento**: Se busca maximizar la cantidad de procesos por unidad de tiempo.
-- **Tiempo de Retorno**: Se utiliza un intervalo de tiempo desde que se cargó un proceso hasta que el mismo finaliza su ejecución.
-- **Tiempo de Espera**: Es la suma de los periodos en la cola de espera.
-- **Tiempo de Respuesta**: Es el intervalo de tiempo desde que un proceso es cargado hasta que da su primera respuesta. *(Útil en sistemas interactivos).*
+- **Tiempo de Retorno**: Es el intervalo de tiempo desde que un proceso es cargado hasta que este finaliza su ejecución.
+- **Tiempo de Espera**: Es la suma de los intervalos de tiempo que el proceso estuvo en la *ready queue*.
+- **Tiempo de Respuesta**: Es el intervalo de tiempo desde que un proceso es cargado hasta que da su primera respuesta.
 
 >[!important] Importante
->A los algoritmos de scheduling se les suele aplicar la técnica de [[Sistemas#Multiprogramación|Multiprogramación]] con el fin de reducir el tiempo muerto del CPU.
+>A los algoritmos de scheduling se les suele aplicar la técnica de [[Sistemas#Multiprogramming System|Multiprogramación]] con el fin de reducir el tiempo muerto del CPU.
 
 ### First Come First Server
 El algoritmo *first come first server (FCFS)* ejecuta los procesos (hasta que finalicen) según el orden de arribo.
 
->[!example] FCFS con [[Sistemas#Multiprogramación|Multiprogramación]]
+>[!example] FCFS con Multiprogramación
 >Sea $\{p_1,...,p_n\}$ un conjunto de procesos donde $p_i$ es el i-esimo proceso en arribar. Si se esta ejecutando $p_j$ y este recibe una petición de I/O, se empieza a ejecutar $p_{j+1}$ y cuando esta petición de I/O finalize, deja de ejecutarse $p_{j+1}$ y se sigue con la ejecución de $p_j$.
 
 ### Shortest Job First

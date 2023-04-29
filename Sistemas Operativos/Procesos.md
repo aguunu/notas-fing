@@ -1,11 +1,14 @@
 Un *proceso* representa la ejecución de un programa dentro de un sistema operativo.
 
-## Memoria
-Un proceso en memoria contiene varias secciones:
+## Disposición en Memoria
+Un proceso en memoria se puede descomponer de la siguiente forma:
 - **Text**: Contiene una porción de las instrucciones del proceso.
 - **Data**: Incluye variables globales y estáticas.
-- **Heap**: Memoria dinámica asignada al proceso.
-- **Stack**: Datos temporales asignados al proceso (ej. parámetros de métodos/funciones y variables locales).
+- **Heap**: Memoria dinámica asignada al proceso durante *runtime*.
+- **Stack**: Contiene datos temporales *(ej. parámetros de funciones y variables locales)*.
+
+>[!success] Memory Address Space
+>El sistema operativo provee a cada proceso su propia *memory address space* que representa una pequeña porción del *memory address space* del procesador. Por lo tanto, un proceso con un mal comportamiento no afectará el *memory address space* de otro proceso.
 
 ## Estados
 Mientras un proceso se ejecuta, este puede cambiar de estado.
@@ -68,11 +71,11 @@ Es la acción de cambiar el CPU de un proceso $p_1$ *(en estado running)* a un p
 
 El SO guarda el contexto *(registros del CPU, program counter, stack pointer, etc)* de $p_1$ en su correspondiente **PCB**, para luego cargar el contexto de $p_2$. Además, actualiza el estado correspondiente de $p_1$ al estado que le corresponda *(terminated, waiting o ready)* y $p_2$ al estado **running**.
 
-### Creación de Procesos
+## Creación de Procesos
 Un proceso puede crear otros procesos, donde el creador es llamado *padre* y el nuevo procedimiento es llamado *hijo*, formando así un *árbol* de procesos.
 
 El *padre* define los recursos y privilegios a compartir con sus *hijos*. Sin embargo, nunca se comparte la memoria entre ellos.
-Además, el *padre* pude esperar a que sus *hijos* completen su trabajo o continuar en paralelo.
+Además, el *padre* puede esperar a que sus *hijos* completen su trabajo o continuar en paralelo.
 
 Los *hijos* se crean usando una [[Sistema Operativo#System Calls|System Call]] dependiendo del SO.  En el caso de Unix, se provee un [[Sistema Operativo#System Calls|System Call]] *"fork"* (retorna el **PID** del *hijo* creado en el caso del *padre*, y **0** en el caso del *hijo*). Cuando se ejecuta, se copia todo el contexto del *padre* al *hijo* excepto el resultado de *fork*. Además, provee un [[Sistema Operativo#System Calls|System Call]] *exec* que remplaza el espacio de memoria del proceso por uno nuevo.
 
@@ -110,11 +113,8 @@ int main() {
 }
 ```
 
->[!info] Procesos en Paralelo (Unix)
->Si se agrega **&** después de un comando, Unix ejecutará estos procesos en paralelo sobre la shell, de otra forma, el próximo comando deberá esperar hasta que finalize el primero.
-
 ## Cooperación entre Procesos
 Dos procesos pueden sincronizarse y comunicarse entre ellos usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.
 
->[!danger] Datos Inconsistentes
+>[!bug] Datos Inconsistentes
 >El acceso concurrente entre varios procesos a datos compartidos puede resultar en *datos inconsistentes.*
