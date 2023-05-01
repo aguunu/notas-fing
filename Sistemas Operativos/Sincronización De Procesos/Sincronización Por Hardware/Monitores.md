@@ -5,17 +5,16 @@ El *tipo monitor* define un conjunto de variables cuyos valores definen el estad
 ```c
 Monitor nombre_monitor
 {
-	/* declaración de variables compartidas */
+	// Declaración de variables compartidas.
+	// ...
 
-	/* operaciones */
+	// Operaciones.
 	function P1(...) { ... }
 	function P2(...) { ... }
-	.
-	.
-	.
+	// ...
 	function Pn(...) { ... }
 
-	/* codigo para inicializar el monitor*/
+	// Codigo para inicializar el monitor.
 	inicializar(...) { ... }
 }
 ```
@@ -25,6 +24,6 @@ Una operación definida dentro de un monitor puede acceder únicamente a las var
 Solo puede haber una única operación en ejecución en un momento dado.
 
 Se definen variables de tipo *condition* cuyo valor no se inicializa. Las únicas operaciones que pueden ser invocadas sobre dichas variables son `wait()` y `signal()`.
+Sea `var` una variable de tipo *condition*:
 - `var.wait()`: El proceso que invoque esta función se bloquea y queda en un cola de procesos bloqueados.
 - `var.signal()`: Si la cola de procesos no esta vacía, despierta al primer proceso bloqueado. En otro caso, la operación no tiene efecto.
-- 

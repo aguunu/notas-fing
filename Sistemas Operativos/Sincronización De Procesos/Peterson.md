@@ -1,8 +1,8 @@
 La *Solución de Dekker* brinda una solución al [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] que consiste [[Sección Crítica#Busy Waiting|Busy Waiting]].
 
 ```c
-int turn; // indica el proceso al que le corresponde entrar a su sección crítica.
-bool flag[2]; // indica si el proceso esta listo para entrar a su sección crítica.
+int turn; // Indica el proceso al que le corresponde entrar a su sección crítica.
+bool flag[2]; // Indica si el proceso esta listo para entrar a su sección crítica.
 ```
 
 Sean $P_0$ y $P_1$ dichos procesos, la estructura del proceso $P_0$ según la solución de Peterson:
@@ -11,9 +11,11 @@ Sean $P_0$ y $P_1$ dichos procesos, la estructura del proceso $P_0$ según la so
 flag[0] = true; 
 turn = 1;
 while (flag[1] && turn == 1); // busy waiting
-// sección crítica
+// Sección crítica.
+// ...
 flag[0] = false;
-// sección restante
+// Sección restante.
+// ...
 ```
 
 Análogamente, se deduce la estructura del proceso $P_1$.

@@ -4,9 +4,6 @@ La CPU esta conformada por tres componentes fundamentales:
 - Banco de Registros: Serie de posiciones especiales en memoria de la CPU, permiten el acceso a operandos y lugares de almacenamiento.
 
 ## Banco de Registros
-
-^3ca220
-
 Contiene registros que se dividen en ciertas categorías.
 
 ### Totalmente Visibles

@@ -3,28 +3,30 @@ El *semáforo* logra resolver el [[Sección Crítica#Problema de la Sección Cr�
 - `signal()` $\rightarrow$ **V** *to increment*
 
 ```c
-/* Operación atómica P "to test" */
+// Operación atómica P "to test".
 void wait(Semaforo S) {
 	while (S <= 0); // busy waiting
 	S--;
 }
 
-/* Operación atómica V "to increment" */
+// Operación atómica V "to increment".
 void signal(Semaforo S) {
 	S++;
 }
 
-/* Inicializa el semáforo S */
+// Inicializa el semáforo S.
 void init(unsigned int S, unsigned int recursos_disponibles) {
 	S = recursos_disponibles;
 }
 ```
 
 ```c
-wait(S); // esperar hasta que el semáforo S este disponible
-/* sección crítica */
-signal(S); // avisar a los procesos que el semáforo S esta disponible
-/* sección restante */
+wait(S); // Esperar hasta que el semáforo S este disponible.
+// Sección crítica.
+// ...
+signal(S); // Avisar a los procesos que el semáforo S esta disponible.
+// Sección restante.
+// ...
 ```
 
 ## Semáforo Binario

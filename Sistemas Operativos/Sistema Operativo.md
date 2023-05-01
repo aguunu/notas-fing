@@ -39,12 +39,13 @@ El hardware suministra al sistema operativo mecanismos para la protección, entr
 Un *system call* es una interfaz, provista por el *kernel*, para que los [[Procesos]] accedan a los diferentes servicios que brinda el sistema operativo.
 
 El proceso de realizar una *system call* generalmente implica los siguientes pasos:
-1. Cargar los argumentos (parámetros) en el stack, registros del CPU y/o bloque de memoria (apuntado a través de un registro).
+1. Cargar los argumentos (parámetros) en el stack y/o registros del CPU.
 2. Cargar el identificador del *system call* en un registro especifico correspondiente a la arquitectura *(rax en x86)*.
-4. Invocar el *system call handler* adecuado ([[#Excepción|Trap]]).
-5. El procesador pasa a *kernel mode*, luego el *kernel* identifica la *system call* y procesa los argumentos.
+4. Invocar el *system call handler* adecuado.
+5. El procesador pasa a *kernel mode* a través de una [[#Excepción|Trap]].
 6. El *kernel* ejecuta la *system call* y retorna el resultado en un registro especifico correspondiente a la arquitectura *(rax en x86)*.
-7. El procesador vuelve a *user mode* y se retorna el control al proceso que invocó el *system call*.
+7. El procesador vuelve a *user mode* a través de una [[#Excepción|Trap]].
+8. Se otorga el control del CPU al proceso que invocó el *system call*.
 
 Podemos clasificarlos de la siguiente manera:
 - Control de procesos

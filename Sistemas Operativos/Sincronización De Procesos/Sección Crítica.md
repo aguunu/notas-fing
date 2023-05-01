@@ -13,12 +13,15 @@ Para resolver este problema, se busca diseñar un protocolo que los procesos uti
 
 ***
 ### Busy Waiting
-Desperdicia ciclos del CPU que podrían ser aprovechados por otro proceso.
+El *busy waiting (espera activa)* es una forma de esperar por un determinado evento, haciendo uso de un bucle que su único funcionamiento es desperdiciar ciclos del CPU.
 
 ```c
 // busy waiting
 while (condicion); // no hacer nada
 ```
+
+>[!bug] Ciclos del CPU
+>Los ciclos del CPU desperdiciados por *busy waiting* podrían ser aprovechados por otro proceso.
 
 ### Deadlock
 Dos o más procesos están esperando indefinidamente por un evento que puede ser causado únicamente por alguno de estos procesos.
