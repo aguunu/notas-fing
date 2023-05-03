@@ -68,7 +68,7 @@ El algoritmo *first come first server (FCFS)* ejecuta los procesos (hasta que fi
 >Sea $\{p_1,...,p_n\}$ un conjunto de procesos donde $p_i$ es el i-esimo proceso en arribar. Si se esta ejecutando $p_j$ y este recibe una petición de I/O, se empieza a ejecutar $p_{j+1}$ y cuando esta petición de I/O finalize, deja de ejecutarse $p_{j+1}$ y se sigue con la ejecución de $p_j$.
 
 ### Shortest Job First
-El algoritmo *shortest job first (SJF)* ejecuta el proceso que tenga la menor carga de trabaja hasta su finalización o hasta la próxima petición de I/O.
+El algoritmo *shortest job first (SJF)* ejecuta el proceso que tenga la menor carga de trabajo hasta su finalización o hasta la próxima petición de I/O.
 
 ### Basados en Prioridad
 En los algoritmos basados en prioridad, a cada proceso se le asigna una prioridad, y el algoritmo se encarga de seleccionar el proceso con mas prioridad.
