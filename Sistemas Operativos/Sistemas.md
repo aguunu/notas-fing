@@ -33,7 +33,7 @@ También conocido como **Sistema Paralelo** y **Sistema Multicore**. Un *multipr
 3. Según el uso de memoria
 	- **Sistemas de Memoria Compartida**: Los procesadores se encuentran en un único nodo altamente integrado, todos comparten el bus que los conecta a memoria
 	- **Sistema de Memoria Distribuida**: Los procesadores tienen su propia memoria y están conectados a través de redes.
-
+***
 ## Taxonomía de Flynn
 La **Taxonomía de Flynn** es una clasificación de arquitecturas de computadores en base a cuantos *flujos de instrucciones* y *flujos de datos* pueden ser procesados en simultaneo por dicha arquitectura.
 - **Single Instruction Single Data (SISD)**: En una arquitectura SSID, existe un único procesador que ejecuta un único *flujo de instrucciones* y opera sobre un único *flujo de datos*. Es el tipo de arquitectura más simple y la más usada en los computadores tradicionales.

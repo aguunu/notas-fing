@@ -31,4 +31,3 @@ do {
 	empty.V();
 } while (true);
 ```
-

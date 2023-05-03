@@ -48,4 +48,3 @@ do {
 
 >[!success] Deadlock
 >En esta última solución, si los $n$ filósofos desean comer simultáneamente, solo uno de ellos podrá adquirir el mutex `m`. Además, luego de adquirirlo, este tomará los cubiertos únicamente si ambos están libres, evitando de esta forma el problema del [[Sección Crítica#Deadlock]].
-
