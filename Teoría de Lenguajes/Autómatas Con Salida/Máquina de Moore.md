@@ -2,8 +2,8 @@ Una *máquina de Moore* es un [[Autómata Con Salida]] cuya salida depende únic
 
 Definimos una *máquina de Moore* como una $M = (Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde:
 - $Q$ un conjunto finito de estados.
-- $\Sigma$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de entrada.
-- $\Delta$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de salida.
+- $\Sigma$ un [[Alfabeto]] de entrada.
+- $\Delta$ un [[Alfabeto]] de salida.
 - $\delta : Q \times \Sigma \rightarrow Q$ la función de transición.
 - $\lambda : Q \rightarrow \Delta$ la función de salida.
 - $q_0 \in Q$ el estado inicial.

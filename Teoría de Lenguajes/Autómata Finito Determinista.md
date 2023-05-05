@@ -2,7 +2,7 @@ Un *autómata finito determinista (AFD)* es un [[Autómata Finito|AF]] que sólo
 
 Definimos un *AFD* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
 - $Q$ un conjunto finito de estados.
-- $\Sigma$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de entrada.
+- $\Sigma$ un [[Alfabeto]] de entrada.
 - $\delta : Q \times \Sigma \rightarrow Q$ la función de transición.
 - $q_0 \in Q$ el estado inicial.
 - $F \subseteq Q$ el conjunto de estados finales.

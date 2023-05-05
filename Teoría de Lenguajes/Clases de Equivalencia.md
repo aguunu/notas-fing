@@ -11,7 +11,7 @@ Hallar las clases de equivalencia de $R_M$:
 Si el autónoma $M$ es mínimo y completo (todas sus transiciones están definidas), las clases de equivalencia de $R_M$ calculadas coinciden con las de $R_L$
 
 >[!note] Lema Arden II
->Para resolver las ecuaciones de la forma $X=Xr|s$ se utiliza el *lema arden*. Que nos permite afirmar que $X=s \cdot r^\ast$ es la solución a la ecuación $X=Xr|s$ donde $\varepsilon \notin L(r)$.
+>$X=s \cdot r^\ast$ es solución a la ecuación $X=Xr|s$ donde $\varepsilon \notin L(r)$.
 
 >[!warning] ¡Cuidado!
  A diferencia del [[Análisis de Kleene]], se deberá incluir el estado pozo ya que este define una clase de equivalencia.

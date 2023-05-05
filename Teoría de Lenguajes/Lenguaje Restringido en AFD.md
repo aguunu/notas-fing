@@ -1,4 +1,4 @@
-Dado un [[Autómata Finito Determinista|AFD]] $M=(Q, \Sigma, \delta, \textcolor{yellow}{q_1}, F)$ con $Q=\{\textcolor{yellow}{q_1},...,q_n\}$, definimos $R_{ij}^k$ como el conjunto de las [[Conceptos Fundamentales#Cadena de Caracteres|Cadenas]] que parten del estado $i$ y terminan en el estado $j$ sin pasar por un estado mayor a $k$.
+Dado un [[Autómata Finito Determinista|AFD]] $M=(Q, \Sigma, \delta, \textcolor{yellow}{q_1}, F)$ con $Q=\{\textcolor{yellow}{q_1},...,q_n\}$, definimos $R_{ij}^k$ como el conjunto de las [[Cadena de Caracteres|Cadenas]] que parten del estado $i$ y terminan en el estado $j$ sin pasar por un estado mayor a $k$.
 
 Definimos $R_{ij}^k$ de forma inductiva,
 - Caso Base

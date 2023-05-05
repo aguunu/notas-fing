@@ -2,8 +2,8 @@ Un *autómata con salida* es una variación de los [[Autómata Finito]], pues lo
 
 Definimos una *autómata con salida* como $M=(Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde:
 - $Q$ un conjunto finito de estados.
-- $\Sigma$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de entrada.
-- $\Delta$ un [[Conceptos Fundamentales#Alfabetos|Alfabeto]] de salida.
+- $\Sigma$ un [[Alfabeto]] de entrada.
+- $\Delta$ un [[Alfabeto]] de salida.
 - $\delta$ la función de transición.
 - $\lambda$ la función de salida.
 - $q_0 \in Q$ el estado inicial.

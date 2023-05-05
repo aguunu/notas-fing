@@ -6,4 +6,4 @@ El teorema de *Myhill-Nerode* provee una condición necesaria y suficiente para 
 >  Además, $|R_L|$ es equivalente a la cantidad de estados del autómata mínimo completo.
 
 > [!note] Colorario
-> Para todo [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], existe y es único el [[Autómata Mínimo]].
+> Para todo [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], existe y es único su [[Autómata Mínimo]].
