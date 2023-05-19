@@ -1,9 +1,10 @@
 Un lenguaje es un conjunto (posiblemente infinito) de cadenas, todas ellas seleccionadas de un $\Sigma^\ast$, donde $\Sigma$ es un determinado [[Alfabeto]].
 
-1. El lenguaje de todas las cadenas que constan de $n$ ceros seguidos de $n$ unos para cualquier $n \ge 0$: $\{\varepsilon,01,0011,000111,...\}$.
-2. $\Sigma^\ast$ es un lenguaje para cualquier alfabeto $\Sigma$.
-3. $\emptyset$, el lenguaje vacío, es un lenguaje de cualquier alfabeto.
-4. $\{\varepsilon \}$, el lenguaje que consta sólo de la cadena vacía, también es un lenguaje de cualquier alfabeto. *Observe que $\emptyset \neq \{\varepsilon\}$; el primero no contiene ninguna cadena y el segundo sólo tiene una cadena.*
+>[!example] 
+>1. El lenguaje de todas las cadenas que constan de $n$ ceros seguidos de $n$ unos para cualquier $n \ge 0$: $\{\varepsilon,01,0011,000111,...\}$.
+>2. $\Sigma^\ast$ es un lenguaje para cualquier alfabeto $\Sigma$.
+>3. $\emptyset$, el lenguaje vacío, es un lenguaje de cualquier alfabeto.
+>4. $\{\varepsilon \}$, el lenguaje que consta sólo de la cadena vacía, también es un lenguaje de cualquier alfabeto. *Observe que $\emptyset \neq \{\varepsilon\}$; el primero no contiene ninguna cadena y el segundo sólo tiene una cadena.*
 
 Aunque los lenguajes pueden tener un número infinito de cadenas, están restringidos a que dichas cadenas estén formadas por los símbolos que definen un [[Alfabeto]] prefijado.
 
@@ -30,17 +31,17 @@ $$xR_My \iff \hat{\delta}(q_0, x) = \hat{\delta}(q_0, y)$$
 >No necesariamente se cumple que $xR_Ly \implies xR_My$.
 
 ## Propiedades de Clausura
-1. Unión: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cup L_2$ regular.
-2. Intersección: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cap L_2$ regular.
-3. Concatenación: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cdot L_2$  regular.
-4. Diferencia: Sean $L_1$ y $L_2$ regulares $\implies$ $L_1 - L_2$ regular
-5. Clausura: Sea $L$ regular $\implies L^\ast$ regular.
-6. Complementario: Sea $L$ regular $\implies L^c$ regular.
-7. Reflexión: Sea $L$ regular $\implies L^r$[^1] regular.
-8. Cociente: Sea $L_1$ regular y $L_2$ un lenguaje arbitrario $\implies$ $\frac{L_1}{L_2}$[^2]  regular.
-9. Sustitución: Sea $L$ regular y $f$ una función de sustitución $\implies f(L)$ regular.
-10. Homomorfismo: Sea $L$ regular y $h$ un homomorfismo[^3] $\implies$ $h(L)$ regular.
-11. Homomorfismo inverso: Sea $L$ regular y $h$ un homomorfismo $\implies$ $h^{-1}(L)$ regular.
+1. **Unión**: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cup L_2$ regular.
+2. **Intersección**: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cap L_2$ regular.
+3. **Concatenación**: Sean $L_1$ y $L_2$ regulares $\implies L_1 \cdot L_2$  regular.
+4. **Diferencia**: Sean $L_1$ y $L_2$ regulares $\implies$ $L_1 - L_2$ regular
+5. **Clausura**: Sea $L$ regular $\implies L^\ast$ regular.
+6. **Complementario**: Sea $L$ regular $\implies L^c$ regular.
+7. **Reflexión**: Sea $L$ regular $\implies L^r$[^1] regular.
+8. **Cociente**: Sea $L_1$ regular y $L_2$ un lenguaje arbitrario $\implies$ $\frac{L_1}{L_2}$[^2]  regular.
+9. **Sustitución**: Sea $L$ regular y $f$ una función de sustitución $\implies f(L)$ regular.
+10. **Homomorfismo**: Sea $L$ regular y $h$ un homomorfismo[^3] $\implies$ $h(L)$ regular.
+11. **Homomorfismo Inverso**: Sea $L$ regular y $h$ un homomorfismo $\implies$ $h^{-1}(L)$ regular.
 
 [^1]: Se define el reflexión/reverso de un lenguaje $L$ como $L^r=\{x^r \in \Sigma^\ast: x \in L\}$. 
 [^2]: Se define el cociente entre los lenguajes $L_1$ y $L_2$ como $\frac{L_1}{L_2}=\{x \in \Sigma^\ast : \exists y \in L_2 \land xy \in L_1 \}$.

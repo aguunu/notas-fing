@@ -112,9 +112,3 @@ int main() {
 	return 0;
 }
 ```
-
-## Cooperación entre Procesos
-Dos procesos pueden sincronizarse y comunicarse entre ellos usando un mecanismo de **Inter-Process Communication (IPC)**. Entre estos se destacan los mecanismos de **Memoria Compartida** y **Pasaje de Mensajes**.
-
->[!bug] Datos Inconsistentes
->El acceso concurrente entre varios procesos a datos compartidos puede resultar en *datos inconsistentes.*

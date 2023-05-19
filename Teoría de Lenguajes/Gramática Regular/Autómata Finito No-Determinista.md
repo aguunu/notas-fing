@@ -1,6 +1,6 @@
 Un *autómata finito no determinista* (AFN) tiene la capacidad de estar en varios estados a la vez.
 
-Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
+Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un [[Alfabeto]] de entrada.
 - $\delta : Q \times \Sigma \rightarrow 2^Q$ la función de transición.

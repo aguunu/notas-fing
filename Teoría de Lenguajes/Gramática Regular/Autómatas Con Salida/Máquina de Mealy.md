@@ -1,6 +1,6 @@
 Una *máquina de Mealy* es un [[Autómata Con Salida]] cuya salida depende tanto del estado actual como de la entrada actual.
 
-Definimos una *máquina de Mealy* como $M=(Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde:
+Definimos una *máquina de Mealy* como $M=(Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde,
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un [[Alfabeto]] de entrada.
 - $\Delta$ un [[Alfabeto]] de salida.

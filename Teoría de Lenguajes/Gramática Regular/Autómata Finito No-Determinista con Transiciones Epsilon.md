@@ -1,6 +1,6 @@
 Un *autómata finito no determinista con transición-$\varepsilon$ (AFN-$\varepsilon$)* es una variante del [[Autómata Finito No-Determinista|AFN]] que permite transiciones para la [[Cadena de Caracteres#Cadena Vacía $ varepsilon$|Cadena Vacía]] $\varepsilon$. Así, un [[Autómata Finito No-Determinista|AFN]] puede hacer una transición espontáneamente, sin consumir el símbolo de entrada.
 
-Definimos un *AFN-$\varepsilon$* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
+Definimos un *AFN-$\varepsilon$* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un  [[Alfabeto]] de entrada.
 - $\delta : Q \times (\Sigma \cup \{ \varepsilon \}) \rightarrow 2^Q$ la función de transición.

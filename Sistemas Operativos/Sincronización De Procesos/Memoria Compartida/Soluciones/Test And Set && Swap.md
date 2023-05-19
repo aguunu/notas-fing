@@ -1,4 +1,4 @@
-El hardware provee las instrucciones atómicas `test_and_set()` y `swap()` para resolver el [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]].
+El hardware provee las instrucciones atómicas `test_and_set()` y `swap()` para resolver el [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] a través de [[Sincronización por Hardware]].
 
 Existe una variable compartida entre los [[Procesos]] que puede tomar el valor 0 o 1. Antes de entrar a una [[Sección Crítica]], se adquiere un *lock*, que luego se liberará al salir. Si el *lock* adquirido esta bloqueado , el proceso espera hasta que se desbloque. En otro caso, toma el *lock* y ejecuta la sección crítica.
 

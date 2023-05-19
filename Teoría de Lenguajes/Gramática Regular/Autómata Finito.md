@@ -1,6 +1,6 @@
 Un *autómata finito (AF)* es un modelo matemático abstracto que representa una maquina pudiendo estar en un número finito de estados y que se mueve entre ellos en respuesta a entradas específicas.
 
-Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde:
+Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un [[Alfabeto]] de entrada.
 - $\delta$ la función de transición.

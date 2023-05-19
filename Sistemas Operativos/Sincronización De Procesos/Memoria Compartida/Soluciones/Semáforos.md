@@ -1,4 +1,4 @@
-El *semáforo* logra resolver el [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] y en [[Sistemas#Sistema Multiprocesador (Paralelos)|Multiprocessing Systems]]. Haciendo uso de un valor entero no negativo, que se accede únicamente por dos operaciones atómicas:
+El *semáforo* logra resolver el [[Sección Crítica#Problema de la Sección Crítica|Problema de la Sección Crítica]] y en [[Sistemas#Sistema Multiprocesador (Paralelos)|Multiprocessing Systems]] A a través [[Sincronización por Hardware]]. Haciendo uso de un valor entero no negativo, que se accede únicamente por dos operaciones atómicas:
 - `wait()` $\rightarrow$ **P** *to test*
 - `signal()` $\rightarrow$ **V** *to increment*
 
@@ -39,8 +39,8 @@ El *semáforo binario (mutex)* puede tomar únicamente el valor 0 o 1. En alguno
 El *semáforo de conteo* no está restringido por un dominio. Se utiliza para controlar el acceso a un recurso que posee multiples instancias.
 
 ***
-## Equivalencia
-Se puede demostrar que los [[#Semáforo Binario]] y [[#Semáforo de Conteo]] son equivalentes ya que se puede implementar uno de estos a partir del otro.
+## Semáforo Binario $\equiv$ Semáforo de Conteo
+Se puede demostrar que los [[#Semáforo Binario]] y [[#Semáforo de Conteo]] son equivalentes ya que se pueden implementar entre ellos.
 
 ## Semáforo de Conteo $\rightarrow$ Semáforo Binario
 Se hace uso de las siguientes variables:

@@ -1,6 +1,6 @@
 Una *máquina de Moore* es un [[Autómata Con Salida]] cuya salida depende únicamente del estado actual.
 
-Definimos una *máquina de Moore* como una $M = (Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde:
+Definimos una *máquina de Moore* como una $M = (Q, \Sigma, \Delta, \delta, \lambda, q_0)$ donde,
 - $Q$ un conjunto finito de estados.
 - $\Sigma$ un [[Alfabeto]] de entrada.
 - $\Delta$ un [[Alfabeto]] de salida.
