@@ -5,7 +5,7 @@ Sea $G=(V,T,P,S)$ una  [[Gramáticas Libres de Contexto#Gramática Libre de Cont
 - **Útil** si $S \xRightarrow{\star} \alpha A \beta \xRightarrow{\star} x \in T^\star$ con $\alpha, \beta \in (V \cup T)^\star$
 Además, diremos que una *regla de producción* $p \in P$ es,
 - **Unitaria** si es de la forma $A \rightarrow B$ con $A, B \in V$.
-- $\varepsilon$***-producción***: si es de la forma $A \rightarrow \varepsilon$
+- $\varepsilon$***-producción***: si es de la forma $A \rightarrow \varepsilon$ con $A \in V$.
 
 ## Gramática Libre de Contexto Simplificada
 Una  [[Gramáticas Libres de Contexto#Gramática Libre de Contexto|GLC]] esta *simplificada* cuando **NO** tiene *reglas de producción* del tipo $\varepsilon$*-producción* ni tampoco *unitaria*. Y además, todas sus *variables* son del tipo *útil*.

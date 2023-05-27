@@ -19,7 +19,7 @@ do {
 ```
 
 >[!bug] Deadlock
->En este código, si los $n$ filósofos desean comer simultáneamente, el programa quedaría en [[Sección Crítica#Deadlock|Deadlock]]. Una posible solución a este problema, seria permitirle a un filósofo tomar un cubierto si y solamente si ambos cubiertos están libres.
+>En este código, si los $n$ filósofos desean comer simultáneamente, el programa quedaría en [[Deadlock]]. Una posible solución a este problema, seria permitirle a un filósofo tomar un cubierto si y solamente si ambos cubiertos están libres.
 
 Para solucionar el problema, agregamos un arreglo `libre[N] : Array of Boolean` (inicializados en `false`) donde cada entrada equivale a un cubierto. Además agregamos un semáforo binario `m` (inicialmente 1) para adquirir y liberar el sistema.
 
@@ -47,7 +47,7 @@ do {
 ```
 
 >[!success] Deadlock
->En esta última solución, si los $n$ filósofos desean comer simultáneamente, solo uno de ellos podrá adquirir el mutex `m`. Además, luego de adquirirlo, este tomará los cubiertos únicamente si ambos están libres, evitando de esta forma el problema de [[Sección Crítica#Deadlock|Deadlock]].
+>En esta última solución, si los $n$ filósofos desean comer simultáneamente, solo uno de ellos podrá adquirir el mutex `m`. Además, luego de adquirirlo, este tomará los cubiertos únicamente si ambos están libres, evitando de esta forma el problema de [[Deadlock]].
 
 ## Solución con [[Monitores]]
 En esta solución un *filósofo* tomará ambos cubiertos únicamente si ambos están libres.

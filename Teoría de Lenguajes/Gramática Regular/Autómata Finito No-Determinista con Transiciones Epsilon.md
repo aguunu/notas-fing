@@ -2,7 +2,7 @@ Un *autómata finito no determinista con transición-$\varepsilon$ (AFN-$\vareps
 
 Definimos un *AFN-$\varepsilon$* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 - $Q$ un conjunto finito de estados.
-- $\Sigma$ un  [[Alfabeto]] de entrada.
+- $\Sigma$ un [[Alfabeto]] de entrada.
 - $\delta : Q \times (\Sigma \cup \{ \varepsilon \}) \rightarrow 2^Q$ la función de transición.
 - $q_0 \in Q$ el estado inicial.
 - $F \subseteq Q$ el conjunto de estados finales.

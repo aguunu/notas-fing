@@ -47,6 +47,9 @@ Por otro lado, el `TASK` que define el `ENTRY`, permanecerá bloqueado en la sen
 
 Esta sincronización se denomina *rendezvous*.
 
+>[!success] Orden de Llegada
+>Las *entry calls* correspondientes a un mismo `ENTRY` siempre son aceptadas en orden de llegada. Sin embargo, esto no se garantiza cuando no corresponden al mismo `ENTRY`.
+
 ***
 
 La sentencia `SELECT`, espera simultáneamente por *entry calls* en más de un `ACCEPT` y responde al que llegue primero usando la sentencia `OR`. En caso de no haber un *entry call* esperando por atención, se ejecuta inmediatamente el código de la sentencia `ELSE`.
@@ -91,7 +94,7 @@ END SELECT
 >La clausula `WHEN` es evaluada antes de entrar a la sentencia `SELECT`.
 
 >[!error] 
->Si ninguna clausula es evaluada en `TRUE`, el programa abortará.
+>Deberá existir alguna sentencia `ACCEPT` que no este ligada a una clausula `WHEN` o que alguna clausula `WHEN` sea evaluada en `TRUE`. En otro caso, el programa abortará.
 
 ***
 El atributo `COUNT` de una `ENTRY` indica la cantidad de *entry calls* están esperando por su atención. Sin embargo, este atributo solo aplica para el `TASK` que define dicho `ENTRY`.
