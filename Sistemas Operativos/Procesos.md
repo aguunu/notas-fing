@@ -53,6 +53,7 @@ El PCB contiene la siguiente información:
 - Recursos de software  y hardware
 - Información del estado de I/O
 - Proceso *padre* e *hijos*
+- *Page table*
 
 ### State Queues
 El SO mantiene todos los **Process Control Blocks** en *State Queues*, todos los **PCBs** que corresponden al mismo estado se colocan en el mismo *State Queue*.

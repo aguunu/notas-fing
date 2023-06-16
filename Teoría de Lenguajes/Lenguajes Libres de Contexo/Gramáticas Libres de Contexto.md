@@ -1,25 +1,17 @@
-## Gramática
-Definimos una *gramática* $G$ como $G=(V,T,P,S)$ donde,
-- $V$ el conjunto de variables.
-- $T$ el conjunto de símbolos terminales.
-- $P$ el conjunto de reglas de producción.
-- $S \in V$ el símbolo inicial.
+Una *gramática libre de contexto* es una [[Gramática]] donde todas sus reglas de producción son de la forma $A \rightarrow \alpha$ donde $A \in V$ y $\alpha \in (V \cup T)^\star$.
 
-## Gramática Libre de Contexto
-Una *gramática libre de contexto* es una [[#Gramática]] donde todas sus reglas de producción son de la forma $A \rightarrow \alpha$ donde $A \in V$ y $\alpha \in (V \cup T)^\star$.
-
-### Derivación
-Una *derivación* representa la inferencia de una regla de producción. Dada una [[#Gramática]] $G=(V,T,P,S)$, escribimos $\alpha A \beta \implies \alpha \gamma \beta$ cuando queremos mostrar que $\gamma$ es el resultado de aplicar la regla $A \implies \gamma$ con $A \in V$ y $\alpha, \beta, \gamma \in (V \cup T)^\star$.
+## Derivación
+Una *derivación* representa la inferencia de una regla de producción. Dada una [[Gramática]] $G=(V,T,P,S)$, escribimos $\alpha A \beta \implies \alpha \gamma \beta$ cuando queremos mostrar que $\gamma$ es el resultado de aplicar la regla $A \implies \gamma$ con $A \in V$ y $\alpha, \beta, \gamma \in (V \cup T)^\star$.
 
 Para indicar que la inferencia se produce en $n$ pasos, $\alpha A \beta \xRightarrow{n} \alpha \gamma \beta$. En caso de querer representar una cantidad indefinida de pasos se utiliza $\star$ en vez de $n$.
 
-#### Derivación de más a la Izquierda
+### Derivación de más a la Izquierda
 Una *derivación de más a la izquierda* es una secuencia de derivaciones en la que cada paso se deriva sobre la variable que este más a la izquierda.
 
-#### Derivación de más a la Derecha
+### Derivación de más a la Derecha
 Definición análoga a [[#Derivación de más a la Izquierda]].
 
-### Árbol de Derivación
+## Árbol de Derivación
 Un *árbol de derivación* es un árbol ordenado que gráficamente representa la información semántica de cadenas derivadas de una [[#Gramática Libre de Contexto]].
 
 >[!success] Teorema 
@@ -27,7 +19,7 @@ Un *árbol de derivación* es un árbol ordenado que gráficamente representa la
 >
 >$$S \xRightarrow{\star} w \iff \exists \text{ un árbol de derivación para } w$$
 
-### Gramática Ambigua
+## Gramática Ambigua
 Una gramática es *ambigua* si existen dos o más [[#Árbol de Derivación|Árboles de Derivación]] para una cadena arbitraria.
 
 >[!example] 
@@ -43,11 +35,89 @@ Dada una gramática $G=(V,T,P,S)$, el lenguaje generado por $G$ es $$L(G) = \{ x
 
 En otras palabras, $L(G)$ es el conjunto de secuencias de $T^\star$ que se derivan del símbolo inicial $S$.
 
-### Lenguaje Libre de Contexto
+## Lenguaje Libre de Contexto
 $L$ es un *lenguaje libre de contexto* si existe alguna [[#Gramática Libre de Contexto]] que lo genera.
 
 >[!success] Teorema
 >Todos los [[Lenguaje#Lenguaje Regular|Lenguajes Regulares]] son *libres de contexto*.
+
+### Propiedades de Clausura
+
+$$
+\tag{Union}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+B \textit{ libre de contexto}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{A \cup B}
+$$
+
+$$
+\tag{Intersección}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+B \textit{ regular}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{A \cap B}
+$$
+
+$$
+\tag{Concatenación}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+B \textit{ libre de contexto}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{A \cdot B}
+$$
+
+$$
+\tag{Clausura Kleene}
+\underset{\textit{libre de contexto}}{A} \implies \underset{\textit{libre de contexto}}{A^\star}
+$$
+
+$$
+\tag{Reverso}
+\underset{\textit{libre de contexto}}{A} \implies \underset{\textit{libre de contexto}}{A^r}
+$$
+
+$$
+\tag{Sustitución}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+f \textit{ sustitución}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{f(A)}
+$$
+
+$$
+\tag{Homomorfismo}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+h \textit{ homomorfismo}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{h(A)}
+$$
+
+$$
+\tag{Homomorfismo Inverso}
+\left.
+\begin{array}{l}
+A \textit{ libre de contexto}\\
+h \textit{ homomorfismo}
+\end{array}
+\right\}
+\implies \underset{\textit{libre de contexto}}{h^{-1}(A)}
+$$
 
 ## Gramática Regular
 Una *gramática regular* es una [[#Gramática Libre de Contexto]] en la que __todas__ sus *reglas de producción* son o bien *gramática lineal izquierda* o *gramática lineal derecha*,

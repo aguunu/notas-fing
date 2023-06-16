@@ -1,0 +1,2 @@
+Una *memory management unit (MMU)*, también conocida como *paged memory management unit (PMMU)*, es una pieza de hardware que se encarga de traducir una [[Virtual Memory#Virtual Address|Virtual Address]] a su correspondiente [[Administración de Memoria#Physical Address|Physical Address]] haciendo uso de una [[#Page Table]] en caso de [[Paging]] y/o [[Segmentation#Segment Table|Segmentation Table]] en caso de [[Segmentation]].
+
