@@ -27,7 +27,7 @@ Se define la clausura $\varepsilon \text{-} cl(q) : Q \rightarrow 2^Q$ como el c
 >Dado un AFN-$\varepsilon$ $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$
 
 >[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFN-$\varepsilon$ $\implies$ $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]].
+>Si $L$ es aceptado por algún AFN-$\varepsilon$ $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
 
 ## AFN-$\varepsilon$ $\rightarrow$ AFN
 Dado un AFN-$\varepsilon$  $M=(Q,\Sigma,\delta, q_0, F)$ construiremos un [[Autómata Finito No-Determinista|AFN]] $M=(Q', \Sigma, \delta', q_0, F')$.

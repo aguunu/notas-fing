@@ -1,4 +1,4 @@
-Sea $G=(V,T,P,S)$ una  [[Gramáticas Libres de Contexto#Gramática Libre de Contexto|GLC]], entonces, diremos que una *variable* $A \in V$ es,
+Sea $G=(V,T,P,S)$ una  [[Gramática Libre de Contexto#Gramática Libre de Contexto|GLC]], entonces, diremos que una *variable* $A \in V$ es,
 - **Anulable** si $A \xRightarrow{\star} \varepsilon$
 - **Positiva** si $A \xRightarrow{\star} x \in T^\star$
 - **Alcanzable** si $S \xRightarrow{\star} \alpha A \beta$ con $\alpha, \beta \in (V \cup T)^\star$
@@ -8,7 +8,7 @@ Además, diremos que una *regla de producción* $p \in P$ es,
 - $\varepsilon$***-producción***: si es de la forma $A \rightarrow \varepsilon$ con $A \in V$.
 
 ## Gramática Libre de Contexto Simplificada
-Una  [[Gramáticas Libres de Contexto#Gramática Libre de Contexto|GLC]] esta *simplificada* cuando **NO** tiene *reglas de producción* del tipo $\varepsilon$*-producción* ni tampoco *unitaria*. Y además, todas sus *variables* son del tipo *útil*.
+Una  [[Gramática Libre de Contexto#Gramática Libre de Contexto|GLC]] esta *simplificada* cuando **NO** tiene *reglas de producción* del tipo $\varepsilon$*-producción* ni tampoco *unitaria*. Y además, todas sus *variables* son del tipo *útil*.
 
 >[!success] Teorema
 >Para todo *lenguaje libre de contexo* $L : L \neq \emptyset \land \varepsilon \notin L$ puede ser generado por una [[#Gramática Libre de Contexto Simplificada]].

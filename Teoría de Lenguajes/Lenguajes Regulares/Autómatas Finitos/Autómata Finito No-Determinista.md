@@ -21,7 +21,7 @@ $$
 >Dado un AFN-$\varepsilon$ $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$
 
 >[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFN $\implies$ $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]].
+>Si $L$ es aceptado por algún AFN $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
 
 ## AFN $\rightarrow$ AFD
 Dado un AFN $M=(Q,\Sigma,\delta, q_0, F)$ construiremos un [[Autómata Finito Determinista|AFD]] $M=(Q', \Sigma, \delta', q_0, F')$.

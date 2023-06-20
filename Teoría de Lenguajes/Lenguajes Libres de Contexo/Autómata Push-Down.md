@@ -49,4 +49,4 @@ $$\tag{2} \forall q \in Q, \forall X \in \Gamma: \text{ Si } |\delta(q, \varepsi
 ***
 
 >[!important]
->$L$ es un [[Gramáticas Libres de Contexto#Lenguaje Libre de Contexto|Lenguaje Libre de Contexto]] si es aceptado por algún [[Autómata Push-Down|APD]]. 
+>$L$ es un [[Gramática Libre de Contexto#Lenguaje Libre de Contexto|Lenguaje Libre de Contexto]] si es aceptado por algún [[Autómata Push-Down|APD]]. 

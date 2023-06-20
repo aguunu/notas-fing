@@ -93,14 +93,17 @@ Los *algoritmos de reemplazo* pueden ser clasificados de la siguiente manera:
 - Reemplazo global: Un proceso reemplaza un *frame* cualquiera, inclusive si es utilizado por otro proceso.
 - Reemplazo local: Un proceso reemplaza únicamente los *frames* que tiene asignado.
 
+### Reemplazo Óptimo
+Se reemplaza la pagina que produjo *page fault* por la pagina que no se utilizará durante más tiempo.
+
+>[!error] 
+> Este algoritmo no es posible implementarlo en la práctica. Pues se necesita información sobre el futuro.
+
 ### FIFO
 Algoritmo de reemplazo que cumple con el principio *FIFO (first in, first out).*
 
-### Reemplazo Óptimo
-TODO
-
 ### Second Chance
-TODO
+En el algoritmo *second chance* el sistema operativo mantiene los *frames* en una lista circular, además se coloca un bit extra por cada uno de estos. Cuando se produce un *page fault*, se chequea el bit del próximo *frame*. Si dicho bit vale $0$, se selecciona esta pagina para ser reemplazada y se actualiza su bit a $1$. En caso de valer $1$, se le otorga un *second chance* actualizando el bit a $0$ y se avanza al próximo *frame*.
 
 ### Not Recently Used
 El algoritmo *not recently used (NRU)* es una variante mejorada de [[#Second Chance]]. Se asignan dos bits $r, m)$ a cada pagina. Donde $r$ vale $1$ si hubo una lectura reciente sobre la pagina y $m$ vale $1$ si se realizó una modificación reciente sobre la pagina. Por lo tanto, surgen 4 clases:

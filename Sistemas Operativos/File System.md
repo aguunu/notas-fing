@@ -1,7 +1,7 @@
 ## Concepto de Archivo
 Un *archivo (file)* es una secuencia de *registros*[^registro] que representa datos *(ej. imagen .png, audio .mp3, documento de texto .txt)* y es guardado en almacenamiento secundario. Representa la unidad de almacenamiento mínima en almacenamiento secundario.
 
-[^registro]: El concepto de *registro* depende del tipo de archivo, por ejemplo, en un `n` el *registro* podría representar un código ASCII.
+[^registro]: El concepto de *registro* depende del tipo de archivo, por ejemplo, en un `.txt` el *registro* podría representar un código ASCII.
 
 ### Metadata
 Los archivos poseen ciertos atributos denominados *metadata*. Entre ellos se destacan:

@@ -11,7 +11,7 @@ $$\tag{2} R_{ii}^0=\{a \in \Sigma \mid \delta(q_i, a) = q_i \} \cup \{ \varepsil
 
 $$\tag{3} R_{ij}^k=R_{ij}^{k-1} \cup R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^\ast \cdot R_{kj}^{k-1}$$
 
-Además, expresando $R_{ij}^k$ como una [[Expresiones Regulares|Expresión Regular]] obtenemos la siguiente expresión,
+Además, expresando $R_{ij}^k$ como una [[Expresiones Regulares|Expresiones Regulares]] obtenemos la siguiente expresión,
 
 $$R_{ij}^k=R_{ij}^{k-1} | R_{ik}^{k-1} \cdot (R_{kk}^{k-1})^\ast \cdot R_{kj}^{k-1}$$
 

@@ -21,10 +21,10 @@ $$
 >Dado un AFD $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \in F \}$
 
 >[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFD $\implies$ $L$ es un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]].
+>Si $L$ es aceptado por algún AFD $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
 
 ## AFD $\rightarrow$ Expresión Regular
-Dado un AFD $M$ se quiere hallar una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $L(M)$ = $L(r)$.
+Dado un AFD $M$ se quiere hallar una [[Expresiones Regulares|Expresiones Regulares]] $r$ tal que $L(M)$ = $L(r)$.
 Para esto podemos utilizar cualquiera de los siguientes métodos:
 - [[Lenguaje Restringido en AFD]]
 - [[Clases de Equivalencia]]

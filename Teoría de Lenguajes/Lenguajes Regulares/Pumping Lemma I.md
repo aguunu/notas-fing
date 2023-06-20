@@ -1,4 +1,4 @@
-Sea $\mathscr{L}$ un [[Lenguaje#Lenguaje Regular|Lenguaje Regular]], entonces, $\exists n \in \mathbb{N} : (\forall s \in \mathscr{L}) (s \in \mathscr{L} \land s |s| \geq n)$ de forma que $s$ se puede descomponer de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
+Sea $\mathscr{L}$ un [[Expresiones Regulares|Lenguaje Regular]], entonces, $\exists n \in \mathbb{N} : (\forall s \in \mathscr{L}) (s \in \mathscr{L} \land s |s| \geq n)$ de forma que $s$ se puede descomponer de la siguiente manera $s=xyz$ cumpliendo con las siguientes condiciones:
 
 $$\tag{1} x y^i z \in L \; \forall i \geq 0$$
 
@@ -18,7 +18,7 @@ Para probar que un lenguaje $\mathscr{L}$ no es regular utilizando el *pumping l
 > [!example]
 > Sea $\mathscr{L}=\{x \mid x \text{ contiene una cantidad igual de 0s y 1s}\}$
 > 
-> 1. Supongamos que $\mathscr{L}$ es [[Lenguaje#Lenguaje Regular|Regular]] con constante de *pumping lemma* igual a $N$.
+> 1. Supongamos que $\mathscr{L}$ es un [[Expresiones Regulares|Lenguaje Regular]] con constante de *pumping lemma* igual a $N$.
 > 2. Tomamos como contra ejemplo la cadena $s=0^N 1^N$, donde claramente $s \in L$ y además $|s| \geq N$. 
 >    *Observar que al descomponer $s=xyz$ la condición $(3)$ fuerza a que $y$ este compuesta únicamente de $0s$.*
 > 3. Luego, tomando $i=2$, obtenemos que $xy^2z \notin L$ pues $xy^2z$ tiene más $0s$ que $1s$. Por ende, el lenguaje $\mathscr{L}$ no es regular.
