@@ -90,7 +90,7 @@ El *logical file system* se administra toda la *metadata* de del *file system* e
 [^fcb]: Un *file-control block (FCB)* contiene información sobre el archivo *(propietarios, permisos, ubicación de los datos)*.
 
 >[!info] *inode* $\equiv$ *file-control block*
->En Unix, se denomina *inode* a un *file-control block (FCB)*.
+>En sistemas POSIX, se denomina *inode* a un *file-control block (FCB)*.
 
 ## Estructura en Hardware
 Los *dispositivos de almacenamiento* contienen las siguientes estructuras:
@@ -123,6 +123,12 @@ Para lograr esto, se diseña una estructura en tres capas:
 - Linked Allocation: Los bloques asociados a un archivo son almacenados de forma encadenada. Se necesita una referencia al *bloque inicial* y *bloque final*. Además, cada bloque tendrá una referencia al siguiente bloque.
 - Indexed Allocation: Cada archivo tendrá su propio *index block* donde la *i-esima* entrada  de este apuntará al *i-esimo* bloque del archivo. Los directorios contendrán las referencias a los respectivos *index blocks* asociados a los archivos del mismo.
   Por otra parte, una asignación *indexed allocation* permite *copy-on-write*[^copy-on-write] de manera eficiente.
+
+>[!important] 
+>En sistemas POSIX, se utiliza una modificación de *Indexed Allocation*, donde además de que cada archivo pueda referenciar directamente cierta cantidad de bloques de datos, también permite referenciar indirectamente con las siguientes referencias:
+>- Puntero de *Indirección Simple*: Apunta a un bloque que referencia bloques de datos del archivo.
+>- Puntero de *Indirección Doble*: Apunta a un bloque que referencia bloques que referencian datos del archivo.
+>- Puntero de *Indirección Triple*: Apunta a un bloque de referencia bloques que referencian  bloques que referencian bloques de datos del archivo.
 
 [^copy-on-write]: Cuando se desea modificar un bloque en un *file system* de tipo *copy-on-write*, se escribe un nuevo bloque y se elimina el bloque anterior de forma atómica. De esta forma, permite solucionar problemas de inconsistencia, pues si surge un error al ejecutar la operación, el bloque anterior seguirá siendo valido.
 

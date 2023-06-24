@@ -1,4 +1,4 @@
-Una *gramática irrestricta* es un caso particular de [[Gramática Irrestricta]] donde todas sus reglas de producción son de la forma $$\alpha \rightarrow \beta$$
+Una *gramática sensible al contexto* es un caso particular de [[Gramática Irrestricta]] donde todas sus reglas de producción son de la forma $$\alpha \rightarrow \beta$$
 
 donde $\alpha, \beta \in (V \cup T)^\star \land \alpha \neq \varepsilon$ y además $\color{red} |\alpha| \leq |\beta|$.
 

@@ -15,5 +15,5 @@ La técnica de *RAID (Redundant Array of Independent Disks)* brinda confiabilida
 - RAID 6, *P + Q redundancy*
 
 >[!success] 
->Los [[#Niveles de RAID]] pueden ser combinados, en un RAID $i+j$, se aplica la técnica de RAID $j$ a sobre un RAID $i$.
+>Los [[#Niveles de RAID]] pueden ser combinados, en un RAID $i+j$, se aplica la técnica de RAID $j$ sobre un RAID $i$.
 
