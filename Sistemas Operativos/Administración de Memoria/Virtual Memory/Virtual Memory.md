@@ -7,4 +7,4 @@ Rango completo que contiene todas las *virtual address* disponibles para cierto 
 >Cada proceso contará con su propio *virtual address space*. Por lo tanto, un proceso no podrá acceder a una *virtual address space* de otro.
 
 ### Virtual Address
-Una *virtual address* es una clase *memory address* utilizada por un proceso dentro de su *virtual address space* que se corresponde (indirectamente) una *physical memory address*.
+Una *virtual address/logical address* es una *memory address* utilizada por un proceso dentro de su *virtual address space* que se corresponde (indirectamente) una *physical memory address*.

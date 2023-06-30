@@ -54,8 +54,8 @@ El [[Sistema Operativo]] provee [[Sistema Operativo#System Calls|System Calls]] 
 	- *Absolute path name*: Empieza en la raíz del árbol y termina en un archivo especifico *(ej. root/home/work/todo.txt)*.
 	- *Relative path name*: Empieza en un directorio especifico y termina en un archivo especifico *(ej. work/todo.txt)*.
 - Grafo: A diferencia de la *estructura árbol*, la *estructura grafo* permite compartir archivos entre distintos directorios mediante *links*.
-	- Soft Link: Referencia a un archivo en diferentes directorios.
-	- Hard Link: Duplica la información de un archivo en diferentes directorios.
+	- Hard Link: Un *hard link* es una referencia directa a un archivo por su *inodo*.
+	- Soft Link: Por otra parte, *symbolic link* es una referencia sobre un archivo en vez de a un *inodo*. Además, al eliminar un archivo que posee un *symbolic link*  se genera un *dangling link* que referencia a un archivo que ya no existe.
 
 ### Implementación
 - Linear List: Se implementa una lista donde cada nodo representa el nombre de un archivo perteneciente al directorio y una referencia a su *directory entry*.

@@ -4,8 +4,8 @@ Es la base para lograr la [[Sistemas#Multiprogramming System|Multiprogramación]
 ### Largo Plazo *(Job Scheduler)*
 Selecciona un conjunto de procesos de una *jobs pool* y los carga en memoria para ser ejecutarlos, por lo tanto, controla el *grado de multiprogramación* (cantidad de procesos en memoria).
 
->[!important] Grado de Multiprogramación
->Si el *grado de multiprogramación* es estable, entonces el promedio de procesos entrando al sistema es equivalente al promedio de procesos saliendo del sistema.
+#### Grado de Multiprogramación
+El *grado de multiprogramación* es la cantidad de procesos en memoria en un momento dado. Si el promedio de procesos entrando al sistema es equivalente al promedio de procesos saliendo del sistema, entonces el *grado de multiprogramación* es estable.
 
 ### Medio Plazo *(Swapping)*
 En ocasiones puede ser de utilidad remover procesos de la memoria y por lo tanto reducir el **grado de multiprogramación**. Luego estos procesos pueden ser reintroducidos en la memoria y su ejecución puede continuar donde se dejó.

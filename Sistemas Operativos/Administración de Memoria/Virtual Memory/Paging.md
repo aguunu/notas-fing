@@ -22,7 +22,7 @@ El tiempo $T$ para resolver un *page fault* incluye las siguientes tareas:
 1. Generar una interrupción por el sistema operativo.
 2. Determinar si se debe a un *page fault*.
 3. Guardar el estado del proceso.
-4. Ejecutar el *Scheduler* ($\star$) (para aprovechar el CPU mientras se espera).
+4. Ejecutar [[Scheduling|Scheduler]] ($\star$) (para aprovechar el CPU mientras se espera).
 5. Solicitar la lectura de la pagina a memoria secundaria.
 6. Esperar la transferencia de la memoria secundaria.
 7. Atender la rutina de completitud de la operación de IO de la memoria secundaria.
@@ -32,7 +32,7 @@ El tiempo $T$ para resolver un *page fault* incluye las siguientes tareas:
 11. Restaurar el estado y continuar con la ejecución del proceso.
 
 ## Page Table
-Estructura de datos que se almacena en memoria principal y se encarga de mapear una [[Virtual Memory#Virtual Address|Virtual Address]] a una *physical address*. Esta es accedida por el [[Memory Management Unity|MMU]] a través del registro *page table base register (PTBR)*. 
+Estructura de datos que se almacena en memoria principal y se encarga de mapear una [[Virtual Memory#Virtual Address|Virtual Address]] a una [[Administración de Memoria#Physical Address|Physical Address]]. Esta es accedida por el [[Memory Management Unity|MMU]] a través del registro *__page table base register (PTBR)__*. 
 
 >[!success] Compartir Paginas
 >Los procesos que comparten datos entre ellos, podrán compartir de forma eficiente *pages* entre ellos. Pues en la *page table* de estos proceso, tendrán referenciado el *frame* que contiene dicha *page*.
@@ -55,7 +55,7 @@ Consiste en dividir la *page table* formando una jerarquía por niveles. Los bit
 Luego, se toma la tabla correspondiente al primer nivel y se identifica el próximo nivel usando los bits del segmento correspondiente a este nivel, este procedimiento se repite hasta llegar al último nivel. En el último nivel, se identificará (usando el segmento correspondiente) el *frame* asociado a la *virtual address*.
 
 ### Inverted
-Se utiliza una única *page table* en común para todos los procesos. De esta forma, reduciendo el espacio de almacenamiento y aumentando el tiempo de búsqueda.
+Se utiliza una única *page table* en común para todos los procesos. De esta forma, reduciendo el espacio de almacenamiento pero aumentando el tiempo de búsqueda.
 
 ### Hash-Map
 Se usa un *hash-map* (con *listas* para colisiones), mapeando un *page number* a su correspondiente *frame*.
@@ -119,7 +119,7 @@ El algoritmo *least recently used (LRU)*, se encarga de reemplazar la pagina que
 No cumple con *Belady's Anomaly*. Sea $\{f_0, f_1, ..., f_m\}$ el conjunto de *frames* y $\{p_0, p_1, ..., p_n\}$ el conjunto de *pages* (ordenadas de *más recientes* a *menos recientes*) con $n > m$, donde $A =\{(f_0, p_0), (f_1, p_1), ..., (f_m, p_m)\}$ el conjunto de asignaciones. Entonces, al agregar un nuevo *frame* $f_{m+1}$ el nuevo conjunto de asignaciones será $A' = A \cup \{(f_{m+1}, p_{m+1})\}$. Por ende, al agregar más *frames* no se podrán producir más *page faults* de los que se producían anteriormente.
 
 ## Page Trashing
-También conocido como *hiperpaginación*, sucede cuando un proceso tiene en uso más *frames* de los que se encuentran en memoria principal se producirán más *page faults*. Lo que conlleva a que probablemente tenga más tiempo resolviendo *page faults* que usando el CPU. De esta forma, degradando el rendimiento del sistema.
+También conocido como *hiper-paginación*, sucede cuando un proceso tiene en uso más *frames* de los que se encuentran en memoria principal. Lo que conlleva a que probablemente tenga más tiempo resolviendo *page faults* que tiempo usando el CPU. De esta forma, degradando el rendimiento del sistema.
 
 ### Working-Set
 El *working-set* es una estrategia para afrontar [[#Page Trashing]] haciendo uso del *principio de localidad*.

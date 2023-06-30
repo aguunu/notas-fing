@@ -1,4 +1,4 @@
-La técnica de *swapping* permite que el *address space* de los procesos exceda con respecto al limite del *physical address space* del sistema. Aumentando, de esta forma, el *grado de multiprogramación*.
+La técnica de *swapping* permite que el [[Administración de Memoria#Address Space|Address Space]] de los procesos exceda con respecto al limite del [[Administración de Memoria#Physical Address Space|Physical Address Space]] del sistema. Aumentando, de esta forma, el [[Scheduling#Grado de Multiprogramación|Grado de Multiprogramación]].
 
 ## Backing Store
 Lugar en memoria secundaria dónde se dispondrá un conjunto procesos.
