@@ -1,3 +1,6 @@
+***
+TODO
+***
 Una interrupción es un mecanismo que permite al hardware la invocación de una rutina fuera del control del programa que está siendo ejecutado.
 
 ## Pedido de Interrupción
@@ -37,9 +40,3 @@ La CPU tiene la capacidad de aceptar o no los pedidos de interrupción de los co
 ## Prioridades
 - Hay dos (o más) pedidos de interrupción simultáneos.
 - Hay uno (o más) pedidos de interrupción mientras se esta ejecutando una rutina de interrupción previa y las interrupciones han sido habilitadas.
-
-
-
-
-
-

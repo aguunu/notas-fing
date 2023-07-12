@@ -50,7 +50,7 @@ Una secuencia de procesos $p_0,...,p_n$ es segura para un estado $E$ si los recu
 #### Estado Seguro
 Un estado $E$ es *seguro* si existe una [[#Secuencia Segura]] para dicho estado. En otro caso, $E$ será un estado *inseguro* que podría conllevar a deadlock.
 
-### Algoritmos de Evitación
+#### Algoritmos de Evitación
 Un algoritmo de evitación asegura que el sistema siempre se encuentre en un [[#Estado Seguro]]. Estos algoritmos se clasifican según la cantidad de instancias por recurso.
 - Única Instancia: Algoritmo de detección de ciclos en el [[#Grafo de Asignación de Recursos]], siendo un *estado seguro* si no se detectan ciclos y *estado inseguro* si se detectan ciclos.
 - Múltiples Instancias: Algoritmo del Banquero.

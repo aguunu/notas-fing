@@ -1,5 +1,6 @@
-El sistema operativo se encarga de administrar y controlar las operaciones I/O así como los dispositivos I/O.
+El sistema operativo se encarga de administrar y controlar las operaciones I/O así como [[Input & Output|I/O Devices]].
 
+***
 ## I/O Hardware
 Un dispositivo se comunica a través de un *port (ej. serial port)*. Si los de dispositivos comparten un conjunto de cables, esta conexión es llamada *bus*.  
 
@@ -13,11 +14,11 @@ Por lo general, un *device controller* consiste de 4 registros:
 - *data-out register*
 - *status register*
 - *control register*
+***
+## Handshaking
+El *handshaking* es la comunicación entre el sistema operativo y el [[Input & Output#Device Controller|Device Controller]].
 
-### Handshaking
-El *handshaking* es la comunicación entre el sistema operativo *(host)* y el *device controller*.
-
-#### Programmed I/O
+### Programmed I/O
 La técnica de __*programmed I/O*__ consiste en realizar una solicitud al dispositivo y esperar a que se realice mediante [[Sección Crítica#Busy Waiting|Polling]]. Una vez realizada, el proceso saldrá del bucle y finalmente podrá leer el registro del *controller*.
 
 ```c
@@ -31,7 +32,7 @@ while (device_status_register != READY); // busy waiting
 >[!warning] 
 >Para dispositivos que transfieren grandes cantidades de datos, esta solución no es eficiente. Pues, los registros suelen tener un tamaño pequeño.
 
-#### Interrupt-Driven I/O
+### Interrupt-Driven I/O
 Cuando un proceso $p_0$ hace realiza una operación IO, la técnica de __*Interrupt-Driven I/O*__ consiste de los siguientes pasos:
 1. $p_0$ se agrega a una cola de espera asociada al dispositivo y es bloqueado por el [[Scheduling]].
 2. Una vez que el dispositivo completa la tarea, genera una interrupción *(el estado del CPU es guardado en el stack)*.
@@ -44,8 +45,8 @@ Cuando un proceso $p_0$ hace realiza una operación IO, la técnica de __*Interr
 >[!warning] 
 >Observar que el sistema se degrada debido a los procesos que constantemente realizan operaciones IO. Pues, constantemente se están generando interrupciones.
 
-#### Direct Memory Access
-La técnica de __*direct memory access (DMA)*__ consiste en cargar ciertos registros del *device controller* en el __*DMA Controller*__. De esta forma, el *DMA Controller* se encarga de la transferencia, interrumpiendo al procesador cuando esta finalice.
+### Direct Memory Access
+La técnica de __*direct memory access (DMA)*__ consiste en cargar ciertos registros del [[Input & Output#Device Controller|Device Controller]] en el __*DMA Controller*__. De esta forma, el *DMA Controller* se encarga de la transferencia, interrumpiendo al procesador cuando esta finalice.
 
 ## Interfaz de Sistema Entrada & Salida
 El objetivo es independizar el sistema de I/O del hardware. De esta forma, simplificando el trabajo para los desarrolladores.
@@ -69,7 +70,7 @@ La técnica de *I/O Scheduling* se apoya sobre la planificación para lograr un 
 Cuando un proceso se bloquea al realizar una operación I/O, es puesto en la cola del dispositivo correspondiente y el subsistema de I/O reorganiza los pedidos para lograr un mayor rendimiento.
 
 ### Buffering
-El *buggering* es un lugar de memoria que guarda datos mientras son transferidos entre dos dispositivos o un dispositivo y una aplicación.
+El *buffering* es un lugar de memoria que guarda datos mientras son transferidos entre dos dispositivos o un dispositivo y una aplicación.
 
 ### Caching
 La utilidad del *caching* es acelerar el acceso a la información.
