@@ -23,8 +23,9 @@ La *longitud de una cadena* $w$ es el número de posiciones ocupadas por símbol
 ## Concatenación de Cadenas
 Sean $x$ e $y$ dos cadenas. Entonces, $xy$ denota la concatenación de $x$ e $y$, es decir, la cadena formada por una copia de $x$ seguida de una copia de $y$.
 
->[!tip] 
->Para cualquier cadena $w$, se cumplen las ecuaciones $\varepsilon w = w \varepsilon = w$
+Cualquier cadena $w$, cumple con las siguientes ecuaciones: 
+
+$$\varepsilon w = w \varepsilon = w$$
 
 > [!example]
 >  Sean $x = 01101, y = 110$,

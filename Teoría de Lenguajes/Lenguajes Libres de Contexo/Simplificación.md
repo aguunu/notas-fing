@@ -1,4 +1,4 @@
-Sea $G=(V,T,P,S)$ una  [[Gramática Libre de Contexto#Gramática Libre de Contexto|GLC]], entonces, diremos que una *variable* $A \in V$ es,
+Sea $G=(V,T,P,S)$ una [[Gramática Libre de Contexto]], entonces, diremos que una *variable* $A \in V$ es,
 - **Anulable** si $A \xRightarrow{\star} \varepsilon$
 - **Positiva** si $A \xRightarrow{\star} x \in T^\star$
 - **Alcanzable** si $S \xRightarrow{\star} \alpha A \beta$ con $\alpha, \beta \in (V \cup T)^\star$
@@ -8,14 +8,19 @@ Además, diremos que una *regla de producción* $p \in P$ es,
 - $\varepsilon$***-producción***: si es de la forma $A \rightarrow \varepsilon$ con $A \in V$.
 
 ## Gramática Libre de Contexto Simplificada
-Una  [[Gramática Libre de Contexto#Gramática Libre de Contexto|GLC]] esta *simplificada* cuando **NO** tiene *reglas de producción* del tipo $\varepsilon$*-producción* ni tampoco *unitaria*. Y además, todas sus *variables* son del tipo *útil*.
+Una [[Gramática Libre de Contexto]] esta *simplificada* cuando:
+1. **NO** tiene *reglas de producción* de tipo $\varepsilon$*-producción*
+2. __NO__ tiene *reglas de producción* de tipo *unitaria*.
+3. __TODAS__ sus *variables* son de tipo *útil*.
+4. __TODAS__ sus *variables* son de tipo *alcanzable*.
 
 >[!success] Teorema
->Para todo *lenguaje libre de contexo* $L : L \neq \emptyset \land \varepsilon \notin L$ puede ser generado por una [[#Gramática Libre de Contexto Simplificada]].
+>Todo [[Lenguaje Libre de Contexto]] $L : L \neq \emptyset \land \varepsilon \notin L$ puede ser generado por una [[#Gramática Libre de Contexto Simplificada]].
 
 >[!info] 
->Si el lenguaje $L=\emptyset$, entonces, $G=(\{S\}, \emptyset, \emptyset, S)$ es la *mejor* gramática que se puede generar para dicho lenguaje, siendo la variable $S$ *no útil*.
->Además, si $\varepsilon \in L$, entonces, la *mejor* gramática que se puede generar contendría la regla de producción $S \rightarrow \varepsilon$, la cual es una $\varepsilon$*-producción*.
+>Si el lenguaje $L=\emptyset$, entonces, $G=(\{S\}, \emptyset, \emptyset, S)$ es la mejor gramática que se puede generar para dicho lenguaje, siendo la variable $S$ *no útil*.
+>
+>Por otra parte, si $\varepsilon \in L$, entonces, la mejor gramática que se puede generar contendría la regla de producción $S \rightarrow \varepsilon$, la cual es una $\varepsilon$*-producción*.
 
 ***
 

@@ -17,7 +17,7 @@ Se define una *máquina de Turing (MT)* como $M=(Q, \Sigma, \Gamma, \delta, q_0,
 
 ## Lenguaje Aceptado
 
-Dada una *MT* $M=(Q, \Sigma, \Gamma, \delta, q_0, \cancel{b}, F)$, entonces, el lenguaje aceptado por $M$ es $$L(M)=\{x \in \Sigma^\star \mid M \textit{ llega a $q_f$ $\in$ F con x como entrada. }\}$$
+Dada una *MT* $M=(Q, \Sigma, \Gamma, \delta, q_0, \cancel{b}, F)$, entonces, $$\mathscr{L}(M)=\{x \in \Sigma^\star \mid M \textit{ llega a $q_f$ $\in$ F con x como entrada. }\}$$
 
-## Lenguaje Recursivamente Enumerable
-Un lenguaje $L$ es *recursivamente enumerable* si es aceptado por alguna [[Máquina de Turing]].
+>[!important] 
+>Un lenguaje $L$ es [[Lenguaje Recursivamente Enumerable|Recursivamente Enumerable]] si es aceptado por alguna [[Máquina de Turing]].

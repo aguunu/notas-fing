@@ -10,22 +10,24 @@ Definimos un *AFD* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 Extendemos inductivamente la función de transición $\delta$ para que el autómata sea capaz de procesar cadenas de $\Sigma^\ast$,  con lo cual obtenemos $\hat{\delta} : Q \times \Sigma^\ast \rightarrow Q$ definida de la siguiente manera:
 
 $$
-\forall q \in Q : \hat{\delta}(q, \varepsilon) = q
+\tag{1} \forall q \in Q : \hat{\delta}(q, \varepsilon) = q
 $$
 
 $$
-\forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \delta(\hat{\delta}(q, x), a)
+\tag{2} \forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \delta(\hat{\delta}(q, x), a)
 $$
 
->[!important] Lenguaje Aceptado
->Dado un AFD $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \in F \}$
+## Lenguaje Aceptado
+Sea $M=(Q,\Sigma,\delta, q_0, F)$ un [[Autómata Finito Determinista]] entonces,
 
->[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFD $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
+$$\tag{Lenguaje Aceptado} \mathscr{L}(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \in F \}$$
+
+>[!important]
+>Si $L$ es aceptado por algún AFD $\implies$ $L$ es un [[Lenguaje Regular]].
 
 ## AFD $\rightarrow$ Expresión Regular
-Dado un AFD $M$ se quiere hallar una [[Expresiones Regulares|Expresiones Regulares]] $r$ tal que $L(M)$ = $L(r)$.
+Dado un AFD $M$ se quiere hallar una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $\mathscr{L}(M)$ = $\mathscr{L}(r)$.
 Para esto podemos utilizar cualquiera de los siguientes métodos:
-- [[Lenguaje Restringido en AFD]]
+- [[Lenguaje Restringido]]
 - [[Clases de Equivalencia]]
 - [[Análisis de Kleene]]

@@ -1,4 +1,4 @@
-Un *autómata finito no determinista* (AFN) tiene la capacidad de estar en varios estados a la vez.
+Un *autómata finito no determinista* (AFN) tiene la capacidad de estar en varios estados en simultaneo.
 
 Definimos un *autónoma finito no determinista* como $M=(Q,\Sigma,\delta, q_0, F)$ donde,
 - $Q$ un conjunto finito de estados.
@@ -17,11 +17,13 @@ $$
 \forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \tilde{\delta}(\hat{\delta}(q, x), a) \text{ donde } \tilde{\delta} : 2^Q \times \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
 $$
 
->[!important] Lenguaje Aceptado
->Dado un AFN-$\varepsilon$ $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$
+## Lenguaje Aceptado
+Sea $M=(Q,\Sigma,\delta, q_0, F)$ un [[Autómata Finito No-Determinista]], entonces,
 
->[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFN $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
+$$\mathscr{L}(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$$
+
+>[!important]
+>Si $L$ es aceptado por algún AFN $\implies$ $L$ es un [[Lenguaje Regular]].
 
 ## AFN $\rightarrow$ AFD
 Dado un AFN $M=(Q,\Sigma,\delta, q_0, F)$ construiremos un [[Autómata Finito Determinista|AFD]] $M=(Q', \Sigma, \delta', q_0, F')$.

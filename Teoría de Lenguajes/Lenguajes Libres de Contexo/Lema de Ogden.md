@@ -1,4 +1,4 @@
-Sea $\mathscr{L}$ un [[Gramática Libre de Contexto#Lenguaje Libre de Contexto|Lenguaje Libre de Contexto]], entonces, $\exists n \in \mathbb{N} : \forall z \in \mathscr{L} \textit{ con } distinguibles(z) \geq n$ se cumple que existe una descomposición $z=uvwxy$ que cumple las siguientes condiciones:
+Sea $L$ un [[Lenguaje Libre de Contexto|LC]], entonces, $\exists n \in \mathbb{N} : \forall z \in L \textit{ con } distinguibles(z) \geq n$ se cumple que existe una descomposición $z=uvwxy$ que cumple las siguientes condiciones:
 
 $$\tag{1} distinguibles(z) \leq n$$
 

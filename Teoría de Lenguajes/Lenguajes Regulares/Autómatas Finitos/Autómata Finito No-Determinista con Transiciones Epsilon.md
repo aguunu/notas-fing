@@ -17,17 +17,22 @@ $$
 \forall q \in Q, \forall a \in \Sigma, \forall x \in \Sigma^\ast : \hat{\delta}(q, xa) = \varepsilon \text{-}cl(\tilde{\delta}(\hat{\delta}(q,x),a)) \text{ donde } \tilde{\delta} : 2^Q \times \Sigma \rightarrow 2^Q \mid \tilde{\delta}(P, a) = \bigcup_{q \in P}\delta(q, a)
 $$
 
-## $\varepsilon \text{-} clausura(q)$
-Se define la clausura $\varepsilon \text{-} cl(q) : Q \rightarrow 2^Q$ como el conjunto de estados a los que se pueden llegar partiendo desde $q$ utilizando únicamente arcos $\varepsilon$. Observar que se cumplen las siguientes propiedades para un AFN-$\varepsilon$ arbitrario:
-- $\forall q \in Q : q \in \varepsilon \text{-}cl(q)$
-- $\forall q \in Q : \varepsilon \text{-}cl(\varepsilon \text{-}cl(q)) = \varepsilon \text{-}cl(q)$
-- $\forall P \subseteq Q : \varepsilon \text{-}cl(P) = \bigcup_{q \in P}\varepsilon \text{-}cl(q)$
+## $\varepsilon \textit{-clausura}(q)$
+Se define la clausura $\varepsilon \textit{-cl}(q) : Q \rightarrow 2^Q$ como el conjunto de estados a los que se pueden llegar partiendo desde $q$ utilizando únicamente arcos $\varepsilon$. Observar que se cumplen las siguientes propiedades para un AFN-$\varepsilon$ arbitrario:
 
->[!important] Lenguaje Aceptado
->Dado un AFN-$\varepsilon$ $M=(Q,\Sigma,\delta, q_0, F)$  $\implies$  $L(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$
+$$\tag{1} \forall q \in Q : q \in \varepsilon \textit{-cl}(q)$$
+
+$$\tag{2} \forall q \in Q : \varepsilon \textit{-cl}(\varepsilon \textit{-cl}(q)) = \varepsilon \textit{-}(q)$$
+
+$$\tag{3} \forall P \subseteq Q : \varepsilon \textit{-cl}(P) =  \underset{q \in P}{\bigcup}  \varepsilon \textit{-cl}(q)$$
+
+## Lenguaje Aceptado
+Sea $M=(Q,\Sigma,\delta, q_0, F)$ un [[Autómata Finito No-Determinista con Transiciones Epsilon|AFND con Transiciones Epsilon]], entonces,
+
+$$\mathscr{L}(M) = \{ x \in \Sigma^\ast : \hat{\delta}(q_0, x) \cap F \neq \emptyset \}$$
 
 >[!important] Lenguaje Regular
->Si $L$ es aceptado por algún AFN-$\varepsilon$ $\implies$ $L$ es un [[Expresiones Regulares|Lenguaje Regular]].
+>Si $L$ es aceptado por algún AFN-$\varepsilon$ $\implies$ $L$ es un [[Lenguaje Regular]].
 
 ## AFN-$\varepsilon$ $\rightarrow$ AFN
 Dado un AFN-$\varepsilon$  $M=(Q,\Sigma,\delta, q_0, F)$ construiremos un [[Autómata Finito No-Determinista|AFN]] $M=(Q', \Sigma, \delta', q_0, F')$.

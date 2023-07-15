@@ -28,19 +28,19 @@ Si $(p, \alpha) \in \delta(q, a, X)$ entonces, $(q, aw, X\beta) \vdash (p, w, \a
 ## Lenguaje Aceptado
 Sea $M=(Q,\Sigma,\Gamma,\delta, q_0, Z_0, F)$ un APD, el *lenguaje aceptado* por $M$ por **estado final** es
 
-$$L(M)=\{ x \in \Sigma^\star \mid (q_0, x, Z_0) \vdash^\star (q_f, \varepsilon, \alpha) \text{ con } q_f \in F \land \alpha \in \Gamma^\star \}$$
+$$\mathscr{L}(M)=\{ x \in \Sigma^\star \mid (q_0, x, Z_0) \vdash^\star (q_f, \varepsilon, \alpha) \text{ con } q_f \in F \land \alpha \in \Gamma^\star \}$$
 
 Sea $M=(Q,\Sigma,\Gamma,\delta, q_0, Z_0, \textcolor{red}{\emptyset})$ un APD, el *lenguaje aceptado* por $M$ por **stack vacío** es
 
-$$L(M)=\{ x \in \Sigma^\star \mid (q_0, x, Z_0) \vdash^\star (q, \varepsilon, \varepsilon) \text{ con } q \in Q \}$$
+$$\mathscr{L}(M)=\{ x \in \Sigma^\star \mid (q_0, x, Z_0) \vdash^\star (q, \varepsilon, \varepsilon) \text{ con } q \in Q \}$$
 
 >[!important] Equivalencia
 >El lenguaje aceptado por *estado final* es equivalente al lenguaje aceptado por *stack vacío*.
 
 ***
 
-## Determinista
-Una APD es *determinista* si cumple con las siguientes condiciones:
+## Determinismo
+Una APD es *determinista* si y solamente si cumple con las siguientes condiciones:
 
 $$\tag{1} \forall q \in Q, \forall a \in (\Sigma \cup \{ \varepsilon\}), \forall X \in \Gamma : |\delta(q,a,X)| \leq 1$$
 
@@ -49,4 +49,4 @@ $$\tag{2} \forall q \in Q, \forall X \in \Gamma: \text{ Si } |\delta(q, \varepsi
 ***
 
 >[!important]
->$L$ es un [[Gramática Libre de Contexto#Lenguaje Libre de Contexto|Lenguaje Libre de Contexto]] si es aceptado por algún [[Autómata Push-Down|APD]]. 
+>$L$ es un [[Lenguaje Libre de Contexto|Lenguaje Libre de Contexto]] si es aceptado por algún [[Autómata Push-Down|APD]]. 
