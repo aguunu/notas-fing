@@ -6,9 +6,9 @@ Por ende, algunos sistemas están centrados en la *eficiencia* y otros en la *co
 
 ## Componentes Principales
 - [[Scheduling|Planificación de Procesos]]
-- *Administración de la Memoria Principal*
-- *File System*
-- *Administración de Dispositivos de Entrada y Salida*
+- [[Administración de Memoria]]
+- [[File System]]
+- [[Input & Output System]]
 
 ## System Services
 Un sistema operativo brindará servicios que serán accesibles para el usuario mediante una interfaz definida.
@@ -17,7 +17,7 @@ Se brinda un conjunto de servicios con la finalidad de ayudar al usuario del SO,
 - Interfaz de usuario
 - Ejecución de programas
 - Operaciones I/O
-- Manipulación del *File System*
+- Manipulación del [[File System]]
 - Comunicaciones
 - Detección de errores
 
@@ -64,8 +64,6 @@ En un *sistema por capas*, se busca organizar el diseño del sistema operativo e
 ### Sistema Microkernel
 Se busca que el kernel sea lo más pequeño posible, limitándose a proporcionar los servicios básicos de un SO. 
 
-## Virtual Machine
-TODO
 ***
 
 ## Excepción

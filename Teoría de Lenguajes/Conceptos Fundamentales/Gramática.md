@@ -9,11 +9,14 @@ Una *derivación* representa la inferencia de una regla de producción. Dada una
 
 Para indicar que la inferencia se produce en $n$ pasos, $\alpha A \beta \xRightarrow{n} \alpha \gamma \beta$. En caso de querer representar una cantidad indefinida de pasos se utiliza $\star$ en vez de $n$.
 
-### Derivación de más a la Izquierda
-Una *derivación de más a la izquierda* es una secuencia de derivaciones en la que cada paso se deriva sobre la variable que este más a la izquierda.
+- Derivación de más a la Izquierda: Una *derivación de más a la izquierda* es una secuencia de derivaciones en la que cada paso se deriva sobre la variable que este más a la izquierda.
+- Derivación de más a la Derecha: Análogo a *derivación de más a la izquierda*.
 
-### Derivación de más a la Derecha
-Definición análoga a [[#Derivación de más a la Izquierda]].
+## Lenguaje Generado
+
+Dada una gramática $G=(V,T,P,S)$, el lenguaje generado por $G$ es $$\mathscr{L}(G) = \{ x \in T^\star \mid S \xRightarrow{\star} x \}$$
+
+En otras palabras, $\mathscr{L}(G)$ es el conjunto de secuencias de $T^\star$ que se derivan del símbolo inicial $S$.
 
 ## Árbol de Derivación
 Un *árbol de derivación* es un árbol ordenado que gráficamente representa la información semántica de cadenas derivadas de una [[#Gramática Libre de Contexto]].
@@ -22,12 +25,6 @@ Un *árbol de derivación* es un árbol ordenado que gráficamente representa la
 >Dada una gramática $G=(V,T,P,S)$ y una cadena $w \in T^\star$
 >
 >$$S \xRightarrow{\star} w \iff \exists \text{ un árbol de derivación para } w$$
-
-## Lenguaje Generado
-
-Dada una gramática $G=(V,T,P,S)$, el lenguaje generado por $G$ es $$\mathscr{L}(G) = \{ x \in T^\star \mid S \xRightarrow{\star} x \}$$
-
-En otras palabras, $\mathscr{L}(G)$ es el conjunto de secuencias de $T^\star$ que se derivan del símbolo inicial $S$.
 
 ## Gramática Ambigua
 Una gramática es *ambigua* si existen dos o más [[#Árbol de Derivación|Árboles de Derivación]] para una cadena arbitraria.

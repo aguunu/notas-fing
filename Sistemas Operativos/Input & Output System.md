@@ -82,4 +82,4 @@ La técnica de *spooling* consiste en un buffer que mantiene salida para un disp
 Cada llamado a sistema retorna un bit que informa el éxito o fracaso de una operación I/O.
 
 >[!info] 
->En UNIX se utiliza una variable `errno` que es utilizada para codificar el error.
+>En UNIX se utiliza una variable `errno` para codificar el error.

@@ -1,6 +1,6 @@
-Una *gramática regular* es una [[Gramática]] en la que __TODAS__ sus *reglas de producción* son o bien *lineales izquierda* o *lineales derecha*, de esta forma, definiendo un [[Lenguaje Regular]].
-- **Lineal Izquierda**: $A \rightarrow Bw \mid w$
-- **Lineal Derecha**: $A \rightarrow wB \mid w$
+Una *gramática regular* es una [[Gramática]] en la que __TODAS__ sus *reglas de producción* son o bien *lineales izquierda* o *lineales derecha*, de esta forma, generando un [[Lenguaje Regular]].
+$$\tag{Lineal Izquierda} A \rightarrow Bw \mid w$$
+$$\tag{Lineal Derecha} A \rightarrow wB \mid w$$
 donde $A, B \in V$ y $w \in T^\star$.
 
 Una [[Gramática Regular]] es una __Gramática Lineal Izquierda__ si __TODAS__ sus *reglas de producción* son *lineales izquierda*, o es una __Gramática Lineal Derecha__ en el caso en que __TODAS__ todas sus *reglas de producción* son *lineales derecha*.

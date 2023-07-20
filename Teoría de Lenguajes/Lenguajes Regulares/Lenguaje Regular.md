@@ -18,12 +18,12 @@ $$xR_My \iff \hat{\delta}(q_0, x) = \hat{\delta}(q_0, y)$$
 
 ***
 
-> [!info] Observación
+> [!info]
 > $R_M$ es una relación de equivalencia donde $|R_M|$ es igual a la cantidad de estados de $M$.
 > 
 > Además, para cualquier [[Expresiones Regulares|Lenguaje Regular]] $L$ se cumple que $xR_My \implies xR_Ly$. Por ende, se puede duducir que $|R_L| \leq |R_M|$.
 
->[!warning] ¡Cuidado!
+>[!warning]
 >No necesariamente se cumple que $xR_Ly \implies xR_My$.
 
 ## Propiedades de Clausura

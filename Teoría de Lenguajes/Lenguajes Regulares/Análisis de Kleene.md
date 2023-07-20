@@ -1,4 +1,4 @@
-Dado un [[Autómata Finito Determinista|AFD]] $M$ se quiere hallar una [[Expresiones Regulares|Expresiones Regulares]] $r$ tal que $L(M)$ = $L(r)$.
+Dado un [[Autómata Finito Determinista|AFD]] $M$ se quiere hallar una [[Expresiones Regulares|Expresión Regular]] $r$ tal que $\mathscr{L}(M) = \mathscr{L}(r)$.
 
 Para realizar el análisis de Kleene:
 1. Plantear un sistema de ecuaciones con una variable $X_i$ por cada estado. *Cada variable $X_i$ representa "¿Qué forma tengo de llegar a un estado final desde $q_i$?"*

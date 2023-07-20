@@ -1,8 +1,7 @@
 Dos o más [[Procesos]] están esperando indefinidamente por un evento que puede ser causado únicamente por alguno de estos procesos.
 
 ## Grafo de Asignación de Recursos
-Es un *grafo de asignación de recursos* es un *grafo* cuyos vertices representan [[Procesos]] ($p_n$)
-y recursos ($r_n$). A su vez, sus aristas se definen de la siguiente manera,
+Es un *grafo de asignación de recursos* es un *grafo* cuyos vertices representan [[Procesos]] $(p_n)$ y recursos $(r_n)$. A su vez, sus aristas se definen de la siguiente manera,
 - Existe una arista $p_i \rightarrow r_j$ si $p_i$ requiere el recurso $r_j$.
 - Existe una arista $r_i \rightarrow p_j$ si el recurso $r_i$ esta asignado al proceso $p_j$.
 
@@ -89,7 +88,7 @@ Sea $n$ la cantidad de *procesos*, $m$ la cantidad de *recursos*. Entonces, decl
 	Si `finish[i] = 1` para todo `i`, entonces, el sistema esta en [[#Estado Seguro]].
 
 Sea $\{ p_1, ..., p_n\}, \{ r_1, ..., r_m \}$ los conjuntos de procesos y recursos respectivamente. Definimos las siguientes estructuras:
-- $\vec{D}$ un vector de tamaño $m$, donde $D_j$ representa la cantidad disponible respecto al $r_j$.
+- $\vec{D}$ un vector de tamaño $m$, donde $D_j$ representa la cantidad disponible respecto a $r_j$.
 - $\vec{A}$ una matriz de $n \times m$, donde $A_{ij}$ representa la cantidad de respecto a $r_j$ asignadas a $p_i$.
 - $\vec{M}$ una matriz $n \times m$, donde $M_{ij}$ representa la cantidad máxima de recursos respecto a $r_j$ que podría llegar a ser usado por $p_i$.
 - $\vec{N}$ una matriz $n \times m$ que representa la diferencia entre $\vec{M}$ y $\vec{A}$. En otras palabras, una matriz que representa la cantidad de recursos respecto a $r_j$ que podría llegar a ser solicitado por $p_i$.

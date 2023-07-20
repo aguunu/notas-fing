@@ -27,7 +27,7 @@ Se invoca el **CPU Scheduler** en los siguientes casos:
 Se encarga de darle el control del CPU al proceso seleccionado por el *scheduling de corto plazo*.
 Por lo tanto, se encarga de:
 1. [[Procesos#Context Switch|Context Switch]].
-2. Cambiar a modo usuario.
+2. Cambiar a *user mode*.
 3. Saltar a la instrucción en la que se encuentra el proceso *(program counter)*.
 
 >[!important] Dispatch Latency
@@ -38,11 +38,8 @@ Por lo tanto, se encarga de:
 ## Clase de Procesos
 Existen distintas políticas de scheduling dependiendo la clase de procesos que se ejecutan.
 Los procesos tienen ciclos de ráfagas de ejecución *(CPU burst)* y ciclos de ráfagas de espera *(I/O burst)*.
-
-- **Procesos CPU Bound**: Procesos que tienen alto uso del procesador.
-- **Procesos I/O Bound**: Procesos que tienen alto uso de operaciones I/O.
-
-## Criterios para comparar Algoritmos
+- **CPU Bound**: Procesos que tienen alto uso del procesador.
+- **I/O Bound**: Procesos que tienen alto uso de operaciones I/O.
 
 ## Afinidad de Procesador
 En sistemas multiprocesadores simétricos *(SMP systems)* se intenta evitar la migración de un proceso desde un CPU a otro. A esto se le conoce como **afinidad de procesador**. Esto es conveniente para aprovechar la memoria cache del procesador y así aumentar el rendimiento del sistema.

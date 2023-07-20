@@ -1,4 +1,4 @@
-Es un modelo donde dispondremos de una cantidad finita de estados junto con una cinta  infinita sobre la cual podremos movernos a la izquierda o hacia la derecha tantas veces como sea necesario, así como leer y escribirla donde queramos.
+Es un modelo donde dispondremos de una cantidad finita de estados junto con una cinta  infinita sobre la cual podremos movernos hacia la izquierda o derecha tantas veces como sea necesario, así como leer y escribirla donde queramos.
 
 >[!warning] 
 >Nos restringiremos a las *máquinas de Turing* deterministas, de una cinta y con un solo estado de aceptación del cual no salen transiciones (de modo que, al llegar a este, la máquina se detenga).

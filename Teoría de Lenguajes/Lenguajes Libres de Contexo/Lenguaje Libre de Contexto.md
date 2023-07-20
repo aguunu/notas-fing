@@ -1,4 +1,4 @@
-Decimos que un [[Lenguaje]] es *libre de contexto (LC) si existe alguna instancia de los siguientes objetos matemáticos que lo generen:
+Decimos que un [[Lenguaje]] es *libre de contexto (LC)* si existe alguna instancia de los siguientes objetos matemáticos que lo generen:
 - [[Autómata Push-Down]]
 - [[Gramática Libre de Contexto]]
 
