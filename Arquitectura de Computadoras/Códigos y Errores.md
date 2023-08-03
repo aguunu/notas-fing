@@ -46,7 +46,7 @@ Se agrega un bit de paridad a cada representación para que la cantidad de $1's$
 Observar que dada una representación $b_0b_1...b_n$, podemos expresar su bit de paridad como $P = b_ 0 \oplus b_1 \oplus ... \oplus b_n$ (paridad par) y $P = \overline{b_ 0 \oplus b_1 \oplus ... \oplus b_n}$ (paridad impar). Luego, una vez obtenido $P$, podremos chequear si se detectaron errores $E = P \oplus b_0 \oplus b_1 ... \oplus b_n$. Si $E=0$, entonces no se detectaron errores $(\star)$.
 
 ## 2 de 5
-TODO
+#TODO
 
 ## Códigos de Hamming
 Los *Códigos de Hamming* se utilizan para generar representaciones con distancia $3$.
@@ -81,4 +81,4 @@ Consiste en agregarle a un conjunto de códigos binarios transmitidos un código
 >Luego, el mensaje completo sería $0110 \; 1001 \; 1101 \; \color{red}1100$
 
 ## Código de Redundancia Cíclica
-TODO
+#TODO

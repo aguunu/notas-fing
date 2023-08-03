@@ -40,6 +40,6 @@ Los [[#Lenguaje Regular|Lenguajes Regulares]] son cerrados bajo las siguientes o
 10. **Homomorfismo**: Sea $L$ regular y $h$ un homomorfismo[^3] $\implies$ $h(L)$ regular.
 11. **Homomorfismo Inverso**: Sea $L$ regular y $h$ un homomorfismo $\implies$ $h^{-1}(L)$ regular.
 
-[^1]: Se define el reflexión/reverso de un lenguaje $L$ como $L^r=\{x^r \in \Sigma^\ast: x \in L\}$. 
+[^1]: Se define reflexión/reverso de un lenguaje $L$ como $L^r=\{x^r \in \Sigma^\ast: x \in L\}$. 
 [^2]: Se define el cociente entre los lenguajes $L_1$ y $L_2$ como $\frac{L_1}{L_2}=\{x \in \Sigma^\ast : \exists y \in L_2 \land xy \in L_1 \}$.
 [^3]: Un homomorfismo de cadenas es una función sobre cadenas que sustituye cada símbolo por una cadena determinada. A modo de ejemplo, la función $h$ definida por $h(0) = ab$ y $h(1) = \varepsilon$ es un homomorfismo. Dada cualquier cadena formada por $0s$ y $1s$, todos los $0s$ se reemplazan por la cadena $ab$ y todos los $1s$ se reemplazan por $\varepsilon$. Por ejemplo $h(011)=h(0) \cdot h(1) \cdot h(1) = ab$.

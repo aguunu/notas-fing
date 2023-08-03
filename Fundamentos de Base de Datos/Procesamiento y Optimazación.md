@@ -31,4 +31,4 @@ Construir el **Plan Lógico** partiendo del Árbol Canónico:
 4. Cambiar secuencias de selección y productos por *join's*
 5. Mover las proyecciones lo más abajo posible.
 
-##TODO
+#TODO

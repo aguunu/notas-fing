@@ -1,0 +1,1 @@
+Define el *formato* y el *orden* de los mensajes intercambiados entre dos o más entidades comunicándose, además de las *acciones* tomadas en la transmisión y/o recepción de los mensajes u otros eventos.

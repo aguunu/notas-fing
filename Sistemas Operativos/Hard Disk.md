@@ -49,4 +49,4 @@ Luego, para poder ser usado, el sistema operativo primero particionará el disco
 >El sistema operativo puede darle la habilidad a ciertas aplicaciones de usar particiones que no posean *logical formatting* llamadas *(RAW disk/unformatted disk)*. Por ejemplo, algunas bases de datos prefieren este método ya que podrán tener control exacto sobre las posiciones en el disco.
 
 ## Boot Block
-TODO
+#TODO

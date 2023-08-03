@@ -83,11 +83,10 @@ Un conjunto de operadores se llama lógicamente completo si cualquier función b
 
 ## Simplificación
 ### Método Algebraico
-TODO
-
+#TODO
 ### Métodos Sistemáticos
 #### Diagrama de Karnaugh
-TODO
+#TODO
 
 #### Quine-McKlusky
-TODO
+#TODO

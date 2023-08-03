@@ -1,4 +1,4 @@
-TODO: OVERFLOW Y CARRY
+#TODO: OVERFLOW Y CARRY
 ## Representación Binaria
 Sea $n \in \mathbb{Z^+}$, entonces su representación binaria coincide con su expresión en base 2.
 - Rango $k$ bits: $0 \leq n \leq 2^k - 1$.

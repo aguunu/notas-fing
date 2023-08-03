@@ -1,0 +1,1 @@
+El [[Protocolo]] UDP (User Datagram Protocol), no garantiza la confianza al transferir datos entre procesos, en pocas palabras, el protocolo UDP ni siquiera garantiza que el mensaje vaya a llegar a su destino, e incluso pueden llegar desordenados.

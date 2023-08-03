@@ -66,7 +66,7 @@ Es una técnica utilizada en el diseño de *microprocesadores* para implementar 
 - Vertical: Cada instrucción se divide en *campos de control*. Cada *campo de control* activa los componentes específicos del CPU para ejecutar una parte particular de la instrucción.
 
 ## Banco de Registros
-TODO
+#TODO
 
 [^1]: Una *microinstruction* contiene señales de control que activan los diferentes componentes del procesador para ejecutar la instrucción correspondiente.
 [^2]: Un *microprogram* es una secuencia de *microinstructions*.[^microinstruction]
