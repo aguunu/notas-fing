@@ -20,7 +20,7 @@ Para que la comunicación sea posible, se necesita identificar el host, lo cual 
 >El puerto 80 suele estar asociado al servidor HTTP. Por ende, si se desea mandar un mensaje HTTP a fing.edu.uy, se necesita la IP (164.73.32.20) y el número de puerto 80.
 
 ## Servicios en la Red
-Existen dos tipos de [[Protocolo]] para los servicios/aplicaciones, los de **Dominio Público** *(ej. HTTP, SMTP)* y los **Protocolos de Propietario** *ej. Skype*. Algunas características que se deben tener en cuenta en una aplicación de red son:
+Existen dos tipos de [[Protocolo]] para los servicios/aplicaciones, los de **Dominio Público** *(ej. HTTP, SMTP)* y los **Protocolos de Propietario** *(ej. Skype)*. Algunas características que se deben tener en cuenta en una aplicación de red son:
 - Data Loss
 - Time
 - Throughput

@@ -3,7 +3,7 @@ La estructura de la red se divide en capas, donde cada una de estas implementa u
 ## Modelo TCP/IP
 1. Aplicación: Soporte de aplicaciones en red *(ej. FTP, SMTP, HTTP, DNS, P2P)*.
 2. Transporte: Transferencia de los datos *(ej. TCP, UDP)*.
-3. Red: Rutea los *datagramas* de la fuente hasta el destino *(ej. IP, protocolos de enrutamiento)*.
+3. Red: Rutear los *datagramas* de la fuente hasta el destino *(ej. IP, protocolos de enrutamiento)*.
 4. Enlace: Transferir los datos entre elementos de red vecinos *(ej. ethernet, 802.111, PPP).*
 5. Física: Trasferir los bits mediante un [[#Enlace Físico]] *(ej. Fibra Óptica)*.
 

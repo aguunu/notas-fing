@@ -1,0 +1,8 @@
+Un *proxy*, es un servidor que funciona como intermediario entre el cliente y el servidor. Logrando que el cliente se comunique indirectamente con el servidor; el cliente envía su solicitud al servidor proxy, y luego este último reenvía la solicitud al servidor remoto en nombre del cliente.
+
+Los servidores *proxy* pueden tener varios propósitos, incluyendo:
+- Anonimato/Privacidad: Al utilizar un *proxy*, la dirección IP real del cliente no es visible para el servidor destino. Proporcionando cierto grado de anonimato y privacidad.
+- Caché: Un servidor *proxy* puede almacenar en caché el contenido web *(imágenes, archivos, paginas HTML, etc.)*, para optimizar futuras solicitudes y reducir el trafico en la red.
+- Filtrado y Control de Contenido: Un servidor *proxy* puede ser utilizado para filtrar y bloquear ciertos tipos de contenido, como sitios web maliciosos o inapropiados, en entornos empresariales o educativos.
+- Acceso a recursos restringidos: En algunos casos, los *proxies* pueden permitir el acceso a recursos que están bloqueados o restringidos geográficamente para ciertas ubicaciones. *Ejemplo: Un usuario de `www.netflix.com` residente en Uruguay, puede usar un proxy ubicado en USA como intermediario para poder acceder a contenidos restringidos en Uruguay.*
+- Seguridad: Los *proxies* pueden configurarse como *firewall* para monitorear y controlar el tráfico que entra y sale de la red, protegiéndola de ataques maliciosos y no autorizados.

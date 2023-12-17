@@ -1,0 +1,6 @@
+*Network Address Translation (NAT)* es una técnica que permite traducir las direcciones IP en una red. Se utiliza comúnmente para asignar direcciones IP privadas a dispositivos en una red local y luego traducir esas direcciones a una única dirección IP pública cuando se comunican fuera de la red local. Esto ayuda a conservar direcciones IP públicas y mejora la seguridad al ocultar la estructura interna de la red.
+
+Para implementar esto, un router que utilice NAT debe:
+1. Reemplazar en los datagramas de salida la dirección IP y número de puerto origen, por la dirección IP de NAT y un nuevo número de puerto. De esta forma, los clientes/servidores remotos responderán a la dirección IP del NAT y a ese puerto, como dirección de destino.
+2. Recordar en la tabla de traducción NAT el mapeo entre dirección y puerto fuente con la dirección NAT y el nuevo puerto.
+3. Reemplazar en los datagramas entrantes la dirección IP NAT y el nuevo puerto por la correspondiente dirección IP fuente local y el número de puerto original, almacenados en la tabla de NAT.

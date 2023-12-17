@@ -39,14 +39,18 @@ Los enlaces físicos pueden clasificarse en dos categorías:
 		- Terrestrial Microwave
 		- Satellite
 
+Por otra parte, también se clasifican según el *duplex* de la comunicación:
+![[Drawing 2023-09-20 11.08.41.excalidraw|center]]
+
 ## Network Core
 Es una red de *routers* interconectados para la transmisión de datos entre los distintos *end systems*. Esta transmisión se realiza mediante [[#Packet-Switching]] o [[#Circuit-Switching]].
 
 ### Packet-Switching
 Los datos se dividen en [[Data Packets]]. Los paquetes del usuario $A$ y $B$ comparten los mismos recursos de la red. Además, cada paquete ocupa un *bandwidth* completo del enlace, y los recursos son utilizados a medida que son requeridos.
 
->[!warning] 
->Los nodos deben recibir el paquete en su totalidad antes de reenviarlo.
+>[!warning] Contención de Recursos
+>- *Almacenamiento & Reenvío*: los nodos deben recibir el paquete en su totalidad antes de transmitirlo al siguiente enlace.
+>- *Congestión*: se genera una cola de paquetes para el uso del enlace.
 
 ### Circuit-Switching
 Se establece un canal de comunicaciones dedicado entre dos estaciones. Luego, utilizando técnicas de división de señales sobre el mismo medio, varios "llamados" podrán ser atendidos en simultaneo. *Notar: Un canal puede quedar ocioso, es decir, no existe una "llamada" que lo este usando, esto implica desperdiciar recursos de la red.*
