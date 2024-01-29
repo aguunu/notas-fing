@@ -1,0 +1,4 @@
+La dirección MAC (Media Access Control) es un identificador único asignado a la *network interface card (NIC)* de un dispositivo para su uso en una red. Es un identificador de 48 bits grabado en el hardware de fábrica (aunque también puede ser definida por software) y se utiliza para identificar de manera única cada dispositivo dentro de una LAN.
+
+>[!info] 
+>Existen algunas direcciones MAC especiales, como la dirección de Broadcast, definida en $\texttt{FF-FF-FF-FF-FF-FF}$, utilizada como destino cuando el nodo emisor desea que los demás nodos dentro de la LAN reciban el frame que quiere enviar.

@@ -3,7 +3,7 @@ En BGP un [[Dynamic Routing#Autonomous System|AS]] es identificado mediante un n
 - eBGP: obtener la información de alcance de la subred a partir de los AS vecinos.
 - iBGP: propagar la información de alcance a todos los routers internos al AS.
 
-En BGP, los pares de routers intercambian la información de ruteo mediante conexiones TCP. En general, existe una conexión BGP-TCP por cada enlace que conecta directamente dos routers en dos AS distintos. Además, hay también una conexión TCP semipermanente entre los routers dentro del AS.
+En BGP, los pares de routers intercambian la información de ruteo mediante conexiones [[TCP]]. En general, existe una conexión TCP por cada enlace que conecta directamente dos routers en dos AS distintos. Además, hay también una conexión TCP semipermanente entre los routers dentro del AS.
 Para cada conexión TCP, los dos routers que participan son llamados *BGP peers*, y la conexión TCP, acompañada de todos los mensajes BGP enviados a través de esta es llamada *BGP session*. Estos mensajes se utilizan para comunicar los caminos a diferentes prefijos de redes de destino, donde cada prefijo representa una subred o una colección de subredes.
 
 Además de anunciar la subred destino, también se anuncian ciertos atributos, entre ellos se destacan:

@@ -1,3 +1,5 @@
+Es un dispositivo de [[Capa de Red]] encargado de enrutar el tráfico entrante por la interfaz correcta mediante su *[[Forwarding|forwarding table]]*. Además, es el encargado de ejecutar los [[Routing Algorithms]].
+
 ## Switching Fabric
 Se encarga de transferir el paquete desde el buffer de entrada al buffer de salida correspondiente.
 

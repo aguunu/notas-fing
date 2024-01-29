@@ -1,4 +1,3 @@
-
 - *broadcast routing*: mecanismo para enviar un paquete desde un nodo a *todos* los demás nodos de la red.
 - *multicast routing*: mecanismo para enviar un paquete desde un nodo a un *subconjunto* de los demás nodos de la red.
 

@@ -37,7 +37,7 @@ $$2^p \geq k + p + 1$$
 
 Donde $2^p$ es la cantidad de posiciones que se pueden "señalar", observar que esta cantidad deberá ser mayor o igual a la cantidad de bits de la representación, en este caso, $k$ bits de información, $p+1$ bits de redundancia, donde el último de estos índica si hay o no error.
 
-## Paridad
+## Paridad de 1 bit
 Se agrega un bit de paridad a cada representación para que la cantidad de $1's$ en la representación (incluyendo el bit de paridad) sea par (paridad par) o impar (paridad impar).
 
 >[!error] 

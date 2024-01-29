@@ -25,23 +25,6 @@ Hace referencia a la red que se encarga de conectar físicamente un *end system*
 	- 3G/4G/5G
 	- LTE
 
-### Enlace Físico
-Los enlaces físicos pueden clasificarse en dos categorías:
-- Guided Media
-	- Twisted Pair (TP)
-	- Coaxial Cable
-	- Fiber Optic Cable
-- Unguided Media: No posee un "cable físico". Por lo general, la señal tiende a ser *broadcast*, es decir, no se emite a un receptor en especifico.
-	- Wireless Radio: La señales se comunican a través de bandas que se encuentran en el *espectro electromagnético*.
-		- Wireless LAN (Local Access Network) (WIFI)
-		- Wide-Area *(e.g. 4G)*
-		- Bluetooth
-		- Terrestrial Microwave
-		- Satellite
-
-Por otra parte, también se clasifican según el *duplex* de la comunicación:
-![[Drawing 2023-09-20 11.08.41.excalidraw|center]]
-
 ## Network Core
 Es una red de *routers* interconectados para la transmisión de datos entre los distintos *end systems*. Esta transmisión se realiza mediante [[#Packet-Switching]] o [[#Circuit-Switching]].
 
@@ -57,11 +40,13 @@ Se establece un canal de comunicaciones dedicado entre dos estaciones. Luego, ut
 - **Frequency Division Multiplexing (FDM)**: Divide el *bandwidth* en un conjunto de frecuencias que no se sobrepone entre ellas **(Frequency Bands)**, de esta forma, permitiendo trasmitir varios flujos de datos sobre el mismo enlace físico.
 - **Time Division Multiplexing (TDM)**: Multiples frecuencias se colocan sobre el mismo enlace físico separando cada una de estas en segmentos que poseen una corta duración sobre el enlace físico.
 
+## Goodput
+Es la velocidad a la que los __datos útiles__ atraviesan un [[Enlace]]. *Notar: el goodput contempla únicamente los datos útiles, es decir, los datos enviados desde [[Capa de Aplicación]].*
+
 ## Throughput
-Indica la velocidad en que los datos se transmiten sobre un canal de comunicación entre un emisor y receptor en un instante de tiempo determinado. *Nota: Su unidad de medida es (bits/unidad de tiempo).*
+Es la velocidad a la que los datos atraviesan un [[Enlace]]. *Notar: el throughput contempla las retransmisiones, flow control, congestion avoidance, así como también los datos de los headers.*
 
 ## Bandwidth
-Indica la cantidad máxima de datos que pueden ser trasmitidos sobre un canal de comunicación en un instante de tiempo determinado. *Nota: Su unidad de medida es (bits/unidad de tiempo).*
+Es la velocidad máxima a la que los datos pueden atravesar un [[Enlace]]. Por ende, podemos deducir la siguiente ecuación:
 
-## Network of Networks
-#TODO 
+$$\texttt{Goodput} < \texttt{Throughput} \leq \texttt{Bandwidth}$$
