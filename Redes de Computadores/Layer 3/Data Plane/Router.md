@@ -1,4 +1,4 @@
-### Switching Fabric
+## Switching Fabric
 Se encarga de transferir el paquete desde el buffer de entrada al buffer de salida correspondiente.
 
 - Switching por Memoria: el paquete es copiado a la memoria del sistema. Por ende, la velocidad está limitada por el ancho de banda de la memoria.
@@ -10,7 +10,7 @@ Se encarga de transferir el paquete desde el buffer de entrada al buffer de sali
 Un paquete que se encuentra bloqueado puede impedirle el paso a paquetes que arriban en la misma interfaz, de esta forma, bloqueándolos. A este evento se le denomina **Head-of-the-Line (HOL)**.
 Por otra parte, los paquetes que arriban en determinada interfaz pueden ser descartados en caso de que el *buffer* de dicha interfaz se encuentre lleno.
 
-### Packet Scheduling
+## Packet Scheduling
 Se encarga de seleccionar el próximo paquete a enviar por el enlace.
 - FIFO Scheduling: Se envían en orden de arribo.
 	- *discard policy:* *tail drop, priority, random.*

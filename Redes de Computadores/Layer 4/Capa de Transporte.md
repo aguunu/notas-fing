@@ -24,7 +24,7 @@ Mientras que las acciones que realiza un *receptor* son las siguientes:
 Existen dos protocolos disponibles en esta capa, [[TCP]] y [[UDP]].
 
 ## Multiplexing & Demultiplexing
-El *multiplexing* y *demultiplexing* consiste en extender el servicio de comunicación host-to-host de la capa de red, a un servicio de comunicación process-to-process para los servicios ejecutandose en los hosts.
+El *multiplexing* y *demultiplexing* consiste en extender el servicio de comunicación host-to-host de la capa de red, a un servicio de comunicación process-to-process para los servicios ejecutándose en los hosts.
 
 >[!question] ¿Cómo funciona *demultiplexing*?
 >El host recibe *IP datagrams*, cada *datagram* posee el *source IP address* y *destination IP address*. Por otro lado, cada *datagram* posee 1 *tranport-layer segment*, donde cada uno de estos posee *source port* y *destination port*.
