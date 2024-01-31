@@ -1,5 +1,5 @@
-## Enlace P2P
-Un enlace *point-to-point (P2P)* consiste de un único nodo emisor en uno de los extremos del enlace, y un único nodo receptor en el extremo opuesto.
+## Enlace Point To Point
+Un enlace *point-to-point (PPP)* consiste de un único nodo emisor en uno de los extremos del enlace, y un único nodo receptor en el extremo opuesto.
 
 Algunos ejemplos:
  - Twisted Pair (TP)

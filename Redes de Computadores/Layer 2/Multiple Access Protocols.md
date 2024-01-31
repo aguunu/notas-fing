@@ -12,8 +12,8 @@ Existen 3 tipos de *Multiple Access Protocols*:
 
 ## Channel Partitioning
 Estos protocolos dividen el canal en piezas que luego son asignadas a un nodo en particular para uso exclusivo. 
-- Time Division Multiple Access (TDMA): Se accede al canal en “rondas”. Cada nodo tiene un slot de largo fijo (tiempo de transmisión del paquete) en cada ronda.
-- Frequency Division Multiple Access (FDMA): El espectro del canal se divide en bandas de frecuencia. Cada nodo tiene asignada una banda de frecuencia fija. 
+- Time Division Multiple Access (TDMA): se accede al canal en “rondas”. Cada nodo tiene un slot de largo fijo (tiempo de transmisión del paquete) en cada ronda.
+- Frequency Division Multiple Access (FDMA): el espectro del canal se divide en bandas de frecuencia. Cada nodo tiene asignada una banda de frecuencia fija. 
 
 ![[Drawing 2024-01-29 16.03.49.excalidraw]]
 
@@ -25,18 +25,18 @@ Estos protocolos permiten colisiones y luego se "recuperan" de estas.
 
 ### Slotted ALOHA
 El protocolo *slotted ALOHA* hace las siguientes suposiciones:
-- Todos los frames tienen el mismo tamaño.
-- El tiempo se divide en slots de igual tamaño (el tiempo para transmitir un frame).
-- Los nodos empiezan a transmitir solo el comienzo del slot.
-- Nodos sincronizados.
-- Si 2 o más nodos transmite en un slot, todos los nodos detectan la colisión.
+- Todos los frames poseen el mismo tamaño.
+- El tiempo se divide en slots de tamaño fijo.
+- Los nodos empiezan a transmitir solo al inicio del slot.
+- Todos los nodos están sincronizados, de esta forma saben cuando inicia un slot.
+- Si 2 o más nodos colisionan en un mismo slot, todos los nodos detectan la colisión.
 
-Al transmitir un nuevo frame en el siguiente slot:
+Al transmitir un frame:
 - Si no hay colisión, el nodo puede enviar un nuevo frame en el siguiente slot.
 - Si hay colisión, el nodo retransmite el frame en cada slot subsecuente con probabilidad $p$ hasta que haya éxito.
 
-### Pure (Unslotted) ALOHA
-A diferencia de [[#Slotted ALOHA]] cuando un nodo tiene un frame para transmitir, lo transmite en cualquier momento sin esperar.
+### Unslotted ALOHA
+A diferencia de [[#Slotted ALOHA]], *unslotted ALOHA* no utiliza slots. Por ende, cuando un nodo tiene un frame para transmitir, lo transmite en cualquier momento sin esperar.
 
 ### CSMA
 CSMA (Carrier Sense Multiple Access) cumple con las siguientes reglas:
@@ -49,14 +49,14 @@ CSMA (Carrier Sense Multiple Access) cumple con las siguientes reglas:
 ### CSMA/CD
 CSMA/CD (Carrier Sense Multiple Access / Collision Detection) es una mejora de [[#CSMA]] que incorpora la detección y manejo de colisiones durante la transmisión.
 
-Si durante la transmisión el nodo detecta una colisión, envía una *jam signal*. Luego, el nodo entra en *binary (exponential) backoff* esperando un tiempo aleatorio antes de intentar transmitir nuevamente (este tiempo aumenta exponencialmente), reduciendo la probabilidad de otra colisión.
+Si durante la transmisión el nodo detecta una colisión, envía una *jam signal*. Luego, el nodo entra en *exponential backoff* esperando un tiempo aleatorio antes de intentar transmitir nuevamente (este tiempo aumenta exponencialmente), reduciendo la probabilidad de otra colisión.
 
 1. NIC recibe un datagrama de la capa de red y crea un frame.
 2. Si la NIC siente un canal ocioso, comienza la transmisión. Si la NIC siente un canal ocupado, espera hasta que el canal quede ocioso y luego transmite.
-3. Si la NIC transmite el frame entero sin detectar otra transmisión, entonces la NIC completo su trabajo para ese frame.
-4. Si la NIC detecta otra transmisión mientras está transmitiendo, aborta y envía una señal de atasco.
-5. Luego de abortar, la NIC entra a *Exponential Backoff*.
-	- *Exponential Backoff*: luego de la *n-ésima* colisión, la NIC elige un $K \in \{0,1, .., 2^n - 1\}$ de forma aleatoria y procede a esperar $K \cdot 512 \textit{ bit times }$[^bit-time] y regresa al paso 2.
+3. Si la NIC transmite el frame entero sin detectar colisión, entonces la NIC completo su trabajo para ese frame.
+4. Si la NIC detecta colisión mientras está transmitiendo, aborta y envía una *jam signal*.
+5. Luego de abortar, la NIC pasa al estado *exponential backoff*.
+	- *exponential backoff:* luego de la *$n$-ésima* colisión, la NIC elige un $K \in \{0,1, .., 2^n - 1\}$ de forma aleatoria y procede a esperar $K \cdot 512 \textit{ bit times }$[^bit-time] y regresa al paso 2.
 
 ## Taking Turns
 - Polling Protocol: Un nodo master invita a los nodos esclavos a transmitir en turnos.

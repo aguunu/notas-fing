@@ -9,30 +9,7 @@ El protocolo posee las siguientes características:
 - Control de Flujo: El emisor no va a "abrumar" al receptor con la cantidad de datos transferidos.
 - Control de Congestión: Apura al emisor cuando la red está sobrecargada.
 
-```
-    0                   1                   2                   3
-    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |          Source Port          |       Destination Port        |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                        Sequence Number                        |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                    Acknowledgment Number                      |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |  Data |       |C|E|U|A|P|R|S|F|                               |
-   | Offset| Rsrvd |W|C|R|C|S|S|Y|I|            Window             |
-   |       |       |R|E|G|K|H|T|N|N|                               |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |           Checksum            |         Urgent Pointer        |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                           [Options]                           |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                                                               :
-   :                             Data                              :
-   :                                                               |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
-
+![[Drawing 2024-01-30 15.44.55.excalidraw]]
 - *Sequence Number*: Es el número de secuencia que identifica al primer byte del segmento dentro del *byte-stream*.
 - *Acknowledgement Number (ACK)*: Es el número de secuencia que identifica al byte esperado dentro del *byte-stream* desde el otro lado de la conexión. *Notar: el ACK es acumulativo.*
 

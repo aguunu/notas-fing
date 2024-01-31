@@ -11,7 +11,7 @@ El datagrama correspondiente al protocolo de red *(ej. IPv4)* es encapsulado en 
 - *Source address (6 bytes):* [[MAC Address]] origen.
 - *Type (2 bytes):* indica el protocolo de capa superior.
 - *payload (46-1500 bytes):* los datos del datagrama de la capa superior. *Notar que el MTU máximo es de 1500 bytes.*
-- *CRC (4 bytes):* campo de verificación de [[Capa de Enlace#Cyclic Redundancy Check (CRC)|CRC]]. Si se detecta un error, el *frame* se descarta.
+- *CRC (4 bytes):* campo de verificación de [[Detección y Corrección de Errores#Cyclic Redundancy Check|CRC]]. Si se detecta un error, el *frame* se descarta.
 
 >[!info] 
 >Observar que un *ethernet frame* tendrá un tamaño mínimo de 64 bytes y un tamaño máximo de 1518 bytes.

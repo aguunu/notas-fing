@@ -80,5 +80,12 @@ Consiste en agregarle a un conjunto de códigos binarios transmitidos un código
 >
 >Luego, el mensaje completo sería $0110 \; 1001 \; 1101 \; \color{red}1100$
 
-## Código de Redundancia Cíclica
-#TODO
+## Cyclic Redundancy Check
+En primer lugar, ambas partes acuerdan un patrón $G$ de $r + 1$ bits. Luego, el objetivo de *cyclic redundancy check (CRC)* al transmitir un mensaje $D$, es encontrar un código $R$ de $r$ bits que cumpla $DR \pmod{G} = 0$. Por lo tanto, el receptor detectará un error si $DR \pmod{G} \neq 0$.
+
+>[!tip] 
+>Necesitamos hallar $R$ que cumpla $D \cdot 2^r \oplus R \pmod G = 0$.
+>*Notar: $D \cdot 2^r$ equivale a $D$ al aplicarle un desplazamiento de $r$ bits hacia izquierda. Mientras que $\oplus$ equivale a la suma bit a bit.*
+>
+>Por ende, podremos calcular $R$ con la siguiente formula:
+>$$R=D \cdot 2^r \pmod G$$

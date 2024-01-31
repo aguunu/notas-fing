@@ -3,10 +3,10 @@ La *network interface card (NIC)* es el dispositivo encargado de implementar la 
 A través de un [[Enlace]], un nodo transmisor encapsula el datagrama en un *link-layer frame* y lo transmite mediante el enlace.
 
 ## Detección y Corrección de Errores
-- *[[Códigos y Errores#Paridad de 1 bit|Single Bit Parity]]: detecta un único bit erróneo.*
+- *[[Detección y Corrección de Errores#Paridad de 1 bit|Single Bit Parity]]: detecta un único bit erróneo.*
 - *Two Dimensional Bit Parity: detecta y corrige un único bit erróneo.*
-- *[[Códigos y Errores#Checksum|Checksum]]: detecta errores. Notar: se utiliza únicamente en [[Capa de Transporte]].*
-- *CRC (Cyclic Redundancy Check):*
+- *[[Detección y Corrección de Errores#Checksum|Checksum]]: detecta errores. Notar: se utiliza únicamente en [[Capa de Transporte]].*
+- *[[Detección y Corrección de Errores#Cyclic Redundancy Check|Cyclic Redundancy Check (CRC)]]: detecta errores.*
 
 ## Dominio de Colisión
 Un [[Enlace]] en donde pueden ocurrir colisiones define un *dominio de colisión*. Por lo tanto,  un [[Enlace#Enlace Broadcast|Enlace Broadcast]] define un *dominio de colisión*.
