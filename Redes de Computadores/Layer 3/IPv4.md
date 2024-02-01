@@ -1,6 +1,15 @@
 
 ![[Drawing 2024-01-28 16.40.28.excalidraw|center]]
 
+## IPv4 Address
+Es un dirección de 32 bits que identifica una interfaz en la red. Además, existen bloques de direcciones privadas:
+- Clase A Privada `10.0.0.0/8`
+- Class B Privada: `172.16.0.0/12`
+- Class C Privada: `192.168.0.0/16`
+
+>[!hint] 
+>Por lo general, la primer dirección de una red se reserva para la identificación de esta, mientras que la última se reserva para la dirección de broadcast.
+
 ## Fragmentación
 Cada nodo de la red chequea si el tamaño de cada paquete IP que intenta enviar es soportado por el [[Maximum Transmission Unit|MTU]] del próximo nodo. En caso de que un paquete IP exceda el [[Maximum Transmission Unit|MTU]] del próximo nodo, este es dividido en fragmentos, reensamblándose únicamente cuando todos los fragmentos llegan al destino final. 
 

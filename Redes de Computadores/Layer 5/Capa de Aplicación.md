@@ -8,11 +8,6 @@ Es la capa cuyo objetivo es brindarle soporte a las aplicaciones de red *(ej. FT
 ## Comunicación entre Procesos
 Un [[Procesos|Proceso]] en ejecución en cierto host se comunica mediante [[Inter Process Communication]] con procesos que se encuentran en el mismo host. Sin embargo, en distintos hosts, se comunican intercambiando mensajes por la red.
 
-### Sockets
-Es una interfaz que permite a la comunicación de procesos que se encuentran en distintos hosts mediante la emisión y recepción de mensajes.
-
-Los únicos controles que se hacen desde el *socket* son la elección del protocolo de transporte y la habilidad de corregir algunos parámetros.
-
 ### Direccionando Procesos
 Para que la comunicación sea posible, se necesita identificar el host, lo cual se realiza mediante la dirección IP de este. Luego, una vez identificado el host, se necesitará identificar el proceso. Por este motivo, el proceso tendrá asignado un *port number* dentro del host para poder ser identificado.
 

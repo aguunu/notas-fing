@@ -29,25 +29,29 @@ Cuando un *host* realiza una consulta de DNS, esta es enviada al *local DNS serv
 >En caso de que la consulta sea resuelta por cache, existe la posibilidad de que el valor asociado este *out of date*, es decir, sea invalido. Por lo tanto, el cache eliminará una entrada después de un tiempo llamado **TTL**.
 
 ![[Drawing 2023-08-04 17.04.51.excalidraw|center]]
-## DNS Records
-Los registros de un DNS **(RR)**, se almacenan respetando el siguiente formato: `(name, value, type, ttl)`.
+## Resource Record
+Los registros de un DNS (*resource record*), se almacenan respetando en el siguiente formato: ($\texttt{name}$, $\texttt{value}$, $\texttt{type}$, $\texttt{ttl}$).
 
-- `type=A`
-	- `name` referencia a un *hostname/dominio.*
-	- `value` IP asociada a `name`.
-- `type=NS`
-	- `name` referencia a un *host* *(ej. fing.com).*
-	- `value` es el *hostname* del *authoritative name server* asociado a `name`.
-- `type=CNAME`
-	- `name` es un alias del objeto.
-	- `value` es el nombre canónico asociado a `name` *(ej. www.ibm.com es realmente servereast.backup2.ibmcom).* *Nota: Cuando el DNS consulta un alias y encuentra un CNAME asociado, luego, consultará  dicho nombre canónico.*
-- `type=MX`
-	- `name` referencia a un *hostname/dominio.*
-	- `value` es el nombre de servidor [[Electronic Mail]] asociado a `name`.
+- $\texttt{type=A} \rightarrow$ referencia a una dirección de host.
+- $\texttt{type=NS} \rightarrow$ referencia a un servidor autoritativo para dicho dominio.
+- $\texttt{type=CNAME} \rightarrow$ referencia al nombre canónico para el alias. *(ej. el nombre canónico de www.ibm.com es  servereast.backup2.ibmcom).*
+- $\texttt{type=MX} \rightarrow$  referencia a un servidor [[Electronic Mail|EMAIL]] para dicho dominio.
 
 ## DNS Protocol
-Los mensajes de consulta y respuestas poseen el mismo formato.
+Los mensajes de consulta y respuestas poseen el siguiente formato.
 ![[Drawing 2023-08-04 18.10.17.excalidraw|center]]
+- $\texttt{ID} :$ identificador de 16 bits asignado por el programa que genera cualquier tipo de consulta. Este identificador se copia  la respuesta correspondiente y puede ser utilizada por el solicitante  para comparar las respuestas a las consultas pendientes.
+- $\texttt{QR (Flag)} :$ especifica si el mensaje es un consulta (0), o una respuesta (1).
+- $\texttt{Authoritative Answer (AA Flag)} :$ este bit es válido en respuestas, y especifica que el servidor  que responde es autoritativo para el nombre de dominio en la sección $\texttt{Questions}$.
+- $\texttt{Recursion Desired (RD Flag)} :$ este bit puede establecerse en una consulta y se copia en la respuesta. Especifica que el emisor desea que la consulta sea recursiva.
+- $\texttt{Recursion Available (RA Flag)} :$ se establece en una respuesta, indica si el soporte de consultas recursivas es disponible en el servidor de nombres.
+- $\texttt{Question Section} :$ contiene las consultas realizadas siguiendo el formato $(\texttt{class, type, value})$.
+- $\texttt{Answer Section} :$ contiene [[#Resource Record|RRs]] que responden a la $\texttt{Question Section}$.
+- $\texttt{Authority Section} :$ contiene [[#Resource Record|RRs]] que apuntan a un servidor autoritativo.
+- $\texttt{Additional Information} :$ contiene [[#Resource Record|RRs]] adicionales, es decir, que no se consideran respuesta a la $\texttt{Question Section}$.
+
+*Notar: para saber si una consulta se produjo de forma recursiva se realiza $\texttt{RD} \land \texttt{RA}$ en la respuesta, siendo recursiva si el resultado es $1$.*
+
 >[!example] 
 >Supongamos que empezamos un nuevo emprendimiento "Segurovich" y deseamos agregar nuestro sitio al DNS.
 >

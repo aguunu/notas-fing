@@ -9,9 +9,7 @@ A través de un [[Enlace]], un nodo transmisor encapsula el datagrama en un *lin
 - *[[Detección y Corrección de Errores#Cyclic Redundancy Check|Cyclic Redundancy Check (CRC)]]: detecta errores.*
 
 ## Dominio de Colisión
-Un [[Enlace]] en donde pueden ocurrir colisiones define un *dominio de colisión*. Por lo tanto,  un [[Enlace#Enlace Broadcast|Enlace Broadcast]] define un *dominio de colisión*.
+Un *dominio de colisión* es un conjunto de nodos que pueden sufrir colisiones entre ellos al enviar un [[Ethernet#Ethernet Frame|Frame]]. Un [[Enlace]] en donde pueden ocurrir colisiones define un *dominio de colisión*. Por lo tanto, un [[Enlace#Enlace Broadcast|Enlace Broadcast]] define un *dominio de colisión*.
 
 ## Dominio de Broadcast
-El *dominio de broadcast* es la división lógica de la red dentro de la cual los nodos envían mensajes de broadcast. Dos nodos dentro del dominio de broadcast comparten *gateway*, dirección de subred y pueden transmitir a otro nodo dentro del dominio sin necesidad de enrutamiento; es decir, se encuentran en la misma LAN. Los dominios broadcast están delimitados por routers.
-
-
+Un *dominio de broadcast* es un conjunto de nodos que forman parte de una LAN. Además, a todos estos nodos son capaces de recibir el mismo [[Ethernet#Ethernet Frame|Frame]] cuya [[MAC Address|MAC]] destino es `FF-FF-FF-FF-FF-FF`.
