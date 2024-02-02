@@ -1,28 +1,37 @@
-El *EMAIL (Electronic Mail)* tiene tres componentes principales:
-- User Agents
-- Mail Server
-- SMTP
-
-1. El emisor compone un *e-mail* destinado a un destinatario.
-2. El **User Agent** *(ej. Outlook, Thunderbird, iPhone Mail Client)* del emisor se encarga de enviar el mensaje a su servidor mail usando el protocolo SMTP; donde el mensaje es colocado en una cola de mensajes.
-3. Dicho servidor inicia una conexión [[TCP]] con el servidor mail del destinatario y envía el mensaje por la conexión [[TCP]] iniciada.
-4. El servidor mail del destinatario coloca el mensaje en la casilla del destinatario.
-5. El destinatario podrá invocar su *User Agent* para leer el mensaje recibido.
 ## SMTP
-Se encarga de enviar los mensajes entre los servidores emisores y los servidores receptores de mail. Utiliza el protocolo TCP para el envío confiable de mensajes de mail desde el servidor cliente al “servidor” a través del puerto 25, a través de una transferencia directa.
-El envío de mail consiste de tres fases:
-1. Handshaking
-2. Transferencia de mensajes
-3. Cierre
+SMTP (Simple Mail Transfer Protocol) permite a los servidores que implementen dicho protocolo intercambiar correos electrónicos entre ellos. *Importante: SMTP no es un protocolo de recuperación de correos, sino que es un protocolo de entrega.
 
-```
+## Email Client
+Un *email client (agent)* es un software utilizado por el usuario donde se encuentra implementado el protocolo `SMTP` al igual que algunos protocolos de recuperación como `POP` e `IMAP`. Los *email clients* permiten al usuario enviar, recibir y responder correos. *Outlook, Gmail y Thunderbird son ejemplos de dicho software.*
+
+## Mail Server
+Los *mail servers* conforman el núcleo de la infraestructura del correo electrónico. Cada usuario posee su *mailbox* ubicado en un *mail server* administrado por su proveedor de correo electrónico.
+
+El envío de un correo consiste de los siguientes pasos:
+1. El emisor indica el correo del receptor, compone un mensaje y lo "envía".
+2. El *email client* envía el correo a uno de los *mail servers* del proveedor del emisor.
+3. Se inicia una conexión [[TCP]] entre uno de los *mail servers* del emisor y uno de los *mail servers* del receptor. *Nota: puede usar servidores SMTP intermediarios, aunque no es una practica común.*
+4. Se realiza un *SMTP handshaking* y el mensaje es enviado desde un *mail server* al otro.
+5. El *mail server* del receptor recibe el mensaje y lo coloca en el *mailbox* del receptor.
+6. Finalmente, el receptor invoca a su *email client* y extrae el correo de su *mailbox*.
+
+>[!error] 
+>Si una vez que el correo se encuentra en el *mail server* del emisor, y este no puede ser enviado, el correo se colocará en una *message queue* donde se intentará retransmitir o se le avisará al emisor sobre el fallo.
+
+```Handshake
 S: 220 hamburger.edu
 C: HELO crepes.fr
 S: 250 Hello crepes.fr, pleased to meet you
+```
+
+``` Header
 C: MAIL FROM: <alice@crepes.fr>
 S: 250 alice@crepes.fr... Sender ok
 C: RCPT TO: <bob@hamburger.edu>
 S: 250 bob@hamburger.edu ... Recipent ok
+```
+
+```Message
 C: DATA
 S: 345 Enter mail, end with "." on a line by itself
 C: Do you like ketchup?
@@ -33,5 +42,5 @@ C: QUIT
 S: 221 hamburger.edu closing connection
 ```
 
-## Protocolos de Acceso a Mail
-Si el cliente receptor desea acceder al mensaje, necesita utilizar un Protocolo de Acceso a Mail, el cual recupera del servidor. Entre ellos se destacan *POP*, *IMAP*, *HTTP*.
+>[!tip] 
+>Para obtener la IP de un mail server del proveedor `fing.edu.uy` bastaría con realizar una consulta [[DNS]] del registro `MX` sobre dicho dominio.

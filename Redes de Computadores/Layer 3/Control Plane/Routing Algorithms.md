@@ -49,4 +49,11 @@ Ahora, supongamos que $(a, c)$ cambia su costo a $60$:
 - *después de muchas iteraciones...* $b$ obtiene el DV de $a$ y observa que $a$ tiene un camino *nuevo* costo hacia $c$. Por ende, recalcula su mejor camino hacia $c$ obteniendo $b \xrightarrow{\textcolor{green}{50}} c$ y emite su nuevo DV a sus vecinos.
 
 
-Una forma de evitar este problema es la técnica *poison reverse*. Cuando el nodo $a$ enruta su tráfico hacia $c$ usando $b$, enviará su DV a $b$ modificando su distancia con $b$ de forma que esta sea infinito. *Notar que si el DV de $b$ esta enrutando el tráfico hacia $c$ usando $a$, es decir, $b \rightarrow a \cdots \rightarrow c$ ahora observará que $a$ tiene un nuevo camino hacia $c$, lo que implica que deberá recalcular la ruta para llegar a $c$.*
+>[!success] 
+>Una forma de evitar este problema es la técnica *poison reverse*.
+>Cuando el nodo $a$ enruta su tráfico hacia $c$ usando $b$, enviará su DV a $b$ modificando su distancia con $b$ de forma que esta sea infinito.
+>
+>*Notar que si el DV de $b$ esta enrutando el tráfico hacia $c$ usando $a$, es decir, $b \rightarrow a \cdots \rightarrow c$ ahora observará que $a$ tiene un nuevo camino hacia $c$, lo que implica que deberá recalcular la ruta para llegar a $c$.*
+
+>[!success] 
+>Otra forma de evitar este problema es la técnica *split-horizon*. Consiste en no anunciar una ruta por la interfaz de donde la aprendió.

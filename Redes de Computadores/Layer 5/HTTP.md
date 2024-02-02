@@ -1,19 +1,21 @@
-HTTP (Hyper Text Transfer Protocol). Es el protocolo de la [[Capa de Aplicación]] de la Web, y se basa en el [[Capa de Aplicación#Modelo de Aplicaciones|Modelo Cliente-Servidor]], donde el cliente es el buscador que solicita, recibe y “muestra” los objetos de la web. Y el servidor es el servidor web, que recibe las peticiones y envía los objetos como respuesta.
+HTTP (Hyper Text Transfer Protocol). Es el protocolo de la [[Capa de Aplicación]] de la Web, y se basa en el [[Capa de Aplicación#Modelo de Aplicaciones|Modelo Cliente-Servidor]], donde el cliente solicita, recibe y “muestra” los objetos de la web. Y el servidor es el servidor web, que recibe las peticiones y envía los objetos como respuesta.
 
 Cada página web consiste en un archivo base HTML que incluye referencias a otros objetos, cada uno de ellos direccionable por una URL.
 
 >[!example]
->Sea la URL `www.someschool.edu/someDept/pic.gig`, donde el `www.someschool.edu` indica el nombre del host, y `/someDept/pic.gig` indica el nombre del camino.
+>Sea la URL `www.someschool.edu/someDept/pic.gig`, `www.someschool.edu` indica el nombre del host, y `/someDept/pic.gig` indica el nombre del camino.
 
-HTTP utiliza [[TCP]] como su protocolo de transporte. El cliente inicia una conexión [[TCP]] (crea el [[Capa de Aplicación#Sockets|Socket]]) con el servidor, en el puerto 80. El servidor recibe y acepta la conexión [[TCP]] del cliente. Los mensajes HTTP (mensajes del protocolo de la capa de aplicación) son intercambiados entre el cliente HTTP y el servidor HTTP. *Nota: Como se utiliza [[TCP]] como protocolo, se puede garantizar que tanto los mensajes enviados como los recibidos llegaran intactos.* Por otra parte, el protocolo HTTP no mantiene ninguna información sobre las peticiones HTTP de los clientes **(stateless)**.
-- **HTTP Persistente**: Como máximo un objeto es enviado a través de la conexión TCP.
+HTTP utiliza [[TCP]] como su protocolo de transporte. El cliente inicia una conexión [[TCP]] con el servidor *(por lo general usando puerto 80)*. El servidor recibe y acepta la conexión [[TCP]] del cliente. Los mensajes HTTP son intercambiados entre el cliente HTTP y el servidor HTTP. *Nota: Como se utiliza [[TCP]] como protocolo, se puede garantizar que tanto los mensajes enviados como los recibidos llegaran intactos.* Por otra parte, el protocolo HTTP no mantiene ninguna información sobre las peticiones HTTP de los clientes **(stateless)**.
+
+## HTTP 1.0
+Una de las principales características de la versión `1.0` del protocolo es la no persistencia, es decir, como máximo un objeto es enviado a través de la conexión TCP. Por lo tanto, para detectar el fin de un objeto `HTTP`, el receptor puede utilizar el campo `Content-Length` o esperar a que el servidor cierre la conexión TCP.
   ![[Drawing 2023-07-31 18.06.54.excalidraw|center]]
-- **HTTP No-Persistente**: En este tipo de conexión el servidor deja la conexión abierta después de enviar la respuesta, por lo que los mensajes HTTP subsecuentes entre el mismo cliente/servidor se envían a través de la misma conexión abierta.
+## HTTP 1.1
+En la versión `1.1` del protocolo, el protocolo pasa a ser *persistente*, es decir, el servidor deja la conexión abierta después de enviar la respuesta, por lo que los mensajes HTTP subsecuentes entre el mismo cliente/servidor se envían a través de la misma conexión abierta. Esto implica que para detecta el fin de un objeto `HTTP 1.1`, el receptor deberá utilizar el capo `Contet-Length`.
 
-Se define **RTT (Round Trip Time)** como el tiempo que tarda un [[Data Packets|Data Packet]] en viajar desde el cliente al servidor y volver.
-## HTTP Request Message
-Métodos HTTP/1.0: `GET`, `POST`, `HEAD`.
-Métodos HTTP/1.1: `GET`, `POST`, `HEAD`, `PUT`, `DELETE`.
+## Request Message
+Métodos [[#HTTP 1.0]]: `GET`, `POST`, `HEAD`.
+Métodos [[#HTTP 1.1]]: `GET`, `POST`, `HEAD`, `PUT`, `DELETE`.
 
 >[!note] Conditional GET
 >Se trata de no retornar el objeto si la cache tiene una versión valida.
@@ -33,7 +35,7 @@ Connection: keep-alive\r\n
 \r\n
 ```
 
-## HTTP Response Message
+## Response Message
 
 ```
 HTTP/1.1 200 OK
@@ -50,7 +52,7 @@ Content-Type: text/html; charset=UTF-8
 data data ... data
 ```
 
-## Cookies
+## Cookie
 Los sitios webs y los navegadores utilizan *cookies* para poder mantener un estado entre las transacciones. Una *cookie* es asignada a cierto cliente por el servidor, luego, a través de una *HTTP response*, el servidor devuelve la *cookie* a dicho cliente. El cliente utilizará la *cookie* otorgada en futuras *HTTP requests* (colocándola en el *header* de la *request*), de esta forma, logrando mantener el estado que esta siendo administrado por el servidor.
 
 >[!info] 

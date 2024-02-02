@@ -7,7 +7,7 @@ En BGP, los pares de routers intercambian la información de ruteo mediante cone
 Para cada conexión TCP, los dos routers que participan son llamados *BGP peers*, y la conexión TCP, acompañada de todos los mensajes BGP enviados a través de esta es llamada *BGP session*. Estos mensajes se utilizan para comunicar los caminos a diferentes prefijos de redes de destino, donde cada prefijo representa una subred o una colección de subredes.
 
 El protocolo BGP permite anunciar una ruta compuesta por un prefijo de red y ciertos atributos, entre ellos se destacan:
-- $\texttt{AS-PATH}$: lista de los ASs a través de los cuales el aviso para ese prefijo ha pasado. Cuando un AS anuncia una ruta, este agrega su ASN a este atributo. Además, si un router detecta que su AS en la lista, lo ignora para evitar loops.
+- $\texttt{AS-PATH}$: lista de ASs a través de los cuales el aviso para ese prefijo ha pasado. Cuando un AS anuncia una ruta, este agrega su ASN a este atributo. Además, en $\texttt{eBGP}$, si un router detecta que su AS está en la lista, lo ignora para evitar loops. *Notar: en $\texttt{iBGP}$ este atributo no se utiliza para detectar ciclos ya que no varia dentro del AS.*
 - $\texttt{NEXT-HOP}$: indica la dirección del router que inicia el $\texttt{AS-PATH}$. En $\texttt{eBGP}$, el router que anuncia cambia este valor a su propia dirección.
 
 >[!info] 
