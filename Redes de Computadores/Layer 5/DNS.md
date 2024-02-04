@@ -1,8 +1,7 @@
 El *DNS (Domain Name System)* es una base de datos distribuida implementada de forma jerárquica en varios servidores. Los servicios principales de un DNS:
-- Traducción de un *host name* a su *dirección IP* asociada.
 - *host aliasing*
-- Mail server aliasing
-- Load Distribution: Varias direcciones IP corresponden a un *host name*.
+- *[[Electronic Mail#Mail Server|mail server]] aliasing*
+- *load distribution*
 
 La jerarquía esta dividida en los siguientes niveles:
 1. **Root Servers**: Estos servidores almacenan información sobre las ubicaciones de los servidores de nombres de dominio de nivel superior (TLD) y ayudan a dirigir las consultas de resolución de DNS hacia los servidores TLD adecuados.
@@ -14,8 +13,8 @@ La jerarquía esta dividida en los siguientes niveles:
 
 >[!question] ¿Porqué no centralizar el DNS?
 >El *Domain Name System* difícilmente podría ser centralizado. Pues no es escalable debido a los siguientes factores:
->- Ante una falla, se caería el sistema en su totalidad.
->- Gran volumen de trafico.
+>- Único punto de falla.
+>- Gran volumen de tráfico.
 >- Base de Datos distante.
 >- Mantenimiento.
 >

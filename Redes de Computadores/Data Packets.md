@@ -5,7 +5,7 @@ El tiempo de retraso de un paquete desde un nodo a otro mediante un único enlac
 $$d_{nodal}=d_{proc}+d_{queue}+d_{trans}+d_{prop}$$
 - $d_{proc}$ (Node Processing Delay): Tiempo que invierte el *nodo* para chequear errores y determinar la salida del enlace.
 - $d_{queue}$ (Queue Delay): Tiempo de espera en la salida del enlace.
-- $d_{trans}$ (Transmission Delay): Tiempo de "colocación" de los bits en el enlace físico. Sea $L$ el largo del paquete, y $R$ la velocidad de trasmisión,  entonces, $d_{trans}=\frac{L}{R}$.
+- $d_{trans}$ (Transmission Delay): Tiempo de "colocación" de los bits en el enlace físico. Sea $L$ el largo del paquete, y $R$ la velocidad de trasmisión, entonces, $d_{trans}=\frac{L}{R}$.
 - $d_{prop}$ (Propagation Delay): Tiempo que tarda en propagarse los datos desde un extremo a otro dentro del enlace físico. Sea $d$ el largo del enlace físico, y $s$ la velocidad de propagación del medio, entonces, $d_{prop}=\frac{d}{s}$.
 
 >[!bug] Perdida de Paquetes

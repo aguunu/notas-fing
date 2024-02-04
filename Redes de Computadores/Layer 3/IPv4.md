@@ -2,7 +2,12 @@
 ![[Drawing 2024-01-28 16.40.28.excalidraw|center]]
 
 ## IPv4 Address
-Es un dirección de 32 bits que identifica una interfaz en la red. Además, existen bloques de direcciones privadas:
+Una *IPv4 address* es un dirección de 32 bits que pertenece a uno de los siguientes grupos:
+- *unicast*
+- *multicast*
+- *broadcast*
+
+Además, existen ciertos bloques para direccionamiento privado:
 - Clase A Privada `10.0.0.0/8`
 - Class B Privada: `172.16.0.0/12`
 - Class C Privada: `192.168.0.0/16`
