@@ -63,12 +63,14 @@ Una *multicast address* identifica a un grupo de interfaces. Un paquete cuyo des
 Una *anycast address* puede ser asignada a varias interfaces. Un paquete cuyo destino sea una *anycast address* es entregado a algún miembro del *anycast group.* *Notar: no posee prefijo especial.*
 
 ## Neighbor Discovery
+Es un protocolo IPv6 similar a [[ARP]] que permite a diferentes nodos en el mismo enlace *anunciar* su existencia a sus vecinos y *aprender* sobre la existencia de sus vecinos.
+
 Se definen los siguientes tipos de mensajes:
-- *router solicitation (RS):*
-- *router advertisement (RA):*
-- *neighbor solicitation (NS):*
-- *neighbor advertisement (NA):*
-- *redirect:*
+- __*router solicitation (RS):*__ es generado por un nodo para pedir a los [[Router|Routers]] que se emitan un *router advertisement (RA).
+- __*router advertisement (RA):*__ es generado automáticamente por los [[Router|Routers]] al recibir una *router solicitation (RS)*, o periódicamente para mantener informados a los nodos, o para verificar que un vecino sigue siendo accesible a través de una dirección MAC que se encuentra en caché. También es utilizado para detectar direcciones IP duplicadas.
+- __*neighbor solicitation (NS):*__ es generado por un nodos para determinar la dirección MAC de un vecino.
+- __*neighbor advertisement (NA):*__ se genera automáticamente al recibir una *neighbor solicitation (NS)*, o se genera cuando se va a realizar un cambio en la [[MAC Address]].
+- __*redirect:*__ se genera cuando un nodo quiere informar a un [[Router]] de una mejor ruta hacia un destino. Estos mensajes siempre son *unicast*.
 
 ## Transición a IPv6
 - Dual Stack

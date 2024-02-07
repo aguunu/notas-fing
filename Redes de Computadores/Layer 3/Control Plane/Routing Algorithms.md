@@ -12,8 +12,11 @@ Menor consumo de RAM/CPU.|Mayor consumo de RAM/CPU.
 Convergencia lenta.|Convergencia rápida.
 
 ## Link State Algorithms
-#TODO 
-En Dijkstra, cuando la información de enrutamiento en una red oscila implica que las *routing tables* de los routers se actualicen constantemente, este fenómeno se conoce como *route oscillations*. *Por ejemplo, en una red donde el coste de los links depende del volumen de tráfico, puede ocurrir dicho fenómeno.*
+En vez de compartir su *routing table*, los nodos utilizan *link-state broadcast algorithms* *(ej. flooding)*, de esta forma, todos los nodos obtendrán una *completa* e *idéntica* visión de la topología. Siendo capaces de calcular sus caminos de menor costo en base a algoritmos de distancia *(ej. Dijkstra).*
+
+>[!bug] 
+>En estos algoritmos, cuando la información de enrutamiento en una red oscila implica que las *routing tables* de los routers se actualicen constantemente, este fenómeno se conoce como *route oscillations*. *Por ejemplo, en una red donde el costo de los links depende del volumen de tráfico, puede ocurrir dicho fenómeno.*
+>Una solución, consiste en sincronizar todos los [[Router|Routers]] para que ejecuten el algoritmo en simultaneo, de esta forma, evitando *route oscillations*.
 
 ## Distance Vector Algorithms
 Se basan en la ecuación de *Bellman-Ford* *(dynamic programming).*
@@ -53,7 +56,10 @@ Ahora, supongamos que $(a, c)$ cambia su costo a $60$:
 >Una forma de evitar este problema es la técnica *poison reverse*.
 >Cuando el nodo $a$ enruta su tráfico hacia $c$ usando $b$, enviará su DV a $b$ modificando su distancia con $b$ de forma que esta sea infinito.
 >
->*Notar que si el DV de $b$ esta enrutando el tráfico hacia $c$ usando $a$, es decir, $b \rightarrow a \cdots \rightarrow c$ ahora observará que $a$ tiene un nuevo camino hacia $c$, lo que implica que deberá recalcular la ruta para llegar a $c$.*
+>*Notar que si el DV de $b$ se encuentra enrutando el tráfico hacia $c$ usando $a$, es decir, $b \rightarrow a \cdots \rightarrow c$ ahora observará que $a$ tiene un nuevo camino hacia $c$, lo que implica que deberá recalcular la ruta para llegar a $c$.*
 
 >[!success] 
 >Otra forma de evitar este problema es la técnica *split-horizon*. Consiste en no anunciar una ruta por la interfaz de donde la aprendió.
+
+>[!warning] 
+>Existen escenarios donde la técnica de *split-horizon* y *poison reverse* no solucionan el problema.

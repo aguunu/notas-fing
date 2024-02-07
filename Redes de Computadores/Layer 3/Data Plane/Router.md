@@ -1,4 +1,7 @@
-Es un dispositivo de [[Capa de Red]] encargado de enrutar el tráfico entrante por la interfaz correcta mediante su *[[Forwarding|forwarding table]]*. Además, es el encargado de ejecutar los [[Routing Algorithms]].
+Es un dispositivo de [[Capa de Red]] encargado de enrutar el tráfico entrante por la interfaz correcta mediante su *[[Forwarding|forwarding table]]*. Además, es el encargado de ejecutar los *[[Routing Algorithms]]*.
+
+>[!important] 
+>Una propiedad importante de este dispositivo es *store-and-forward*. Consiste en que el nodo debe recibir un paquete en su totalidad antes de reenviarlo al *next-hop*.
 
 ## Switching Fabric
 Se encarga de transferir el paquete desde el buffer de entrada al buffer de salida correspondiente.

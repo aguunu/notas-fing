@@ -1,4 +1,4 @@
-==Es un dispositivo [[Enlace#Duplex|Full-Duplex]] de [[Capa de Enlace]] cuyo objetivo es reenviar [[Ethernet#Ethernet Frame|Frames]], examinando su [[MAC Address]]. Además, logra crear un [[Capa de Enlace#Dominio de Colisión|Dominio de Colisión]] distinto por cada uno de sus [[Enlace|Enlaces]]==.
+==Es un dispositivo [[Enlace#Duplex|Full-Duplex]] de [[Capa de Enlace]] cuyo objetivo es reenviar [[Ethernet#Ethernet Frame|Frames]], examinando su [[MAC Address]] siguiendo el principio de *store-and-forward*. Además, logra crear un [[Capa de Enlace#Dominio de Colisión|Dominio de Colisión]] distinto por cada uno de sus [[Enlace|Enlaces]]==.
 
 >[!warning] 
 >Un *switch* no posee [[MAC Address]] ni tampoco [[IP Address]]. Además, un *switch* es *invisible* para todos los nodos de la red.

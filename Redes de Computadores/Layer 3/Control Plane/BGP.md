@@ -1,5 +1,5 @@
 El protocolo BGP (Border Gateway Protocol) es el protocolo de ruteo por defecto entre dominios.
-En BGP un [[Dynamic Routing#Autonomous System|AS]] es identificado mediante un número global, llamado *AS number* (ASN). Este protocolo provee a cada AS un medio para:
+En BGP un [[Routing#Autonomous System|AS]] es identificado mediante un número global, llamado *AS number* (ASN). Este protocolo provee a cada AS un medio para:
 - $\texttt{eBGP}$: obtener la información de alcance de la subred a partir de los AS vecinos.
 - $\texttt{iBGP}$: propagar la información de alcance a todos los routers internos al AS.
 
