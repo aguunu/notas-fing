@@ -75,9 +75,8 @@ Al detectarse un *packet loss*:
 	- Se vuelve a la etapa de *slow start*.
 - *TCP Reno*
 	- $\texttt{ssthreshhold} = \frac{\texttt{cwnd}}{2}$
-	- Si se trata de *timeout*, $\texttt{cwnd}=1$.
-	- Si se trata de tres *duplicated ACK*, $\texttt{cwnd} = \frac{\texttt{cwnd}}{2}$.
-	- Pasa a la etapa de *fast retransmission* asumiendo reenviando el paquete sin haber culminado su timeout correspondiente. En este estado, por cada *duplicated ACK*, aumenta $\texttt{cwnd}$ en un $\texttt{MSS}$. Luego, al llegar un $\texttt{ACK}$ se vuelve a la etapa de *congestion avoidance* salteando la etapa de *slow start*.
+	- Si se trata de *timeout*, $\texttt{cwnd}=1$, volviendo a la etapa de *slow start*.
+	- Si se trata de tres *duplicated ACK*, $\texttt{cwnd} = \frac{\texttt{cwnd}}{2}$, pasa a la etapa *fast-recovery* donde realiza *fast retransmission*, es decir, reenvía el paquete sin haber culminado su timeout correspondiente. En este estado, por cada *duplicated ACK*, aumenta $\texttt{cwnd}$ en un $\texttt{MSS}$. Luego, al llegar un $\texttt{ACK}$ se vuelve a la etapa de *congestion avoidance* salteando la etapa de *slow start*.
 
 >[!note] 
 >TCP envía $\texttt{cwnd}$ bytes, espera $\texttt{RTT}$ para recibir el $\texttt{ACK}$ y envía más bytes. Por ende, la tasa de transmisión se puede calcular como: $$rate \approx \frac{\texttt{cwnd}}{\texttt{RTT}} \text{bytes/sec}$$
