@@ -56,17 +56,18 @@ Al momento de diseñar una memoria cache se tienen en cuenta los siguientes crit
 ### Direct Mapping
 Una *memory address* cuya función de correspondencia implementa *direct mapping* se representa como sigue,
 
-$$\overset{TAG}{\overbrace{b_{t+l+w-1} \dots b_{l+w}}} \cdot \overset{LINE}{\overbrace{b_{l+w-1} \dots b_{w}}} \cdot \overset{WORD}{\overbrace{b_{w-1} \dots b_{0}}}$$
+$$\overset{\texttt{TAG}}{\overbrace{b_{t+l+w-1} \dots b_{l+w}}} \cdot \overset{\texttt{LINE}}{\overbrace{b_{l+w-1} \dots b_{w}}} \cdot \overset{\texttt{OFFSET}}{\overbrace{b_{w-1} \dots b_{0}}}$$
 
 Siendo $t, l, w$ los bits reservados para __TAG__, __LINE__, __WORD__ respectivamente.
-- __TAG__: Identifica que bloque esta en una línea dada.
-- __LINE__: Identifica el índice de la entrada de la cache donde se encuentra el bloque.
+- __TAG__: Identifica el bloque que se encuentra en determinada línea.
+- __LINE__: Identifica la entrada donde se encuentra el bloque.
 - __WORD__: Representa el *offset* dentro del bloque identificado.
 
 >[!warning] 
->Un bloque es identificado por su __TAG__ y un __LINE__, es decir, hay $2^m$ bloques que comparten la misma entrada en la cache, donde $m$ la cantidad de bits asociados a __TAG__. Por lo tanto, *direct mapping* no permiten que bloques con misma línea  esten cargados simultaneamente en la memoria cache.
+>Un bloque es identificado por un *tag* y *line*, es decir, $2^m$ bloques que comparten la misma entrada en cache, siendo $m$ la cantidad de bits de *tag*. Por lo tanto, *direct mapping* no permiten que bloques con misma línea estén cargados simultáneamente en la memoria cache.
 
-![[Drawing 2023-07-11 15.55.39.excalidraw|center]]
+
+![[Drawing 2024-02-10 18.58.09.excalidraw]]
 - Cargar un bloque de memoria:
 	1. Se determina la línea según los bits de __LINEA__ de la dirección del bloque de memoria.
 	2. El bloque es cargado en la línea identificada y el __TAG__ de la dirección se almacena en su campo correspondiente.
@@ -74,17 +75,18 @@ Siendo $t, l, w$ los bits reservados para __TAG__, __LINE__, __WORD__ respectiva
 	1. Se determina la línea según los bits de __LINEA__ de la dirección.
 	2. Se determina el __TAG__ a partir de los bits de __TAG__ de la dirección y se compara con el valor del campo __TAG__ correspondiente a la línea identificada.
 	3. Si los valores coinciden, se produce un *hit*, en otro caso, se produce un *miss*.
-	4. Se utiliza el *offset* __(WORD)__ respecto a la dirección para acceder a un byte especifico.
+	4. Se utiliza el *offset* asociado a la dirección para acceder a un byte especifico.
 
 ### Fully Associative
 Una *memory address* cuya función de correspondencia implementa *fully associative* se representa como sigue,
 
-$$\overset{TAG}{\overbrace{b_{w+t-1} \dots b_{w}}} \cdot \overset{WORD}{\overbrace{b_{w-1} \dots b_{0}}}$$
+$$\overset{\texttt{TAG}}{\overbrace{b_{w+t-1} \dots b_{w}}} \cdot \overset{\texttt{WORD}}{\overbrace{b_{w-1} \dots b_{0}}}$$
 
 Siendo $t, w$ los bits reservados para __TAG__, __WORD__ respectivamente.
 - __TAG__: Identifica el bloque deseado.
 - __WORD__: Representa el *offset* dentro del bloque identificado.
 
+![[Drawing 2024-02-11 17.21.37.excalidraw]]
 - Cargar un bloque de memoria:
 	1. Se selecciona una línea de la cache cuyo *valid bit* sea 0. En caso de no encontrar dicha línea, se selecciona una línea mediante una *política de reemplazo*
 	2. La línea seleccionada es "desalojada" y el bloque de memoria es "alojado" en dicha línea. Actualizando el valor __TAG__ de dicha entrada.
@@ -95,12 +97,15 @@ Siendo $t, w$ los bits reservados para __TAG__, __WORD__ respectivamente.
 ### N-Way Set Associative
 Una *memory address* cuya función de correspondencia implementa *n-way set associative* se representa como sigue,
 
-$$\overset{TAG}{\overbrace{b_{t+l+w-1} \dots b_{l+w}}} \cdot \overset{SET}{\overbrace{b_{l+w-1} \dots b_{w}}} \cdot \overset{WORD}{\overbrace{b_{w-1} \dots b_{0}}}$$
+$$\overset{\texttt{TAG}}{\overbrace{b_{t+l+w-1} \dots b_{l+w}}} \cdot \overset{\texttt{SET}}{\overbrace{b_{l+w-1} \dots b_{w}}} \cdot \overset{\texttt{OFFSET}}{\overbrace{b_{w-1} \dots b_{0}}}$$
 
 Siendo $t, s, w$ los bits reservados para __TAG__, __SET__, __WORD__ respectivamente.
 - __TAG__: Identifica que bloque esta en una línea dada.
 - __SET__: Identifica el *set* donde se ubica el bloque.
-- __WORD__: Representa el *offset* dentro del bloque identificado.
+- __OFFSET__: Representa el *offset* dentro del bloque identificado.
+
+>[!note] 
+>Si tenemos un *4-way set associative*, entonces, tendremos 4 conjuntos, por ende, necesitamos 2 bits para identificar el conjunto.
 
 - Cargar un bloque de memoria:
 	1. Se determina el *set* según los bits de __SET__ de la dirección del bloque de memoria.

@@ -1,4 +1,4 @@
-Una *read-only memory (ROM)* es un circuito combinatorio que cuenta con $m + 2$ entradas $A_0, A_1, \dots, A_{m-1}, CS, OE$, y $n$ salidas $D_0, D-1, \dots, D_{n-1}$. Además, la [[Álgebra de Boole#Tabla de Verdad|Tabla de Verdad]] de una ROM esta formada por $2^m$ filas y $n$ columnas.
+Una *read-only memory (ROM)* es un [[Circuitos Combinatorios|Circuito Combinatorio]] que cuenta con $m + 2$ entradas $A_0, A_1, \dots, A_{m-1}, CS, OE$, y $n$ salidas $D_0, D-1, \dots, D_{n-1}$. Además, la [[Álgebra de Boole#Tabla de Verdad|Tabla de Verdad]] de una ROM esta formada por $2^m$ filas y $n$ columnas.
 
 >[!success] 
 >Una ROM podrá implementar cualquier función lógica de $m$ variables y $n$ salidas.
@@ -7,9 +7,9 @@ Una *read-only memory (ROM)* es un circuito combinatorio que cuenta con $m + 2$ 
 Las memorias ROM están caracterizadas por una cierta capacidad, que se mide en bits y una determinada organización, que se expresa en cantidad de palabras de tantos bits. 
 
 >[!example]
->- ROM de 8 KiB, con organización de 1Kx8 (1 Kilo palabras de 8 bits)
->- ROM de 8 KiB, con organización de 4Kx2 (4 Kilo palabras de 2 bits)
->- ROM de 1 KiB, con organización de 1Kx1 (1 Kilo palabras de 1 bit)
+>- ROM de 8 kbit, con organización de 1Kx8 (1 Kilo palabras de 8 bits)
+>- ROM de 8 kbit, con organización de 4Kx2 (4 Kilo palabras de 2 bits)
+>- ROM de 1 kbit, con organización de 1Kx1 (1 Kilo palabras de 1 bit)
 
 ## Arreglos de Memoria
 Las memorias se utilizan en combinaciones denominados __*bancos de memoria*__. Estos bancos permiten la construcción de memorias del tamaño requerido por el sistema en base a circuitos integrados disponibles.

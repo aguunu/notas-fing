@@ -1,11 +1,11 @@
-#TODO: OVERFLOW Y CARRY
+
 ## Representación Binaria
 Sea $n \in \mathbb{Z^+}$, entonces su representación binaria coincide con su expresión en base 2.
 - Rango $k$ bits: $0 \leq n \leq 2^k - 1$.
-- Operaciones: $( +, -, \cdot, / )$
+- Operaciones: $\{ +, -, \cdot, \div \}$
 
 >[!example] 
->Sea $9 = \textcolor{green}{1} \cdot 2^3 + \textcolor{green}{0} \cdot 2^2 + \textcolor{green}{0} \cdot 2^1 + \textcolor{green}{1} \cdot 2^0$ siendo $\textcolor{green}{1001}$ su representación.
+>Observar que $9 = \textcolor{green}{1} \cdot 2^3 + \textcolor{green}{0} \cdot 2^2 + \textcolor{green}{0} \cdot 2^1 + \textcolor{green}{1} \cdot 2^0$ siendo $\textcolor{green}{1001}$ su representación.
 
 ## Valor Absoluto & Signo
 Sea $n \in \mathbb{Z}$, entonces se representa el $|n|$ con su [[#Representación Binaria]]. Luego el bit más significativo indicará el signo del entero; $1$ en caso de ser negativo, $0$ en caso de ser positivo.
@@ -21,14 +21,14 @@ $$
 C_1(n) \rightarrow
 \begin{cases}
 n,  & \text{si $n \geq 0$} \\
-\overline{n}, & \text{si $n \leq^{(\star)} 0$}
+\overline{n}, & \text{si $n \leq 0$}
 \end{cases}
 $$
 
 - Rango $k$ bits: $-(2^k - 1) \leq n \leq 2^k - 1$.
 - Operaciones: $\emptyset$
 - Observaciones:
-	1. Existen dos representaciones distintas para $0$ $(\star)$.
+	1. Existen dos representaciones distintas para $0$.
 	2. $C_1(C_1(n))=n$
 
 >[!example] 
@@ -40,6 +40,7 @@ Se utiliza un desplazamiento $d$ fijo, luego, la representación de un entero $n
 $$D(n) \rightarrow n+D$$
 
 - Rango $k$ bits: $0 \leq n \leq 2^k + d$
+-  Operaciones: $\emptyset$
 - Observaciones:
 	1. Se conserva el orden de los números.
 	2. Existe una única representación para el $0$.
@@ -59,14 +60,21 @@ Otra forma de definirlo es la siguiente:
 
 $$C_2(n) \rightarrow 2^k - n$$
 
+>[!tip] 
+>En complemento a dos de $n$ bits, la representación $b_{n-1}b_{n} \dots b_0$ representa el número $\textcolor{yellow}{-b_{n-1}} 2^{n-1} + b_{n-2} 2^{n-2} + \dots + b_0 2^0$ en decimal. *==Notar el signo negativo respecto al bit más significativo de la representación.==*
+
 - Rango $k$ bits: $-2^{k-1} \leq n \leq 2^{k-1} - 1$
 - Observaciones:
 	1. El $0$ tiene una única representación ($0 = \overline{0} + 1$).
-	2. Operaciones: $\{(+), (-)\}$
+	2. Operaciones: $\{+, -, \cdot, \div\}$
 	3. $A-B=A+(-B)=A+(\overline{B}+1)$
 	4. No se mantiene el orden.
 	5. El bit de *carry* no indica por si solo *overflow*.
 	6. $C_2(C_2(n))=n$
+
+>[!danger] 
+>En *complemento a 2*, el *overflow* ocurre al sumar dos números de igual signo obteniendo el signo opuesto en el resultado. Además, podemos calcular la flag de la siguiente forma:
+>$$\texttt{Overflow} = \texttt{Carry\_Out} \oplus \texttt{Carry\_On}$$
 
 ## Binary-Coded Decimal
 En la representación *binary-coded decimal (BCD)*, se codifican números decimales. Donde cada digito es representado por $4$ bits. Los 4 bits menos significativos marcan el signo y el final del número. Siendo $1100_2$ el fin de un número positivo y $1101_2$ el fin de un número negativo.
@@ -104,13 +112,13 @@ donde:
 La normalización viene en el hecho de que $\beta^{-1} \leq m < 1$; evitando que los números tengan distintas representaciones posibles.
 
 ### IEEE 754
-Se utiliza $\beta=2$ y la mantisa normalizada es de la forma $1,m_1 m_2 ... m_p$. Mientras que la mantisa des-normalizada es de la forma $0,m_1 m_2 ... m_p$.
+Se utiliza $\beta=2$ y la mantisa normalizada es de la forma $1,m_1 m_2 \cdots m_p$. Mientras que la mantisa des-normalizada es de la forma $0,m_1 m_2 ... m_p$.
 
-$$\tag{Normalizado} PF(x) = (-1)^s \cdot \textcolor{red}{1},m \cdot \beta^{e-d}$$
+$$\tag{Normalizado} PF(x) = (-1)^s \cdot \textcolor{red}{1},m \cdot 2^{e-d}$$
 
-$$\tag{Desnormalizado} PF(x)=(-1)^S \cdot \textcolor{red}{0},m \cdot \beta^{e-d}$$
+$$\tag{Desnormalizado} PF(x)=(-1)^S \cdot \textcolor{red}{0},m \cdot 2^{e-d}$$
 
-Si $\beta = 2$, $m$ tendrá $p$ bits asignados, $e$ tendrá $q$ bits asignados, y s $s$ tendrá 1 bit asignado, por lo que la suma de los bits asignados serán $N=1+q+p$.
+$m$ tendrá $p$ bits asignados, $e$ tendrá $q$ bits asignados, y s $s$ tendrá 1 bit asignado, por lo que la suma de los bits asignados serán $N=1+q+p$.
 
 |Bits Asignados|$s$ *(signo)*|$q$ *(exponente)*|$p$ *(mantisa)*|
 |---|---|---|---|

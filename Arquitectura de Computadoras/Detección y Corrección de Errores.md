@@ -6,7 +6,7 @@ La distancia entre dos representaciones binarias se define como la cantidad de b
 >[!example] 
 >Sean $a=01101, b=10110$ representaciones binarias, entonces:
 >
->$$d(a, b) = a \oplus b = 01101 \oplus 10110 = 4$$
+>$$d(a, b) = |a \oplus b|_1 = |01101 \oplus 10110|_1 = |11011|_1 = 4$$
 
 $$\tag{1} d(a,b) = d(b, a)$$
 
@@ -14,44 +14,42 @@ $$\tag{2} d(a,b) = 0 \iff a = b$$
 
 $$\tag{3} d(a, b) + d(b, c) \geq d(a, c)$$
 
-En sistemas de codificación, se define *distancia de sistema de codificación* a la mínima distancia que existe entre dos representaciones validas de dicho sistema.
+Se define *distancia de sistema de codificación* como la mínima distancia que existe entre dos representaciones validas distintas de dicho sistema.
 
-## Detección y Corrección de Errores
-Si consideramos un *sistema de codificación* con distancia $d$ y dos representaciones binarias $a$ y $b$ **validas** dentro del sistema. Sea $A$ el conjunto de representaciones (no necesariamente validas) obtenidas al modificar $e$ bits de $a$. Análogamente definimos $B$.
-Si se cumple que $A \cap B = \emptyset$, además de poder detectar errores, también podremos reconocer a que **representación valida** corresponde una **representación invalida**.
-Por otro lado, podemos detectar errores, siempre y cuando $a \notin B \land b \notin A$, pues en caso de no cumplirse estas condiciones, $a$ podría ser una representación invalida de $b$, lo cual no podríamos detectar como error.
+## Detección y Corrección
+Consideramos un *sistema de codificación* con distancia $d$, dos representaciones binarias $a$ y $b$ *validas*. Definimos el conjunto $A = \{a' \mid d(a, a') \leq e\}$, es decir, el conjunto de representaciones obtenidas al modificar $e$ bits de $a$. Análogamente definimos $B$.
 
->[!tldr]
->Para que el *sistema de codificación* pueda detectar errores, es necesario que se cumpla la siguiente condición:
+![[Drawing 2024-02-08 17.34.29.excalidraw]]
 
-$$a \notin B \land b \notin A \iff d < e$$
-
-Por otra parte, para que el *sistema de codificación* además de detectar, pueda corregir errores, es necesaria que se cumpla la siguiente condición:
-
-$$A \cap B = \emptyset \iff d < \frac{e}{2}$$
+Observar que para poder *detectar* errores, se debe cumplir la siguiente ecuación.
+$$a \notin B \land b \notin A \iff d(a, b) > e \iff \textcolor{red}{d > e}$$
+Por otro lado, para poder *corregir* errores además de detectarlos, se debe cumplir la siguiente ecuación.
+$$A \nsubseteq B \land B \nsubseteq A \iff A \cap B = \emptyset \iff d(a, b) > 2e \iff \textcolor{red}{d > 2e}$$
 
 ## Bits de Redundancia
-Para generar un *sistema de codificación* de $k$ bits con distancia $3$, se necesitan $p$ bits para "señalar" cuál es el bit invalido. Además de $1$ bit para indicar si hay o no error en la representación. Por lo tanto, se deberá cumplir la siguiente condición:
+Para generar un *sistema de codificación* de $k$ bits que pueda *detectar* y *corregir* errores de hasta 1 bit *Observar que el sistema deberá ser de distancia mayor o igual a 3, pues $e=1$.*
 
+En primer lugar, deberemos agregar $p$ bits de *redundancia* para poder identificar el bit erróneo y además un bit extra indicar que no hay error. Por ende, la representación tendrá $k + p + 1$ bits y deberá cumplir la siguiente ecuación.
 $$2^p \geq k + p + 1$$
 
-Donde $2^p$ es la cantidad de posiciones que se pueden "señalar", observar que esta cantidad deberá ser mayor o igual a la cantidad de bits de la representación, en este caso, $k$ bits de información, $p+1$ bits de redundancia, donde el último de estos índica si hay o no error.
-
 ## Paridad de 1 bit
-Se agrega un bit de paridad a cada representación para que la cantidad de $1's$ en la representación (incluyendo el bit de paridad) sea par (paridad par) o impar (paridad impar).
+Permite la detección de errores de 1 bit agregando un bit de paridad en la representación para que la cantidad de $1's$ en la nueva representación sea par *(paridad par)* o impar *(paridad impar)*. El bit de paridad se calcula de la siguiente forma.
+$$
+p=\begin{cases}
+\overline{b_ 0 \oplus b_1 \oplus \cdots \oplus b_n}, & \textit{si paridad impar} \\
+b_ 0 \oplus b_1 \oplus \cdots \oplus b_n, & \textit{si paridad par} \\
+\end{cases}
+$$
 
->[!error] 
->Esta técnica se basa en que la probabilidad de que falle un bit es extremadamente baja. Por lo tanto, puede tener un mal comportamiento cuando hay más de $1$ bit invalido. $(\star)$
-
-Observar que dada una representación $b_0b_1...b_n$, podemos expresar su bit de paridad como $P = b_ 0 \oplus b_1 \oplus ... \oplus b_n$ (paridad par) y $P = \overline{b_ 0 \oplus b_1 \oplus ... \oplus b_n}$ (paridad impar). Luego, una vez obtenido $P$, podremos chequear si se detectaron errores $E = P \oplus b_0 \oplus b_1 ... \oplus b_n$. Si $E=0$, entonces no se detectaron errores $(\star)$.
+Luego, para chequear si existe error, basta con realizar el mismo procedimiento y corroborar la paridad.
 
 ## 2 de 5
 #TODO
 
 ## Códigos de Hamming
-Los *Códigos de Hamming* se utilizan para generar representaciones con distancia $3$.
+Los *Códigos de Hamming* se utilizan para detectar y corregir errores de 1 bit en representaciones de distancia $3$.
 
-Sean $a_1a_2a_3a_4$ los bits de información, por visto anteriormente, necesitamos $3$ bits de redundancia $p_1p_2p_3$ (pues $2^3 \geq 4 + 3 + 1$).
+Sean $a_1a_2a_3a_4$ los bits de información, necesitamos satisfacer $2^p \geq 4 + p + 1$, por ende, necesitamos $3$ bits de redundancia ($p_1p_2p_3$).
 
 Luego, generamos la representación como $a_4 a_3 a_2 p_3 a_1 p_2 p_1$, calculando los bits de redundancia de la siguiente forma:
 - $p_1 = a_4 \oplus a_2 \oplus a_1$
@@ -59,21 +57,20 @@ Luego, generamos la representación como $a_4 a_3 a_2 p_3 a_1 p_2 p_1$, calculan
 - $p_3 = a_4 \oplus a_3 \oplus a_2$
 
 Luego, al recibir una representación, hallamos la paridad de la siguiente manera:
+- $s_1 = p_1 \oplus a_4 \oplus a_2 \oplus a_1$
+- $s_2 = p_2 \oplus a_4 \oplus a_3 \oplus a_1$
+- $s_3 = p_3 \oplus a_4 \oplus a_3 \oplus a_2$
 
-| |$a_4$|$a_3$|$a_2$|$p_3$|$a_1$|$p_2$|$p_1$|
-|-|-|-|-|-|-|-|-|
-|$S_1$|x||x||x||x|
-|$S_2$|x|x||x|x||
-|$S_3$|x|x|x|x|||
+|  | $a_4$ | $a_3$ | $a_2$ | $p_3$ | $a_1$ | $p_2$ | $p_1$ |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| $s_1$ | x |  | x |  | x |  | x |
+| $s_2$ | x | x |  | x | x |  |  |
+| $s_3$ | x | x | x | x |  |  |  |
 
-- $S_1 = p_1 \oplus a_4 \oplus a_2 \oplus a_1$
-- $S_2 = p_2 \oplus a_4 \oplus a_3 \oplus a_1$
-- $S_3 = p_3 \oplus a_4 \oplus a_3 \oplus a_2$
-
-Donde $S=S_3 S_2 S_1$ representa un entero en binario. Si $S=0$ no hay errores. Por otra parte, si $S \neq 0$ índica que hay un bit invalido en la representación y la posición de este bit (leído de derecha a izquierda) es indicada por $S$.
+Donde $s=s_3 s_2 s_1$ representa un entero en binario. Si $s=0$ no hay errores. Por otra parte, si $s \neq 0$ índica que hay un bit invalido en la representación y la posición de este bit (leído de derecha a izquierda) es indicada por $s$.
 
 ## Checksum
-Consiste en agregarle a un conjunto de códigos binarios transmitidos un código adicional que se calcula como la suma de los códigos transmitidos módulo $2^n$, siendo $n$ la cantidad de bits del código.
+Consiste en agregarle a una representación binaria un código adicional que se calcula como la suma de los códigos transmitidos módulo $2^n$, siendo $n$ la cantidad de bits del código.
 
 >[!example] 
 >Se envía el siguiente código $0110 \; 1001 \; 1101$. Entonces, calculamos el *checksum* como $(0110 + 1001 + 1101) \mod{2^4} = (0001 \; 1100) \mod{2^4} = 1100$.

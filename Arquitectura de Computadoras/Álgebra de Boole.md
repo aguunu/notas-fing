@@ -81,12 +81,9 @@ El *XOR $(\oplus)$* se define como $a \oplus b = \bar{a} \cdot b + a \cdot \bar{
 ## Operadores Lógicamente Completos
 Un conjunto de operadores se llama lógicamente completo si cualquier función booleana puede expresarse mediante los mismos.
 
-## Simplificación
-### Método Algebraico
-#TODO
-### Métodos Sistemáticos
-#### Diagrama de Karnaugh
-#TODO
+## Karnaugh
+Es un método de simplificación, donde se representa la función en un *Karnaugh-map* y luego se simplifica agrupando $1's$ en grupos de potencia de 2.
+![[Drawing 2024-02-09 19.38.34.excalidraw]]
 
-#### Quine-McKlusky
-#TODO
+En este caso, la función se simplifica a $f(a, b, c, d) = \textcolor{skyblue}{a b c} + \textcolor{red}{c \hat{d}} + \textcolor{green}{b \hat{d}}$.
+

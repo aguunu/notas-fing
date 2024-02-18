@@ -1,4 +1,4 @@
-Los *circuitos secuenciales*, a diferencia de los [[Circuitos Lógicos Combinatorios|Combinatorios]] determinan el valor de sus salidas no solo en función del valor actual de sus entradas sino que también en función de los valores anteriores de las mismas.
+Los *circuitos secuenciales*, a diferencia de los [[Circuitos Combinatorios|Combinatorios]] determinan el valor de sus salidas no solo en función del valor actual de sus entradas sino que también en función de los valores anteriores de las mismas.
 
 Un *circuito secuencial* se define a través de sus ecuaciones:
 
