@@ -19,7 +19,7 @@ Por lo general, un *device controller* consiste de 4 registros:
 El *handshaking* es la comunicación entre el sistema operativo y el [[Input & Output#Device Controller|Device Controller]].
 
 ### Programmed I/O
-La técnica de __*programmed I/O*__ consiste en realizar una solicitud al dispositivo y esperar a que se realice mediante [[Sección Crítica#Busy Waiting|Polling]]. Una vez realizada, el proceso saldrá del bucle y finalmente podrá leer el registro del *controller*.
+La técnica de __*programmed I/O*__ consiste en realizar una solicitud al dispositivo y esperar a que se culmine mediante [[Sección Crítica#Busy Waiting|Polling]]. Una vez culminada, el proceso saldrá del bucle y finalmente podrá leer el registro del *device controller*.
 
 ```c
 // realizar solicitud
@@ -33,9 +33,9 @@ while (device_status_register != READY); // busy waiting
 >Para dispositivos que transfieren grandes cantidades de datos, esta solución no es eficiente. Pues, los registros suelen tener un tamaño pequeño.
 
 ### Interrupt-Driven I/O
-Cuando un proceso $p_0$ hace realiza una operación IO, la técnica de __*Interrupt-Driven I/O*__ consiste de los siguientes pasos:
+Cuando un proceso $p_0$ hace realiza una operación IO, el mecanismo de __*Interrupt-Driven I/O*__ consiste de los siguientes pasos:
 1. $p_0$ se agrega a una cola de espera asociada al dispositivo y es bloqueado por el [[Scheduling]].
-2. Una vez que el dispositivo completa la tarea, genera una interrupción *(el estado del CPU es guardado en el stack)*.
+2. Una vez que el dispositivo completa la tarea, genera una [[Interrupciones#Interrupt Request|Interrupt Request]]. *Observar: el estado del CPU es guardado en el stack*.
 3. El CPU recibe la interrupción y transfiere el control al *interrupt handler*.
 4. El *interrupt handler* se encarga de procesar los datos. Luego retorna de la interrupción cargando el estado anterior a la interrupción del CPU y desbloqueando a $p_0$ mediante [[Scheduling]].
 

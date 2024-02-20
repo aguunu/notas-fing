@@ -64,7 +64,7 @@ Luego, al recibir una representación, hallamos la paridad de la siguiente maner
 |  | $a_4$ | $a_3$ | $a_2$ | $p_3$ | $a_1$ | $p_2$ | $p_1$ |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | $s_1$ | x |  | x |  | x |  | x |
-| $s_2$ | x | x |  | x | x |  |  |
+| $s_2$ | x | x |  |  | x | x |  |
 | $s_3$ | x | x | x | x |  |  |  |
 
 Donde $s=s_3 s_2 s_1$ representa un entero en binario. Si $s=0$ no hay errores. Por otra parte, si $s \neq 0$ índica que hay un bit invalido en la representación y la posición de este bit (leído de derecha a izquierda) es indicada por $s$.

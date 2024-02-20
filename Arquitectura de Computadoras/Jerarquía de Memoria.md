@@ -126,5 +126,9 @@ Siendo $t, s, w$ los bits reservados para __TAG__, __SET__, __WORD__ respectivam
 El problema de la coherencia de la cache es el que se genera por la necesidad de que el contenido de la cache y el de la memoria principal debe estar sincronizado en todo momento.
 
 - Write-Through: En un esquema *wirte-though*, la escrituras siempre actualizan el cache y el próximo nivel inferior de la jerarquía de memoria, asegurando que la información siempre sea consistente entre ambos niveles.
-- Write-Back: En un esquema *write-back*, las escrituras solo actualizan la cache, luego, cuando se reemplace este bloque, se actualiza el próximo nivel inferior de la jerarquía. *Se agrega un dirty-bit, para indicar si el bloque fue modificado mientras se encontraba en cache o no*.
+- Write-Back: En un esquema *write-back*, las escrituras actualizan únicamente el cache, quedando desincronizadas con la memoria. Luego, al remplazar el bloque, se actualizará la memoria.
+	- Cuando un DMA realice un *read* sobre un bloque que se encuentra desincronizado, se deberá actualizar la memoria.
+	- Cuando un DMA realice un *write* se deberá invalidar la línea de cache que lo contenga mediante un *dirty-bit*[^dirty-bit]. *Notar: cuando el CPU intente acceder a dicho bloque producirá un miss, por lo que deberá deberá actualizar dicha linea de cache.*
 - [[Sistemas#Multiprocessor System|Multiprocessor System]]: Se resuelve de igual forma que *write-through* y *write-back*. Sin embargo, en el caso de *write-back*, puede surgir la situación donde varios [[CPU]] tengan de forma simultanea el mismo bloque en cache, de esta forma, si uno de estos actualiza este bloque surge inconsistencia sobre este bloque. Por ende, es necesario tener un sistema de monitoreo cruzado entre todos los sub-sistemas de memoria cache de todos los [[CPU|CPU'S]].
+
+[^dirty-bit]: El *dirty-bit* es una *flag* que posee cada línea de cache, para indicar si el bloque fue modificado mientras se encontraba en cache o no.

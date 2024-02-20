@@ -34,10 +34,10 @@ Atributos que definen el formato de las instrucciones:
 ## Set de Registros
 Conjunto de posiciones especiales de memoria *(registros)* que se encuentran dentro del CPU y mucho más veloces que si estuvieran en memoria.
 - Totalmente Visibles: son manipulados *directamente* por el programador *(ej. AX, BX, AL).*
-- Parcialmente Visibles: son manipulados *indirectamente* por el programador *(ej. PC (Program Counter)[^PC], SP (Stack Pointer), FLAGS[^PS]).*
+- Parcialmente Visibles: son manipulados *indirectamente* por el programador *(ej. IP (Instruction Pointer)[^IP], SP (Stack Pointer), FLAGS[^PS]).*
 - Internos: son utilizados *exclusivamente* por el *Control Unit* *(ej. IR (Instruction Register)[^IR])*.
 
-[^PC]: También conocido como *IP (Instruction Pointer)*. Contiene la próxima instrucción a ejecutar.
+[^IP]: También conocido como *PC (Program Counter)*. Contiene la próxima instrucción a ejecutar.
 [^PS]: También conocido como *PS (Process Status)*. Contiene las flags de *Overflow, Sign, Zero, etc.*
 [^IR]: Contiene la instrucción que se el *Control Unit* decodificó.
 ## Modos de Direccionamiento

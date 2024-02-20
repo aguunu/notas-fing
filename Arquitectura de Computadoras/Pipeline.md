@@ -78,8 +78,8 @@ Las técnicas para resolver los *hazards de control* incluyen:
 - __Salto Demorado__: siempre se ejecuta la instrucción que está luego del salto, en caso de que no exista dicha condición, se coloca un `NOP`.
 - __Predicción de Salto__: consiste en determinar, en base a una política, si el salto se va a tomar o no. Existen las siguientes politicas:
 	- Asumir que siempre o nunca se ejecuta el salto.
-	- Predicción basada en la condición del salto: ciertos tipos de condición tienen mayor tendencia a realizar el salto y otros a no realizarlo.
-	- Conmutar Taken / No Taken: predice el comportamiento de un salto en función de los antecedentes del salto anterior que no tiene por qué ser el mismo. Esto es bueno para bucles, pero no en general.
+	- Predicción basada en la condición del salto: se realiza la predicción según el tipo de condición que se evalúa *(`JZ`, `JNE,` etc)*.
+	- Conmutar Taken / No Taken: predice el comportamiento de un salto en función de antecedentes.
 	- BHT (Branch History Table): se almacena en una tabla la información de un cierto conjunto de saltos recientemente evaluados.
 
 ## Out Of Order Execution
@@ -95,4 +95,4 @@ Se realiza la ejecución de instrucciones sin respetar el orden establecido por 
 >```
 >No será necesario esperar por la ejecución de la instrucción `XOR` para ejecutar la instrucción `ADD`.
 
-[^burbuja-pipeline]: La técnica de *burbuja de pipeline*, consiste esperar agregando artificialmente operaciones del tipo `NOP` *(No OPeration), que no requieren recursos.
+[^burbuja-pipeline]: La técnica de *burbuja de pipeline*, consiste esperar agregando artificialmente operaciones del tipo `NOP` *(No OPeration)*, que no requieren recursos.

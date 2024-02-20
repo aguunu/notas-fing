@@ -40,7 +40,7 @@ Se utiliza un desplazamiento $d$ fijo, luego, la representación de un entero $n
 $$D(n) \rightarrow n+D$$
 
 - Rango $k$ bits: $0 \leq n \leq 2^k + d$
--  Operaciones: $\emptyset$
+- Operaciones: $\emptyset$
 - Observaciones:
 	1. Se conserva el orden de los números.
 	2. Existe una única representación para el $0$.
@@ -116,7 +116,7 @@ Se utiliza $\beta=2$ y la mantisa normalizada es de la forma $1,m_1 m_2 \cdots m
 
 $$\tag{Normalizado} PF(x) = (-1)^s \cdot \textcolor{red}{1},m \cdot 2^{e-d}$$
 
-$$\tag{Desnormalizado} PF(x)=(-1)^S \cdot \textcolor{red}{0},m \cdot 2^{e-d}$$
+$$\tag{Desnormalizado} PF(x)=(-1)^S \cdot \textcolor{red}{0},m \cdot 2^{1-d}$$
 
 $m$ tendrá $p$ bits asignados, $e$ tendrá $q$ bits asignados, y s $s$ tendrá 1 bit asignado, por lo que la suma de los bits asignados serán $N=1+q+p$.
 

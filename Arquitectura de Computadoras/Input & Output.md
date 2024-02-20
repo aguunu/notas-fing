@@ -1,5 +1,10 @@
 Es una interfaz que permite la comunicación entre el [[CPU]] y el "mundo exterior exterior" mediante *input devices (ej. mouse y teclado)* y *output devices (ej. monitores e impresoras)*.
 
+Existen 3 formas de interactuar con el [[Input & Output System]].
+- [[Input & Output System#Programmed I/O|Programmed IO]]
+- [[Input & Output System#Interrupt-Driven I/O|Interrupt-Driven IO]]
+- [[Input & Output System#Direct Memory Access|Direct Memory Access (DMA)]]
+
 ## Device Controller
 Un __device controller__ es un componente que se encarga de operar sobre un *port*, *bus* o *device*. *(ej. el serial-port controller se encarga de controlar las señales en los cables del serial port)*.
 

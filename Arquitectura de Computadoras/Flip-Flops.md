@@ -1,11 +1,10 @@
 Los *Flip-Flop* son [[Circuitos Secuenciales]] y se los pueden ver como un circuitos capaces de "recordar" el valor de la entrada previo al actual.
 
-## Entradas Adicionales
-En la práctica, los *flip-flops* cuentan con las siguientes entradas adicionales:
-- Utilizadas en *flip-flops* sincrónicos y se activa por flanco:
-	- Set: Pone en 1 el valor del circuito.
-	- Clear: Pone en 0 el valor del circuito.
-- Clock Enable: Fija el estado del *clock*.
+>[!important] 
+>En la práctica, los *flip-flops* cuentan con las siguientes entradas adicionales:
+>- $\texttt{SET}$: Pone en 1 el valor del circuito *(asincronica)*.
+>- $\texttt{CLEAR}$: Pone en 0 el valor del circuito *(asincronica)*.
+>- $\texttt{CLOCK\_ENABLE}$: Fija el estado del *clock* *(sincronica)*.
 
 ## Flip-Flop R-S
 El *Flip-Flop R-S* también conocido como *latch*, cuenta con 2 entradas $R$ y $S$, y 2 salidas $Q$ y $\bar{Q}$.
@@ -19,11 +18,12 @@ Su tabla de verdad corresponde con la siguiente:
 |1|1|-|
 
 - Asincrónico: Las funciones que generan los valores de las señales $R$ y $S$ pueden variar en cualquier momento.
-- Sincrónico: Se introduce una señal de sincronismo para el circuito *(entrada de clock $CLK$)*, de esta forma, se actualizará los nuevos valores cuando se produzca un *tick*.
+- Sincrónico: Se introduce una señal de sincronismo para el circuito, luego, se actualizarán los valores dependiendo si el sincronismo es por *flanco* *(entrada $\texttt{CLK}$)* o por *nivel* *(entrada $\texttt{G}$)*.
 
->[!error] 
->Cuando $M=S=1$, el estado $Q_{n+1}$ quedará indefinido.
+>[!important] 
+>En sincronismo por *nivel*, se actualizarán los valores cuando la entrada del *clock* vale $1$. Por otro lado, en sicronismo por *flanco*, se actualizarán los valores al ocurrir un cambió lógico de $0$ a $1$.
 
+![[Drawing 2024-02-18 17.34.02.excalidraw]]
 ## Flip-Flop D
 Es una variante del [[#Flip-Flop R-S]], donde su tabla de verdad es la siguiente:
 
@@ -68,7 +68,7 @@ $$Q_{n+1}=J \cdot \overline{Q_n} + \overline{K} \cdot Q_n$$
 
 Por ende, podemos re-escribir la tabla de verdad de la siguiente forma:
 
-|$J$|$K$$|$Q_{n+1}$|
+|$J$|$K$ |$Q_{n+1}$|
 |-|-|-|
 |0|0|$Q_n$|
 |0|1|0|
