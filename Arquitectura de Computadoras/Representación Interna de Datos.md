@@ -130,9 +130,9 @@ Para la representación de exponentes negativos, es necesario un desplazamiento 
 
 $$E = e-(2^{q-1} - 1) = e-d \implies d = 2^{q-1} - 1$$
 
-| |$E=(e-p)$ *(exponente)*|$m$ *(mantisa)*|
+| |$E=(e-d)$ *(exponente)* |$m$ *(mantisa)*|
 |---|---|---|
-|Normalizados|$0 \dots 0 < E < 1 \dots 1$|Cualquiera|
+|Normalizados|$0 \dots 0 < E < 1 \dots 1$|$0 \dots 0 \leq m \leq 1 \dots 1$ |
 |Desnormalizado|$0 \dots 0$|$\neq 0$|
 |Cero|$0 \dots 0$|$0$|
 |Infinito|$1 \dots 1$|$0$|

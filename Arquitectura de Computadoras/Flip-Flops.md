@@ -34,7 +34,7 @@ Es una variante del [[#Flip-Flop R-S]], donde su tabla de verdad es la siguiente
 
 Por ende, podemos escribir la función de la siguiente forma:
 
-$$Q_{n+1} = D_n$$
+$$Q_{n+1} = D$$
 
 ## Flip-Flop T
 Es un *flip-flop* mantiene su salida incambiada en el tiempo o la invierte en cada flanco.
